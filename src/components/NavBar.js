@@ -54,7 +54,7 @@ const CustomLink = ({ href, title, className = "" }) => {
 
 const NavBar = () => {
   const [mode, setMode] = useThemeSwitcher();
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
