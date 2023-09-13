@@ -20,11 +20,11 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
     router.push(href);
   };
   return (
-    <button className={`${className} relative group`} onClick={handleClick}>
+    <button className={`${className} relative group text-light dark:text-dark my-2`} onClick={handleClick}>
       {title}
 
       <span
-        className={`h-[1px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 dark:bg-light
+        className={`h-[1px] inline-block bg-light absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 dark:bg-dark
                 ${router.asPath === href ? "w-full" : "w-0"}
             `}
       >
@@ -61,7 +61,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="w-full px-32 py-8 light-medium flex items-center justify-between dark:text-light relative">
+    <header className="w-full px-32 py-8 light-medium flex items-center justify-between dark:text-light relative ">
       <button
         className="flex-col justify-center items-center hidden lg:flex"
         onClick={handleClick}
@@ -85,7 +85,7 @@ const NavBar = () => {
 
       <div className="flex w-full justify-between items-center lg:hidden">
         <nav>
-          <CustomLink href="/" title="Home" className="mr-4" />
+          <CustomLink href="/" title />
           <CustomLink href="/about" title="About" className="mx-4" />
           <CustomLink href="/projects" title="Projects" className="mx-4" />
           <CustomLink
@@ -142,30 +142,30 @@ const NavBar = () => {
       </div>
 
       {isOpen ? (
-        <div className="min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32">
-          <nav className="flex items-center flex-col justify-center">
+        <motion.div 
+        initial={{scale:0, opacity:0, x:"-50%", y:"-50%"}}
+        animate = {{scale:1, opacity:1}}
+        transition={{duration:0.5}}
+        className="min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32">
+          <nav className="flex items-center flex-col justify-center flex-wrap mt-2">
             <CustomMobileLink
               href="/"
               title="Home"
-              className="mr-4"
               toggle={handleClick}
             />
             <CustomMobileLink
               href="/about"
               title="About"
-              className="mx-4"
               toggle={handleClick}
             />
             <CustomMobileLink
               href="/projects"
               title="Projects"
-              className="mx-4"
               toggle={handleClick}
             />
             <CustomMobileLink
               href="/testimonials"
               title="Testimonials"
-              className="ml-4"
               toggle={handleClick}
             />
           </nav>
@@ -176,7 +176,7 @@ const NavBar = () => {
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.8 }}
-              className="w-6 mx-3"
+              className="w-6 mx-3 sm:mx-1"
             >
               <TwitterIcon />
             </motion.a>
@@ -186,7 +186,7 @@ const NavBar = () => {
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.8 }}
-              className="w-6 mx-3"
+              className="w-6 mx-3 bg-light dark:bg-dark rounded-full sm:mx-1"
             >
               <GithubIcon />
             </motion.a>
@@ -196,7 +196,7 @@ const NavBar = () => {
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.8 }}
-              className="w-6 mx-3"
+              className="w-6 mx-3 sm:mx-1"
             >
               <LinkedInIcon />
             </motion.a>
@@ -204,7 +204,7 @@ const NavBar = () => {
             <button
               onClick={() => setMode(mode === "light" ? "dark" : "light")}
               className={`ml-3 flex rounded-full p-1 h-9 w-9 ${
-                mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
+                mode === "light" ? "bg-dark text-light" : "bg-light text-dark sm:mx-1"
               }`}
             >
               {mode === "dark" ? (
@@ -214,7 +214,7 @@ const NavBar = () => {
               )}
             </button>
           </nav>
-        </div>
+        </motion.div>
       ) : null}
 
       <div className="absolute left-[50%] top-22 translate-x-[-50%]">
