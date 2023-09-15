@@ -13,12 +13,12 @@ import kiki from "../../public/images/projects/kiki.jpg";
 
 const FeaturedProject = ({ type, title, summary, img, link }) => {
   return (
-    <article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark dark:border-light bg-light  dark:bg-dark shadow-2xl p-12 relative rounded-br-2xl">
-      <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl" />
+    <article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark dark:border-light bg-light  dark:bg-dark shadow-2xl p-12 relative rounded-br-2xl lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4">
+      <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl sm:-right-2 sm:h-[102%] sm:w-ful sm:rounded-[1,5rem]" />
       <Link
         href={link}
         target="_blank"
-        className="w-1/2 cursor-pointer overflow-hidden rounded-lg"
+        className="w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full"
       >
         <Image
           src={img}
@@ -28,18 +28,18 @@ const FeaturedProject = ({ type, title, summary, img, link }) => {
           sizes="{max-:768px} 100vw, {max-width:1200px} 50vw, 50vw"
         />
       </Link>
-      <div className="w-1/2 flex flex-col items-start justify-between pl-6">
-        <span className="text-primary font-medium text-xl">{type}</span>
+      <div className="w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6 ">
+        <span className="text-primary font-medium text-xl xs:text-base">{type}</span>
         <Link
           href={link}
           target="_blank"
           className="hover:underline underline-offset-2"
         >
-          <h2 className="my-2 w-full text-left text-4xl font-bold dark:text-light">
+          <h2 className="my-2 w-full text-left text-4xl font-bold dark:text-light sm:text-sm">
             {title}
           </h2>
         </Link>
-        <p className="my-2 font-medium text-dark dark:text-light">{summary}</p>
+        <p className="my-2 font-medium text-dark dark:text-light sm:text-sm">{summary}</p>
       </div>
     </article>
   );
@@ -47,8 +47,8 @@ const FeaturedProject = ({ type, title, summary, img, link }) => {
 
 const Project = ({ type, title, img, link }) => {
   return (
-    <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark dark:border-light bg-light dark:bg-dark p-6 relative">
-      <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl" />
+    <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark dark:border-light bg-light dark:bg-dark p-6 relative xs:p-4">
+      <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]" />
       <Link
         href={link}
         target="_blank"
@@ -57,13 +57,13 @@ const Project = ({ type, title, img, link }) => {
         <Image src={img} alt={title} className="w-full h-auto" />
       </Link>
       <div className="w-full flex flex-col items-start justify-between mt-4">
-        <span className="text-primary font-medium text-xl">{type}</span>
+        <span className="text-primary font-medium text-xl lg:text-lg d:text-base">{type}</span>
         <Link
           href={link}
           target="_blank"
           className="hover:underline underline-offset-2"
         >
-          <h2 className="my-2 w-full text-left text-4xl font-bold dark:text-light">{title}</h2>
+          <h2 className="my-2 w-full text-left text-4xl font-bold dark:text-light lg:text-2xl">{title}</h2>
         </Link>
       </div>
     </article>
@@ -82,10 +82,10 @@ const Projects = () => {
         <Layout>
           <AnimatedText
             text="Imagination Trumps Knowledge!"
-            className="mb-16"
+            className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
           />
 
-          <div className="grid grid-cols-12 gap-24 gap-y-32">
+          <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm::gap-y-0">
             <div className="col-span-12">
               <FeaturedProject
                 title="Blonk : Executive Search "
@@ -96,7 +96,7 @@ const Projects = () => {
                 type="UI/UX Redesign"
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-6 sm:col-span-12">
               <Project
                 title="High Fit: Workout plans"
                 img={HF}
@@ -104,7 +104,7 @@ const Projects = () => {
                 type="UI/UX Design"
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-6 sm:col-span-12">
               {" "}
               <Project
                 title="KiKi: Luxury beach accessories"
@@ -123,7 +123,7 @@ const Projects = () => {
                 type="Branding | UI/UX Design | Web Dev"
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-6 sm:col-span-12">
               {" "}
               <Project
                 title="E-state: Real estate company"
@@ -132,7 +132,7 @@ const Projects = () => {
                 type="UI/UX Design"
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-6 sm:col-span-12">
               {" "}
               <Project
                 title="Crypto Marketplace"

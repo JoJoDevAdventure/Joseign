@@ -7,7 +7,7 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col item-center justify-between ms:w-[80%]"
+      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col item-center justify-between sm:w-[80%]"
     >
       <LiIcon reference={ref} />
       <motion.div
@@ -44,7 +44,7 @@ const Experience = () => {
 
   return (
     <div className="my-64 md:mt-8">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center md:mb-4 dark:text-light md:text-6xl xs:text-4xl">
+      <h2 className="font-bold text-8xl mb-32 w-full text-center md:mb-8 dark:text-light md:text-6xl xs:text-4xl">
         Experience
       </h2>
 
