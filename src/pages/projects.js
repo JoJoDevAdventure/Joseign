@@ -74,7 +74,7 @@ const Projects = () => {
   return (
     <>
       <Head>
-        <title> Joseign | Projects Page</title>
+      <title> Joseign | Projects</title>
         <meta name="description" content="any description" />
       </Head>
       <TransitionEffect/>
