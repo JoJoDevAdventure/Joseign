@@ -42,7 +42,7 @@ const about = () => {
   return (
     <>
       <Head>
-        <title> JoDesign | About Page</title>
+        <title> Joseign | About</title>
         <meta name="description" content="any description" />
       </Head>
       <TransitionEffect />
