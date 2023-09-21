@@ -27,7 +27,7 @@ const testimonials = () => {
   return (
     <>
       <Head>
-        <title> JoDesign | Projects Page</title>
+      <title> Joseign | Testimonials </title>
         <meta name="description" content="any description" />
       </Head>
       <TransitionEffect />
