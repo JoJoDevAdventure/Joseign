@@ -5,7 +5,8 @@ import TransitionEffect from "@/components/TransitionEffect";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import profilePic from "../../public/images/profile/developer-pic-1.png";
+import lightProfilePic from "../../public/images/profile/developer-pic-1.png";
+import darkProfilePic from "../../public/images/profile/developer-pic-3.png";
 import lightBulb from "../../public/images/svgs/miscellaneous_icons_1.svg";
 import Layout from "../components/Layout";
 
@@ -22,16 +23,23 @@ export default function Home() {
           <div className="flex items-center justify-between w-full lg:flex-col">
             <div className="w-1/2 md:w-full">
               <Image
-                src={profilePic}
+                src={lightProfilePic}
                 alt="JB"
-                className="w-full h-auto lg:hidden md:inline-block md:w-80"
+                className="w-full h-auto lg:hidden md:inline-block md:w-80 dark:hidden"
+                priority
+                sizes="{max-width:768px} 100vw, {max-width:1200px} 50vw, 50vw"
+              ></Image>
+              <Image
+                src={darkProfilePic}
+                alt="JB"
+                className="w-full h-auto lg:hidden md:inline-block md:w-80  hidden dark:inline"
                 priority
                 sizes="{max-width:768px} 100vw, {max-width:1200px} 50vw, 50vw"
               ></Image>
             </div>
             <div className="w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center">
               <AnimatedText
-                text="Turning Vision Into Reality With Code And Design."
+                text="Turning Vision Into Reality With Design."
                 className="!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
               ></AnimatedText>
               <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
