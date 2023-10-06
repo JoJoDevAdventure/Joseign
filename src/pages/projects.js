@@ -5,14 +5,14 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import CM from "../../public/images/projects/CM.jpg";
+import fiverr from "../../public/images/projects/Fiverr.jpg";
 import HF from "../../public/images/projects/HF.jpg";
 import pf from "../../public/images/projects/PF.jpg";
+import venn from "../../public/images/projects/Venn.jpg";
 import afa from "../../public/images/projects/afa.jpg";
 import blonk from "../../public/images/projects/blonk.jpg";
 import estate from "../../public/images/projects/estate.jpg";
-import fiverr from "../../public/images/projects/fiverr.jpg";
 import kiki from "../../public/images/projects/kiki.jpg";
-import venn from "../../public/images/projects/venn.jpg";
 const FeaturedProject = ({ type, title, summary, img, link }) => {
   return (
     <article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark dark:border-light bg-light  dark:bg-dark shadow-2xl p-12 relative rounded-br-2xl lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4">
