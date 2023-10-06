@@ -74,32 +74,55 @@ const Experience = () => {
             />
 
             <Details
-              position="UI/UX Designer."
+              position="Logo designer"
               company="Fiverr"
               companyLink=""
               time="2019 - 2020"
               address="Remote"
-              work="Worked on websites and mobile apps designing new features, improving the user experience, organizing the user journey and refining the user interface."
-            />
-
-            <Details
-              position="iOS Developer."
-              company="Freelance"
-              companyLink=""
-              time="2020 - Current "
-              address="Remote"
-              work="Developed apps from scratch and provided solutions using Swift, Swift, Xcode, and Cocoa Touch showing proficiency with MVVM Architecture and APIs Integration."
+              work="Worked with multiple small business owners to help them design the ideal logo, using illustrator and Procreate"
             />
 
             <Details
               position="Product designer & Design team lead"
               company="Upwork"
               companyLink=""
-              time="2021-Present"
-              address="Mountain View, CA"
+              time="2020-Present"
+              address="Remote"
               work="Led the creation of visually appealing and user-centered product designs, fostered a collaborative environment and delivered innovative solutions that enhanced the company's design capabilities and drove its success."
             />
 
+            <Details
+              position="UI/UX Team Lead"
+              company="Blonk"
+              companyLink=""
+              time="2020-2021"
+              address="France, Paris"
+              work="Led the recreation of Blonk's UI/UX, changing the overall structure, Enhancing the UI, adding mobile friendly features and multiple animations."
+            />
+            <Details
+              position="Branding & Web designer"
+              company="PROFHIMA"
+              companyLink=""
+              time="2021-2022"
+              address="France, Nice"
+              work="PROFHIMA is a construction company based in France, I helped the owner to design his logo, then furniture such as business card, envelope, shirts... Then I designed his website and the mobile version of it."
+            />
+            <Details
+              position="Graphic designer | Video editor"
+              company="Venn Telecom"
+              companyLink=""
+              time="2022-present"
+              address="Belgium, Brussels"
+              work="In Venn I helped a lot in creating graphic elements for external use by marketing teams, such as banners, posts, marketing videos, Also designing internal documents."
+            />
+            <Details
+              position="Founder | Branding designer"
+              company="Air Force Artisans"
+              companyLink=""
+              time="2023-present"
+              address="France, Paris"
+              work="I founded a team of sneakers artisans to launch a company of sneakers customization, my role was to create a branding guide-lines, design a website with Figma, collaborate with developers team and Design social media posts"
+            />
         </ul>
       </div>
     </div>

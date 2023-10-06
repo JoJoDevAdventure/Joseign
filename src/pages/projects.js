@@ -6,11 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 import CM from "../../public/images/projects/CM.jpg";
 import HF from "../../public/images/projects/HF.jpg";
+import pf from "../../public/images/projects/PF.jpg";
 import afa from "../../public/images/projects/afa.jpg";
 import blonk from "../../public/images/projects/blonk.jpg";
 import estate from "../../public/images/projects/estate.jpg";
+import fiverr from "../../public/images/projects/fiverr.jpg";
 import kiki from "../../public/images/projects/kiki.jpg";
-
+import venn from "../../public/images/projects/venn.jpg";
 const FeaturedProject = ({ type, title, summary, img, link }) => {
   return (
     <article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark dark:border-light bg-light  dark:bg-dark shadow-2xl p-12 relative rounded-br-2xl lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4">
@@ -97,10 +99,66 @@ const Projects = () => {
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
+              {" "}
+              <Project
+                title="Venn Telecom"
+                img={venn}
+                link="https://www.venntelecom.com"
+                type="Graphic design | Social media design"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-12">
+              {" "}
+              <Project
+                title="E-state: Real estate company"
+                img={estate}
+                link="https://www.figma.com/file/anzu6Wb4mE0uDlHVu92HKj/E-state?type=design&node-id=192-2455&mode=design&t=fRyXUy2kSaYa4UJ8-11"
+                type="UI/UX Design"
+              />
+            </div>
+            <div className="col-span-12">
+              {" "}
+              <FeaturedProject
+                title="Air Force Artisans"
+                img={afa}
+                summary="I collaborated with a team of sneakers artisans to launch a company of sneakers customization, my role was to create a branding guide-lines, design a website with Figma and Fullstack develope it using Vue.js and Django, Deploy the website and Design social media posts"
+                link="https://airfa.shop"
+                type="Branding | UI/UX Design | Web Dev"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-12">
+              {" "}
+              <Project
+                title="Fiverr Freelance"
+                img={fiverr}
+                link=""
+                type="Mobile app UI/UX Design"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-12">
+              {" "}
+              <Project
+                title="Crypto Marketplace"
+                img={CM}
+                link="https://www.figma.com/file/OtTYhZcSQq4R2i1n0Yug4O/Crypto-Market-(work-in-progress)?type=design&mode=design&t=J0lcGQNI8nuWoKLZ-11"
+                type="Mobile UI/UX Design"
+              />
+            </div>
+            <div className="col-span-12">
+              {" "}
+              <FeaturedProject
+                title="PROFHIMA"
+                img={pf}
+                summary="PROFHIMA is a construction company based in France, I helped the owner to design his logo, then furniture such as business card, envelope, shirts... Then I designed his website, built it and deployed online, a satisfied client happy with the service I provided."
+                link="https://profhima.fr"
+                type="Branding | Graphic design"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-12">
               <Project
                 title="High Fit: Workout plans"
                 img={HF}
-                link="/home"
+                link="https://www.figma.com/file/anzu6Wb4mE0uDlHVu92HKj/E-state?type=design&node-id=192-2455&mode=design&t=fRyXUy2kSaYa4UJ8-11"
                 type="UI/UX Design"
               />
             </div>
@@ -111,34 +169,6 @@ const Projects = () => {
                 img={kiki}
                 link="/home"
                 type="Branding | Logo Design"
-              />
-            </div>
-            <div className="col-span-12">
-              {" "}
-              <FeaturedProject
-                title="Air Force Artisans"
-                img={afa}
-                summary="lorem lorem"
-                link="/"
-                type="Branding | UI/UX Design | Web Dev"
-              />
-            </div>
-            <div className="col-span-6 sm:col-span-12">
-              {" "}
-              <Project
-                title="E-state: Real estate company"
-                img={estate}
-                link="/home"
-                type="UI/UX Design"
-              />
-            </div>
-            <div className="col-span-6 sm:col-span-12">
-              {" "}
-              <Project
-                title="Crypto Marketplace"
-                img={CM}
-                link="/home"
-                type="Branding | UI/UX Design"
               />
             </div>
           </div>

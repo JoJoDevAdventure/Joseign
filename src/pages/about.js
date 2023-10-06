@@ -57,7 +57,7 @@ const about = () => {
               <p className="font-medium dark:text-light/75">
                 Hi, I&apos;m Joseph, Graphic designer and UI/UX designer with a
                 passion for creating beautiful, functional, and user-centered
-                digital experiences. With 5 years of experience in the field. I
+                digital experiences. With 7 years of experience in the field. I
                 am always looking for new and innovative ways to bring my
                 clients visions to life.
               </p>
