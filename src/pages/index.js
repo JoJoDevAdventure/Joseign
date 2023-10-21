@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import lightProfilePic from "../../public/images/profile/developer-pic-1.png";
 import darkProfilePic from "../../public/images/profile/developer-pic-3.png";
-import lightBulb from "../../public/images/svgs/miscellaneous_icons_1.svg";
+import lightBulb from "../../public/images/svgs/badge.png";
 import Layout from "../components/Layout";
 
 export default function Home() {
