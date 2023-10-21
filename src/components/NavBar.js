@@ -8,8 +8,7 @@ import {
   GithubIcon,
   LinkedInIcon,
   MoonIcon,
-  SunIcon,
-  TwitterIcon,
+  SunIcon
 } from "./icons";
 
 const CustomMobileLink = ({ href, title, className = "", toggle }) => {
@@ -97,16 +96,6 @@ const NavBar = () => {
 
         <nav className="flex items-center justify-center flex-wrap">
           <motion.a
-            href="https://twitter.com/JoJosDev"
-            target={"_blank"}
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.8 }}
-            className="w-6 mx-3"
-          >
-            <TwitterIcon />
-          </motion.a>
-
-          <motion.a
             href="https://github.com/JoJoDevAdventure"
             target={"_blank"}
             whileHover={{ y: -2 }}
@@ -172,17 +161,7 @@ const NavBar = () => {
 
           <nav className="flex items-center justify-center flex-wrap">
             <motion.a
-              href="/"
-              target={"_blank"}
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.8 }}
-              className="w-6 mx-3 sm:mx-1"
-            >
-              <TwitterIcon />
-            </motion.a>
-
-            <motion.a
-              href="/"
+              href="https://github.com/JoJoDevAdventure"
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.8 }}
@@ -192,7 +171,7 @@ const NavBar = () => {
             </motion.a>
 
             <motion.a
-              href="/"
+              href="https://www.linkedin.com/in/youssef-bouhlel/"
               target={"_blank"}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.8 }}
