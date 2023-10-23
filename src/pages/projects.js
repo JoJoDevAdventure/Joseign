@@ -104,7 +104,7 @@ const Projects = () => {
     <>
       <Head>
       <title> Joseign | Projects</title>
-        <meta name="description" content="any description" />
+        <meta name="description" content="A large catalogue displaying my latest projects, from Branding to Graphic design, UI/UX Design and even social media posts design." />
       </Head>
       <TransitionEffect/>
       <main className="w-full mb-16 flex flex-col items-center justify-center">

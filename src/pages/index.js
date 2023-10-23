@@ -15,7 +15,11 @@ export default function Home() {
     <>
       <Head>
       <title> Joseign | Home</title>
-        <meta name="description" content="A Freelance designer for all your work, Design, content" />
+        <meta name="description" content="Joseph I'm Graphic designer and UI/UX designer with a
+                passion for creating beautiful, functional, and user-centered
+                digital experiences. With 7 years of experience in the field. I
+                am always looking for new and innovative ways to bring my
+                clients visions to life." />
       </Head>
       <TransitionEffect />
       <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
