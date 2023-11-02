@@ -24,10 +24,7 @@ const FeaturedProject = ({ type, title, summary, img, link }) => {
 
   return (
     <article
-      className={`w-full flex items-center justify-between rounded-3xl border border-solid border-dark dark:border-light bg-light  dark:bg-dark shadow-2xl p-12 relative rounded-br-2xl lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4 ${isHovered ? 'hover-zoom' : ''}`}
-      onMouseEnter={() => setIsHovered(true)} // Handle mouse enter
-      onMouseLeave={() => setIsHovered(false)} // Handle mouse leave
-    >
+      className={`w-full flex items-center justify-between rounded-3xl border border-solid border-dark dark:border-light bg-light  dark:bg-dark shadow-2xl p-12 relative rounded-br-2xl lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4 ${isHovered ? 'hover-zoom' : ''}`}>
       <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl sm:-right-2 sm:h-[102%] sm:w-ful sm:rounded-[1,5rem]" />
       <Link
         href={link}
@@ -41,6 +38,8 @@ const FeaturedProject = ({ type, title, summary, img, link }) => {
           priority
           sizes="{max-:768px} 100vw, {max-width:1200px} 50vw, 50vw"
           style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }} // Apply zoom effect
+          onMouseEnter={() => setIsHovered(true)} // Handle mouse enter
+          onMouseLeave={() => setIsHovered(false)} // Handle mouse leave
         />
       </Link>
       <div className="w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6 ">
@@ -68,8 +67,6 @@ const Project = ({ type, title, img, link }) => {
   return (
     <article
       className={`w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark dark:border-light bg-light dark:bg-dark p-6 relative xs:p-4 ${isHovered ? 'hover-zoom' : ''}`}
-      onMouseEnter={() => setIsHovered(true)} // Handle mouse enter
-      onMouseLeave={() => setIsHovered(false)} // Handle mouse leave
     >
       <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]" />
       <Link
@@ -82,6 +79,8 @@ const Project = ({ type, title, img, link }) => {
           alt={title}
           className="w-full h-auto transition-transform transform-gpu duration-1000"
           style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }} // Apply zoom effect
+          onMouseEnter={() => setIsHovered(true)} // Handle mouse enter
+          onMouseLeave={() => setIsHovered(false)} // Handle mouse leave
         />
       </Link>
       <div className="w-full flex flex-col items-start justify-between mt-4">
@@ -131,7 +130,7 @@ const Projects = () => {
                 title="Venn Telecom"
                 img={venn}
                 link="https://www.venntelecom.com"
-                type="Graphic design || Social Media Design"
+                type="UI Redesign"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -150,7 +149,7 @@ const Projects = () => {
                 img={afa}
                 summary="I collaborated with a team of sneakers artisans to launch a company of sneakers customization, my role was to create a branding guide-lines, design a website with Figma and Fullstack develope it using Vue.js and Django, Deploy the website and Design social media posts"
                 link="https://airfa.shop"
-                type="Branding || Web UI/UX Design || Fullstack Dev"
+                type="UI/UX Design"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
