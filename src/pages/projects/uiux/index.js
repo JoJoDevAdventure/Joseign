@@ -4,20 +4,19 @@ import TransitionEffect from "@/components/TransitionEffect";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import CM from "../../public/images/projects/CM.jpg";
-import HF from "../../public/images/projects/HF.jpg";
-import letskate from "../../public/images/projects/LetsSkate.gif";
-import pf from "../../public/images/projects/PF.jpg";
-import venn from "../../public/images/projects/Venn.jpg";
-import afa from "../../public/images/projects/afa.jpg";
-import blonk from "../../public/images/projects/blonk.jpg";
-import estate from "../../public/images/projects/estate.jpg";
-import gymrat from "../../public/images/projects/gymrat.jpg";
-import icookpad from "../../public/images/projects/iCookPad.gif";
-import kiki from "../../public/images/projects/kiki.jpg";
-import rps from "../../public/images/projects/rps.gif";
+import HF from "../../../../public/images/projects/HF.jpg";
+import letskate from "../../../../public/images/projects/LetsSkate.gif";
+import pf from "../../../../public/images/projects/PF.jpg";
+import venn from "../../../../public/images/projects/Venn.jpg";
+import afa from "../../../../public/images/projects/afa.jpg";
+import blonk from "../../../../public/images/projects/blonk.jpg";
+import estate from "../../../../public/images/projects/estate.jpg";
+import Controller from "../../../../public/images/projects/gaming.jpg";
+import icookpad from "../../../../public/images/projects/iCookPad.gif";
+import rps from "../../../../public/images/projects/rps.gif";
 
 import { useState } from 'react'; // Import useState
+import ParticlesCont from "../../../components/ParticlesContainer";
 
 const FeaturedProject = ({ type, title, summary, img, link }) => {
   const [isHovered, setIsHovered] = useState(false); // State to track hover
@@ -108,9 +107,10 @@ const Projects = () => {
       <TransitionEffect/>
       <main className="w-full mb-16 flex flex-col items-center justify-center">
         <Layout>
+        <ParticlesCont/>
           <AnimatedText
             text="Imagination Trumps Knowledge!"
-            className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
+            className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl z-10"
           />
 
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm::gap-y-0">
@@ -130,7 +130,7 @@ const Projects = () => {
                 title="Venn Telecom"
                 img={venn}
                 link="https://www.venntelecom.com"
-                type="UI Redesign"
+                type="Web UI Redesign"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -149,35 +149,7 @@ const Projects = () => {
                 img={afa}
                 summary="I collaborated with a team of sneakers artisans to launch a company of sneakers customization, my role was to create a branding guide-lines, design a website with Figma and Fullstack develope it using Vue.js and Django, Deploy the website and Design social media posts"
                 link="https://airfa.shop"
-                type="UI/UX Design"
-              />
-            </div>
-            <div className="col-span-6 sm:col-span-12">
-              {" "}
-              <Project
-                title="Gymrat"
-                img={gymrat}
-                link="https://www.instagram.com/gymrat.tn/"
-                type="Clothing Design || Social Media Design"
-              />
-            </div>
-            <div className="col-span-6 sm:col-span-12">
-              {" "}
-              <Project
-                title="KiKi: Luxury beach accessories"
-                img={kiki}
-                link="https://www.instagram.com/kikibeach_conceptstore/"
-                type="Branding || Social Media Design"
-              />
-            </div>
-            <div className="col-span-12">
-              {" "}
-              <FeaturedProject
-                title="PROFHIMA"
-                img={pf}
-                summary="PROFHIMA is a construction company based in France, I helped the owner to design his logo, then furniture such as business card, envelope, shirts... Then I designed his website, built it and deployed online, a satisfied client happy with the service I provided."
-                link="https://profhima.fr"
-                type="Branding || Graphic design"
+                type="Branding || Web UI/UX Design"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -191,20 +163,20 @@ const Projects = () => {
             <div className="col-span-6 sm:col-span-12">
               {" "}
               <Project
-                title="Crypto Marketplace"
-                img={CM}
-                link="https://www.figma.com/file/OtTYhZcSQq4R2i1n0Yug4O/Crypto-Market-(work-in-progress)?type=design&mode=design&t=J0lcGQNI8nuWoKLZ-11"
-                type="Mobile App UI/UX Design"
+                title="Controller Shop"
+                img={Controller}
+                link="https://www.figma.com/file/yi1lqFHFj0soAWLeZrHGJc/Controller-shop-(Sold)?type=design&node-id=63-6930&mode=design&t=vXcy69U5zvcyUj6j-11"
+                type="Web App UI/UX Design"
               />
             </div>
             <div className="col-span-12">
               {" "}
               <FeaturedProject
-                title="RPS Multiplayer"
-                img={rps}
-                summary="Modern Rock Paper Scissors game design, made using Figma and Illustrator for the game components and illustrations, Designed for iPhone respecting apple's HIG (Human Interface Guidelines)."
-                link="https://www.figma.com/file/Vq6osRrEemkROeWGVcpVhE/RPS-Multiplayer?type=design&mode=design"
-                type="Mobile App UI/UX Design"
+                title="PROFHIMA"
+                img={pf}
+                summary="PROFHIMA is a construction company based in France, I helped the owner to design his logo, then furniture such as business card, envelope, shirts... Then I designed his website, built it and deployed online, a satisfied client happy with the service I provided."
+                link="https://profhima.fr"
+                type="Branding || UI/UX Design"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -224,6 +196,17 @@ const Projects = () => {
                 type="Mobile App UI/UX Design"
               />
             </div>
+            <div className="col-span-12">
+              {" "}
+              <FeaturedProject
+                title="RPS Multiplayer"
+                img={rps}
+                summary="Modern Rock Paper Scissors game design, made using Figma and Illustrator for the game components and illustrations, Designed for iPhone respecting apple's HIG (Human Interface Guidelines)."
+                link="https://www.figma.com/file/Vq6osRrEemkROeWGVcpVhE/RPS-Multiplayer?type=design&mode=design"
+                type="Mobile App UI/UX Design"
+              />
+            </div>
+
           </div>
         </Layout>
       </main>

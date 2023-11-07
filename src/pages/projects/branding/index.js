@@ -4,18 +4,18 @@ import TransitionEffect from "@/components/TransitionEffect";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import CM from "../../public/images/projects/CM.jpg";
-import HF from "../../public/images/projects/HF.jpg";
-import letskate from "../../public/images/projects/LetsSkate.gif";
-import pf from "../../public/images/projects/PF.jpg";
-import venn from "../../public/images/projects/Venn.jpg";
-import afa from "../../public/images/projects/afa.jpg";
-import blonk from "../../public/images/projects/blonk.jpg";
-import estate from "../../public/images/projects/estate.jpg";
-import gymrat from "../../public/images/projects/gymrat.jpg";
-import icookpad from "../../public/images/projects/iCookPad.gif";
-import kiki from "../../public/images/projects/kiki.jpg";
-import rps from "../../public/images/projects/rps.gif";
+import CM from "../../../../public/images/projects/CM.jpg";
+import HF from "../../../../public/images/projects/HF.jpg";
+import letskate from "../../../../public/images/projects/LetsSkate.gif";
+import pf from "../../../../public/images/projects/PF.jpg";
+import venn from "../../../../public/images/projects/Venn.jpg";
+import afa from "../../../../public/images/projects/afa.jpg";
+import blonk from "../../../../public/images/projects/blonk.jpg";
+import estate from "../../../../public/images/projects/estate.jpg";
+import gymrat from "../../../../public/images/projects/gymrat.jpg";
+import icookpad from "../../../../public/images/projects/iCookPad.gif";
+import kiki from "../../../../public/images/projects/kiki.jpg";
+import rps from "../../../../public/images/projects/rps.gif";
 
 import { useState } from 'react'; // Import useState
 
