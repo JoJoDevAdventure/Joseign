@@ -36,7 +36,7 @@ export default function Home() {
               <Image
                 src={darkProfilePic}
                 alt="JB"
-                className="w-full h-auto lg:hidden md:inline-block md:w-80  hidden dark:inline"
+                className="hidden w-full h-auto lg:hidden dark:md:inline-block md:w-80 dark:inline"
                 priority
                 sizes="{max-width:768px} 100vw, {max-width:1200px} 50vw, 50vw"
               ></Image>
