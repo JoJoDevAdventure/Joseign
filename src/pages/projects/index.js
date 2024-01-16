@@ -10,11 +10,11 @@ import pf from "../../../public/images/projects/PF.jpg";
 import venn from "../../../public/images/projects/Venn.jpg";
 import afa from "../../../public/images/projects/afa.jpg";
 import blonk from "../../../public/images/projects/blonk.jpg";
+import debook from "../../../public/images/projects/debook.jpg";
 import estate from "../../../public/images/projects/estate.jpg";
 import Controller from "../../../public/images/projects/gaming.jpg";
 import gymrat from "../../../public/images/projects/gymrat.jpg";
 import icookpad from "../../../public/images/projects/iCookPad.gif";
-import kiki from "../../../public/images/projects/kiki.jpg";
 import rps from "../../../public/images/projects/rps.gif";
 
 import { useState } from 'react'; // Import useState
@@ -138,10 +138,10 @@ const Projects = () => {
             <div className="col-span-6 sm:col-span-12">
               {" "}
               <Project
-                title="E-state: Real estate company"
-                img={estate}
-                link="https://www.figma.com/file/anzu6Wb4mE0uDlHVu92HKj/E-state?type=design&node-id=192-2455&mode=design&t=fRyXUy2kSaYa4UJ8-11"
-                type="Web UI/UX Design"
+                title="DEBOOK: WEB3 Library"
+                img={debook}
+                link="https://www.figma.com/file/I9d7Ibm6Lz7CfsAZrkHgYe/Debook-WEB3?type=design&node-id=0-1&mode=design&t=pwOo41sAZAb546oh-0"
+                type="Web UI/UX Design || Web Dev"
               />
             </div>
             <div className="col-span-12">
@@ -166,10 +166,10 @@ const Projects = () => {
             <div className="col-span-6 sm:col-span-12">
               {" "}
               <Project
-                title="KiKi: Luxury beach accessories"
-                img={kiki}
-                link="https://www.instagram.com/kikibeach_conceptstore/"
-                type="Branding || Social Media Design"
+                title="E-state: Real estate company"
+                img={estate}
+                link="https://www.figma.com/file/anzu6Wb4mE0uDlHVu92HKj/E-state?type=design&node-id=192-2455&mode=design&t=fRyXUy2kSaYa4UJ8-11"
+                type="Web UI/UX Design"
               />
             </div>
             <div className="col-span-12">
