@@ -15,6 +15,7 @@ import estate from "../../../public/images/projects/estate.jpg";
 import Controller from "../../../public/images/projects/gaming.jpg";
 import gymrat from "../../../public/images/projects/gymrat.jpg";
 import icookpad from "../../../public/images/projects/iCookPad.gif";
+import rehmat from "../../../public/images/projects/rehmat.jpg";
 import rps from "../../../public/images/projects/rps.gif";
 
 import { useState } from 'react'; // Import useState
@@ -202,11 +203,11 @@ const Projects = () => {
             <div className="col-span-12">
               {" "}
               <FeaturedProject
-                title="RPS Multiplayer"
-                img={rps}
-                summary="Modern Rock Paper Scissors game design, made using Figma and Illustrator for the game components and illustrations, Designed for iPhone respecting apple's HIG (Human Interface Guidelines)."
-                link="https://www.figma.com/file/Vq6osRrEemkROeWGVcpVhE/RPS-Multiplayer?type=design&mode=design"
-                type="Mobile App UI/UX Design"
+                title="REHMAT"
+                img={rehmat}
+                summary="REHMAT is a British chocolatier that specialises in Halal confectionery. All chocolates are handmade with all-natural and premium ingredients."
+                link="https://ramadanchocolate.com"
+                type="Product Design || Social Media Marketing Design"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -223,6 +224,16 @@ const Projects = () => {
                 title="iCookPad"
                 img={icookpad}
                 link="https://github.com/JoJoDevAdventure/iCookPad"
+                type="Mobile App UI/UX Design"
+              />
+            </div>
+            <div className="col-span-12">
+              {" "}
+              <FeaturedProject
+                title="RPS Multiplayer"
+                img={rps}
+                summary="Modern Rock Paper Scissors game design, made using Figma and Illustrator for the game components and illustrations, Designed for iPhone respecting apple's HIG (Human Interface Guidelines)."
+                link="https://www.figma.com/file/Vq6osRrEemkROeWGVcpVhE/RPS-Multiplayer?type=design&mode=design"
                 type="Mobile App UI/UX Design"
               />
             </div>
