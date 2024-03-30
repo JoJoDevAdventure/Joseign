@@ -151,7 +151,7 @@ const Projects = () => {
                 title="Air Force Artisans"
                 img={afa}
                 summary="I collaborated with a team of sneakers artisans to launch a company of sneakers customization, my role was to create a branding guide-lines, design a website with Figma and Fullstack develope it using Vue.js and Django, Deploy the website and Design social media posts"
-                link="https://airfa.shop"
+                link="https://www.figma.com/file/bPN2xSCKaU4AsDOrmDLCqo/Air-Force-Artisans?type=design&node-id=0-1&mode=design&t=dkV2qc4vX8UqI1OQ-11"
                 type="Branding || Social Media Design || UI/UX Design"
               />
             </div>
