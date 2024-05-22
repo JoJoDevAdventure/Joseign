@@ -105,7 +105,7 @@ const NavBar = () => {
             <GithubIcon />
           </motion.a>
 
-          <motion.a
+          {/* <motion.a
             href="https://www.linkedin.com/in/youssef-bouhlel/"
             target={"_blank"}
             whileHover={{ y: -2 }}
@@ -113,7 +113,7 @@ const NavBar = () => {
             className="w-6 mx-3"
           >
             <LinkedInIcon />
-          </motion.a>
+          </motion.a> */}
 
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}

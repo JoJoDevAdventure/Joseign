@@ -8,6 +8,7 @@ import HF from "../../../public/images/projects/HF.jpg";
 import letskate from "../../../public/images/projects/LetsSkate.gif";
 import pf from "../../../public/images/projects/PF.jpg";
 import venn from "../../../public/images/projects/Venn.jpg";
+import ad from "../../../public/images/projects/ad.jpg";
 import afa from "../../../public/images/projects/afa.jpg";
 import blonk from "../../../public/images/projects/blonk.jpg";
 import debook from "../../../public/images/projects/debook.jpg";
@@ -15,7 +16,6 @@ import estate from "../../../public/images/projects/estate.jpg";
 import Controller from "../../../public/images/projects/gaming.jpg";
 import gymrat from "../../../public/images/projects/gymrat.jpg";
 import icookpad from "../../../public/images/projects/iCookPad.gif";
-import rehmat from "../../../public/images/projects/rehmat.jpg";
 import rps from "../../../public/images/projects/rps.gif";
 
 import { useState } from 'react'; // Import useState
@@ -197,17 +197,17 @@ const Projects = () => {
                 title="Controller Shop"
                 img={Controller}
                 link="https://www.figma.com/file/yi1lqFHFj0soAWLeZrHGJc/Controller-shop-(Sold)?type=design&node-id=63-6930&mode=design&t=vXcy69U5zvcyUj6j-11"
-                type="Mobile App UI/UX Design"
+                type="Website UI/UX Design"
               />
             </div>
             <div className="col-span-12">
               {" "}
               <FeaturedProject
-                title="REHMAT"
-                img={rehmat}
-                summary="REHMAT is a British chocolatier that specialises in Halal confectionery. All chocolates are handmade with all-natural and premium ingredients."
-                link="https://ramadanchocolate.com"
-                type="Product Design || Social Media Marketing Design"
+                title="Addict Nutrition Sport"
+                img={ad}
+                summary="AD Is a french company specialized in supplements, My role was to create a detailed branding guideline from scratch, including logo style, colours, imagery and more..."
+                link="https://addictsportnutrition.com"
+                type="Branding || UI/UX Design"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
