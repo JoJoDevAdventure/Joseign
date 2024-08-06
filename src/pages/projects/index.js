@@ -12,13 +12,13 @@ import ad from "../../../public/images/projects/ad.jpg";
 import afa from "../../../public/images/projects/afa.jpg";
 import blonk from "../../../public/images/projects/blonk.jpg";
 import debook from "../../../public/images/projects/debook.jpg";
-import estate from "../../../public/images/projects/estate.jpg";
 import Controller from "../../../public/images/projects/gaming.jpg";
 import gymrat from "../../../public/images/projects/gymrat.jpg";
 import icookpad from "../../../public/images/projects/iCookPad.gif";
+import jpn from "../../../public/images/projects/jpn.jpg";
 import rps from "../../../public/images/projects/rps.gif";
 
-import { useState } from 'react'; // Import useState
+import { useState } from "react"; // Import useState
 import ParticlesCont from "../../components/ParticlesContainer";
 
 const FeaturedProject = ({ type, title, summary, img, link }) => {
@@ -26,7 +26,10 @@ const FeaturedProject = ({ type, title, summary, img, link }) => {
 
   return (
     <article
-      className={`w-full flex items-center justify-between rounded-3xl border border-solid border-dark dark:border-light bg-light  dark:bg-dark shadow-2xl p-12 relative rounded-br-2xl lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4 ${isHovered ? 'hover-zoom' : ''}`}>
+      className={`w-full flex items-center justify-between rounded-3xl border border-solid border-dark dark:border-light bg-light  dark:bg-dark shadow-2xl p-12 relative rounded-br-2xl lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4 ${
+        isHovered ? "hover-zoom" : ""
+      }`}
+    >
       <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl sm:-right-2 sm:h-[102%] sm:w-ful sm:rounded-[1,5rem]" />
       <Link
         href={link}
@@ -39,13 +42,15 @@ const FeaturedProject = ({ type, title, summary, img, link }) => {
           className="w-full h-auto transition-transform transform-gpu duration-1000"
           priority
           sizes="{max-:768px} 100vw, {max-width:1200px} 50vw, 50vw"
-          style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }} // Apply zoom effect
+          style={{ transform: isHovered ? "scale(1.1)" : "scale(1)" }} // Apply zoom effect
           onMouseEnter={() => setIsHovered(true)} // Handle mouse enter
           onMouseLeave={() => setIsHovered(false)} // Handle mouse leave
         />
       </Link>
       <div className="w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6 ">
-        <span className="text-primary font-medium text-xl xs:text-base">{type}</span>
+        <span className="text-primary font-medium text-xl xs:text-base">
+          {type}
+        </span>
         <Link
           href={link}
           target="_blank"
@@ -55,20 +60,22 @@ const FeaturedProject = ({ type, title, summary, img, link }) => {
             {title}
           </h2>
         </Link>
-        <p className="my-2 font-medium text-dark dark:text-light sm:text-sm">{summary}</p>
+        <p className="my-2 font-medium text-dark dark:text-light sm:text-sm">
+          {summary}
+        </p>
       </div>
     </article>
   );
 };
-
-
 
 const Project = ({ type, title, img, link }) => {
   const [isHovered, setIsHovered] = useState(false); // State to track hover
 
   return (
     <article
-      className={`w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark dark:border-light bg-light dark:bg-dark p-6 relative xs:p-4 ${isHovered ? 'hover-zoom' : ''}`}
+      className={`w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark dark:border-light bg-light dark:bg-dark p-6 relative xs:p-4 ${
+        isHovered ? "hover-zoom" : ""
+      }`}
     >
       <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]" />
       <Link
@@ -80,37 +87,43 @@ const Project = ({ type, title, img, link }) => {
           src={img}
           alt={title}
           className="w-full h-auto transition-transform transform-gpu duration-1000"
-          style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }} // Apply zoom effect
+          style={{ transform: isHovered ? "scale(1.1)" : "scale(1)" }} // Apply zoom effect
           onMouseEnter={() => setIsHovered(true)} // Handle mouse enter
           onMouseLeave={() => setIsHovered(false)} // Handle mouse leave
         />
       </Link>
       <div className="w-full flex flex-col items-start justify-between mt-4">
-        <span className="text-primary font-medium text-xl lg:text-lg d:text-base">{type}</span>
+        <span className="text-primary font-medium text-xl lg:text-lg d:text-base">
+          {type}
+        </span>
         <Link
           href={link}
           target="_blank"
           className="hover:underline underline-offset-2"
         >
-          <h2 className="my-2 w-full text-left text-4xl font-bold dark:text-light lg:text-2xl">{title}</h2>
+          <h2 className="my-2 w-full text-left text-4xl font-bold dark:text-light lg:text-2xl">
+            {title}
+          </h2>
         </Link>
       </div>
     </article>
   );
 };
 
-
 const Projects = () => {
   return (
     <>
       <Head>
-      <title> Joseign | Projects</title>
-        <meta name="description" content="A large catalogue displaying my latest projects, from Branding to Graphic design, UI/UX Design and even social media posts design." />
+        <title> Joseign | Projects</title>
+        <meta
+          name="description"
+          content="A large catalogue displaying my latest projects, from Branding to Graphic design, UI/UX Design and even social media posts design."
+        />
       </Head>
-      <TransitionEffect/>
+      <TransitionEffect />
       <main className="w-full mb-16 flex flex-col items-center justify-center">
         <Layout>
-        <ParticlesCont/>
+          <ParticlesCont />
           <AnimatedText
             text="Imagination Trumps Knowledge!"
             className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl z-10"
@@ -164,7 +177,7 @@ const Projects = () => {
                 type="Clothing Design || Social Media Design"
               />
             </div>
-            <div className="col-span-6 sm:col-span-12">
+            {/* <div className="col-span-6 sm:col-span-12">
               {" "}
               <Project
                 title="E-state: Real estate company"
@@ -172,15 +185,24 @@ const Projects = () => {
                 link="https://www.figma.com/file/anzu6Wb4mE0uDlHVu92HKj/E-state?type=design&node-id=192-2455&mode=design&t=fRyXUy2kSaYa4UJ8-11"
                 type="Web UI/UX Design"
               />
+            </div> */}
+            <div className="col-span-6 sm:col-span-12">
+              {" "}
+              <Project
+                title="JPN - Entertainment"
+                img={jpn}
+                link="https://www.figma.com/design/hAutaufeCSyJ7zCHBbzcKX/JPN-Website?node-id=0-1&t=9w0NJxsNFcWrOmCb-11"
+                type="Web UI/UX Design"
+              />
             </div>
             <div className="col-span-12">
               {" "}
               <FeaturedProject
-                title="PROFHIMA"
-                img={pf}
-                summary="PROFHIMA is a construction company based in France, I helped the owner to design his logo, then furniture such as business card, envelope, shirts... Then I designed his website, built it and deployed online, a satisfied client happy with the service I provided."
-                link="https://profhima.fr"
-                type="Branding || Graphic design"
+                title="Addict Nutrition Sport"
+                img={ad}
+                summary="AD Is a french company specialized in supplements, My role was to create a detailed branding guideline from scratch, including logo style, colours, imagery and more..."
+                link="https://addictsportnutrition.com"
+                type="Branding || UI/UX Design"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -203,11 +225,11 @@ const Projects = () => {
             <div className="col-span-12">
               {" "}
               <FeaturedProject
-                title="Addict Nutrition Sport"
-                img={ad}
-                summary="AD Is a french company specialized in supplements, My role was to create a detailed branding guideline from scratch, including logo style, colours, imagery and more..."
-                link="https://addictsportnutrition.com"
-                type="Branding || UI/UX Design"
+                title="PROFHIMA"
+                img={pf}
+                summary="PROFHIMA is a construction company based in France, I helped the owner to design his logo, then furniture such as business card, envelope, shirts... Then I designed his website, built it and deployed online, a satisfied client happy with the service I provided."
+                link="https://profhima.fr"
+                type="Branding || Graphic design"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
