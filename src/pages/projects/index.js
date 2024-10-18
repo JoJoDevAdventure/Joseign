@@ -7,16 +7,19 @@ import Link from "next/link";
 import HF from "../../../public/images/projects/HF.jpg";
 import letskate from "../../../public/images/projects/LetsSkate.gif";
 import pf from "../../../public/images/projects/PF.jpg";
+import rep from "../../../public/images/projects/ReplicAIDE.jpg";
 import venn from "../../../public/images/projects/Venn.jpg";
 import ad from "../../../public/images/projects/ad.jpg";
 import afa from "../../../public/images/projects/afa.jpg";
 import blonk from "../../../public/images/projects/blonk.jpg";
 import debook from "../../../public/images/projects/debook.jpg";
+import estate from "../../../public/images/projects/estate.jpg";
 import Controller from "../../../public/images/projects/gaming.jpg";
-import gymrat from "../../../public/images/projects/gymrat.jpg";
 import icookpad from "../../../public/images/projects/iCookPad.gif";
-import jpn from "../../../public/images/projects/jpn.jpg";
+import mychoc from "../../../public/images/projects/mychoc.jpg";
+import plonkkaa from "../../../public/images/projects/plonkkaa.jpg";
 import rps from "../../../public/images/projects/rps.gif";
+import spec from "../../../public/images/projects/spec.jpg";
 
 import { useState } from "react"; // Import useState
 import ParticlesCont from "../../components/ParticlesContainer";
@@ -128,7 +131,6 @@ const Projects = () => {
             text="Imagination Trumps Knowledge!"
             className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl z-10"
           />
-
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm::gap-y-0">
             <div className="col-span-12">
               <FeaturedProject
@@ -137,7 +139,7 @@ const Projects = () => {
                 summary="Blonk is a new way to recruit, combining cutting-edge digital marketing and best headhunting techniques. 
                 I redesigned Blonk's UI/UX, changing the overall structure, Enhancing the UI and Adding animations."
                 link="https://blonk.co"
-                type="Web & Mobile App UI/UX Design"
+                type="Web & Mobile App UI/UX Design Team Lead"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -161,23 +163,14 @@ const Projects = () => {
             <div className="col-span-12">
               {" "}
               <FeaturedProject
-                title="Air Force Artisans"
-                img={afa}
-                summary="I collaborated with a team of sneakers artisans to launch a company of sneakers customization, my role was to create a branding guide-lines, design a website with Figma and Fullstack develope it using Vue.js and Django, Deploy the website and Design social media posts"
-                link="https://www.figma.com/file/bPN2xSCKaU4AsDOrmDLCqo/Air-Force-Artisans?type=design&node-id=0-1&mode=design&t=dkV2qc4vX8UqI1OQ-11"
-                type="Branding || Social Media Design || UI/UX Design"
+                title="Plonkkaa Ltd."
+                img={plonkkaa}
+                summary="Plonkkaa is the revolution of greeting cards, I led a team of designers in creating mockups and detailed UI designs for the entire Plonkaa platform. This included the landing page, customer-facing interface, and the designer dashboard. My responsibilities ranged from conceptualizing the initial designs to delivering a full, polished UI for both the customer side and the designers’ portal. I also collaborated on refining the user experience and ensuring a cohesive visual identity across the platform."
+                link="https://www.figma.com/design/P89X8TKDry4aRAs6MDUlsC/Plonkaa-UI?node-id=424-961&node-type=frame&t=Fp6lcsLUPAkoXzjO-11"
+                type="Branding || UI/UX Team Lead Designer"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
-              {" "}
-              <Project
-                title="Gymrat"
-                img={gymrat}
-                link="https://www.instagram.com/gymrat.tn/"
-                type="Clothing Design || Social Media Design"
-              />
-            </div>
-            {/* <div className="col-span-6 sm:col-span-12">
               {" "}
               <Project
                 title="E-state: Real estate company"
@@ -185,13 +178,13 @@ const Projects = () => {
                 link="https://www.figma.com/file/anzu6Wb4mE0uDlHVu92HKj/E-state?type=design&node-id=192-2455&mode=design&t=fRyXUy2kSaYa4UJ8-11"
                 type="Web UI/UX Design"
               />
-            </div> */}
+            </div>
             <div className="col-span-6 sm:col-span-12">
               {" "}
               <Project
-                title="JPN - Entertainment"
-                img={jpn}
-                link="https://www.figma.com/design/hAutaufeCSyJ7zCHBbzcKX/JPN-Website?node-id=0-1&t=9w0NJxsNFcWrOmCb-11"
+                title="ReplicAIDE"
+                img={rep}
+                link="https://replicaide.jodev.xyz"
                 type="Web UI/UX Design"
               />
             </div>
@@ -203,6 +196,34 @@ const Projects = () => {
                 summary="AD Is a french company specialized in supplements, My role was to create a detailed branding guideline from scratch, including logo style, colours, imagery and more..."
                 link="https://addictsportnutrition.com"
                 type="Branding || UI/UX Design"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-12">
+              {" "}
+              <Project
+                title="My Chocolate Shop"
+                img={mychoc}
+                link="https://drive.google.com/file/d/1pQ9T9lToDH8bNdlqAEK4-IsBX2-uxwFb/view?usp=sharing"
+                type="Branding"
+              />
+            </div>
+            <div className="col-span-6 sm:col-span-12">
+              {" "}
+              <Project
+                title="Spectatio"
+                img={spec}
+                link="https://drive.google.com/file/d/1VyzUe0c1oV_WBXUziiaJAe9H4sj1XYPY/view?usp=sharing"
+                type="Branding"
+              />
+            </div>
+            <div className="col-span-12">
+              {" "}
+              <FeaturedProject
+                title="Air Force Artisans"
+                img={afa}
+                summary="I collaborated with a team of sneakers artisans to launch a company of sneakers customization, my role was to create a branding guide-lines, design a website with Figma and Fullstack develope it using Vue.js and Django, Deploy the website and Design social media posts"
+                link="https://www.figma.com/file/bPN2xSCKaU4AsDOrmDLCqo/Air-Force-Artisans?type=design&node-id=0-1&mode=design&t=dkV2qc4vX8UqI1OQ-11"
+                type="Branding || Social Media Design || UI/UX Design"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
