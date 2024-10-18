@@ -4,22 +4,22 @@ import TransitionEffect from "@/components/TransitionEffect";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import HF from "../../../public/images/projects/HF.jpg";
-import letskate from "../../../public/images/projects/LetsSkate.gif";
-import pf from "../../../public/images/projects/PF.jpg";
-import rep from "../../../public/images/projects/ReplicAIDE.jpg";
-import venn from "../../../public/images/projects/Venn.jpg";
 import ad from "../../../public/images/projects/ad.jpg";
 import afa from "../../../public/images/projects/afa.jpg";
 import blonk from "../../../public/images/projects/blonk.jpg";
 import debook from "../../../public/images/projects/debook.jpg";
 import estate from "../../../public/images/projects/estate.jpg";
 import Controller from "../../../public/images/projects/gaming.jpg";
+import HF from "../../../public/images/projects/HF.jpg";
 import icookpad from "../../../public/images/projects/iCookPad.gif";
+import letskate from "../../../public/images/projects/LetsSkate.gif";
 import mychoc from "../../../public/images/projects/mychoc.jpg";
-import plonkkaa from "../../../public/images/projects/plonkkaa.jpg";
+import pf from "../../../public/images/projects/PF.jpg";
+import plonkkaa from "../../../public/images/projects/Plonkkaa.jpg";
+import rep from "../../../public/images/projects/ReplicAIDE.jpg";
 import rps from "../../../public/images/projects/rps.gif";
 import spec from "../../../public/images/projects/spec.jpg";
+import venn from "../../../public/images/projects/Venn.jpg";
 
 import { useState } from "react"; // Import useState
 import ParticlesCont from "../../components/ParticlesContainer";
