@@ -134,12 +134,11 @@ const Projects = () => {
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm::gap-y-0">
             <div className="col-span-12">
               <FeaturedProject
-                title="Blonk : Executive Search "
-                img={blonk}
-                summary="Blonk is a new way to recruit, combining cutting-edge digital marketing and best headhunting techniques. 
-                I redesigned Blonk's UI/UX, changing the overall structure, Enhancing the UI and Adding animations."
-                link="https://blonk.co"
-                type="Web & Mobile App UI/UX Design Team Lead"
+                title="ReplicAIDE"
+                img={rep}
+                summary="ReplicAIDE help agencies and businesses automate customer interactions, cut costs, and convert more leads with our human-like AI voice assistants, My role was conducting research to improve the user experience and interface for their landing page and CRM dashboard."
+                link="https://replicaide.com"
+                type="Product Design"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -148,7 +147,7 @@ const Projects = () => {
                 title="Venn Telecom"
                 img={venn}
                 link="https://www.venntelecom.com"
-                type="Graphic Design || UI Design"
+                type="Product Design || Graphic Design"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -167,7 +166,7 @@ const Projects = () => {
                 img={plonkkaa}
                 summary="Plonkkaa is the revolution of greeting cards, I led a team of designers in creating mockups and detailed UI designs for the entire Plonkaa platform. This included the landing page, customer-facing interface, and the designer dashboard. My responsibilities ranged from conceptualizing the initial designs to delivering a full, polished UI for both the customer side and the designers’ portal. I also collaborated on refining the user experience and ensuring a cohesive visual identity across the platform."
                 link="https://www.figma.com/design/P89X8TKDry4aRAs6MDUlsC/Plonkaa-UI?node-id=424-961&node-type=frame&t=Fp6lcsLUPAkoXzjO-11"
-                type="Branding || UI/UX Team Lead Designer"
+                type="Branding || Product Team Lead Designer"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
@@ -182,10 +181,10 @@ const Projects = () => {
             <div className="col-span-6 sm:col-span-12">
               {" "}
               <Project
-                title="ReplicAIDE"
-                img={rep}
-                link="https://replicaide.jodev.xyz"
-                type="Web UI/UX Design"
+                title="Blonk : Executive Search"
+                img={blonk}
+                link="https://blonk.co"
+                type="Web & Mobile App Design Team Lead"
               />
             </div>
             <div className="col-span-12">
@@ -240,7 +239,7 @@ const Projects = () => {
                 title="Controller Shop"
                 img={Controller}
                 link="https://www.figma.com/file/yi1lqFHFj0soAWLeZrHGJc/Controller-shop-(Sold)?type=design&node-id=63-6930&mode=design&t=vXcy69U5zvcyUj6j-11"
-                type="Website UI/UX Design"
+                type="Product UI/UX Design"
               />
             </div>
             <div className="col-span-12">
