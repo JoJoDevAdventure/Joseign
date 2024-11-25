@@ -1,7 +1,7 @@
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 
-export default function bookme() {
+export default function BookMe() { // Changed the function name to start with an uppercase letter
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "catch-up" });
@@ -11,6 +11,7 @@ export default function bookme() {
       });
     })();
   }, []);
+  
   return (
     <div className="min-h-[80vh] flex flex-col justify-center items-center">
       <Cal
