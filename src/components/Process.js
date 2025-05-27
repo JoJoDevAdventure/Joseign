@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import Lottie from "lottie-react";
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from "react";
 import conceptAnimation from "../../public/concept.json";
 import designAnimation from "../../public/design.json";
 import discoveryAnimation from "../../public/discovery.json";
 import launchAnimation from "../../public/launch.json";
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 const steps = [
   {

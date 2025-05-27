@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import Lottie from "lottie-react";
+import dynamic from 'next/dynamic';
 import chartAnimation from "../../public/chart-up.json";
 import Comparison from "./Comparison";
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 const Hero = () => {
   return (
