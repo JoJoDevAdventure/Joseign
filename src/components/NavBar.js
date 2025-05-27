@@ -27,7 +27,7 @@ const NavBar = () => {
       {/* Placeholder for Logo */}
       <div className="w-[120px]">
         <img
-          src="/joseign-logo.png"
+          src="/Joseign-logo.png"
           alt="Joseign Logo"
           className="w-full h-auto"
         />
