@@ -1,3 +1,4 @@
+import { getCalApi } from "@calcom/embed-react";
 import { motion } from "framer-motion";
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from "react";
@@ -48,6 +49,17 @@ const Process = () => {
     const handleResize = () => setIsSmallScreen(window.innerWidth <= 767);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "joseign-free-call" });
+      cal("ui", {
+        theme: "light",
+        hideEventTypeDetails: true,
+        layout: "month_view",
+      });
+    })();
   }, []);
 
   return (
@@ -137,15 +149,14 @@ const Process = () => {
               >
                 {steps[selected].description}
               </motion.p>
-              <motion.button
-                key={steps[selected].buttonText}
+              <button
                 className="bg-primary text-white text-lg font-medium px-6 py-3 rounded-md"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
+                data-cal-namespace="joseign-free-call"
+                data-cal-link="joseph-bouhlel/joseign-free-call"
+                data-cal-config='{"layout":"month_view","theme":"light"}'
               >
                 {steps[selected].buttonText}
-              </motion.button>
+              </button>
             </div>
           </motion.div>
         </div>
@@ -171,7 +182,12 @@ const Process = () => {
               <p className="text-base text-gray-600 leading-relaxed mb-4">
                 {step.description}
               </p>
-              <button className="bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-md">
+              <button
+                className="bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-md"
+                data-cal-namespace="joseign-free-call"
+                data-cal-link="joseph-bouhlel/joseign-free-call"
+                data-cal-config='{"layout":"month_view","theme":"light"}'
+              >
                 {step.buttonText}
               </button>
             </motion.div>

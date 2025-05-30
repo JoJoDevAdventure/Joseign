@@ -9,14 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@calcom/embed-react": "^1.5.1",
+    "@calcom/embed-react": "^1.5.3",
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "^10.6.0",
     "lottie-react": "^2.4.1",
     "next": "13.2.4",
+    "pdfjs-dist": "^3.0.279",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^5.5.0",
     "react-tsparticles": "^2.12.2",
     "tsparticles": "^2.12.0"
   },

@@ -1,25 +1,61 @@
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import PDFViewer from "./PDFViewer";
 
-const tabs = ["UI/UX Design", "Brand Identity", "Merch Design", "Social Media"];
-const projectImages = {
-  "UI/UX Design": ["/project1.jpg", "/project2.jpg", "/project3.jpg"],
-  "Brand Identity": ["/project4.jpg"],
-  "Merch Design": ["/project5.jpg", "/project6.jpg"],
-  "Social Media": ["/project7.jpg", "/project7.jpg", "/project7.jpg"],
+const tabs = ["UI/UX Design", "Brand Identity", "Case Studies", "Social Media"];
+const projectData = {
+  "UI/UX Design": [
+    { image: "/debook.png", title: "DeBook", link: "https://debook.app" },
+    { image: "/Rep.png", title: "Replicaide", link: "https://replicaide.com" },
+    { image: "/Blonk.png", title: "Blonk", link: "https://blonk.co" },
+    { image: "/Venn.png", title: "Venn", link: "https://venn.com" },
+    { image: "/ad.png", title: "Addict Nutrition", link: "" },
+
+  ],
+  "Brand Identity": [
+    { pdf: "/ad.pdf", title: "Addict Nutrition Sport", link: "" },
+    { pdf: "/mychoc.pdf", title: "My Chocolate Shop", link: "" },
+    { pdf: "/rehmat.pdf", title: "Rehmat", link: "" },
+    { pdf: "/venn.pdf", title: "Venn Telecom", link: "" },
+    { pdf: "/rep.pdf", title: "Replicaide", link: "" },
+    { pdf: "/deepcal.pdf", title: "Deepcal", link: "" },
+  ],
+  "Case Studies": [
+    { pdf: "/ReplicCase.pdf", title: "Merch Drop A", link: "" },
+  ],
+  "Social Media": [
+    {
+      title: "Instagram Campaign",
+      link: "https://www.instagram.com/joseign",
+      iframe: "https://instagram.com/gymrat.tn/embed"
+    },
+  ],
 };
 
 const ProjectsSection = () => {
   const [selectedTab, setSelectedTab] = useState("UI/UX Design");
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-  const images = projectImages[selectedTab] || [];
+  const projects = projectData[selectedTab] || [];
+  const project = projects[currentSlide] || { image: "", title: "", link: "#" };
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % images.length);
+    setDirection(1);
+    setCurrentSlide((prev) => (prev + 1) % projects.length);
   };
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
+    setDirection(-1);
+    setCurrentSlide((prev) => (prev - 1 + projects.length) % projects.length);
+  };
+
+  // Slide animation variants
+  const variants = {
+    enter: (dir) => ({ x: dir > 0 ? 300 : -300, opacity: 0.5 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir) => ({ x: dir < 0 ? 300 : -300, opacity: 0.5 }),
   };
 
   return (
@@ -85,44 +121,66 @@ const ProjectsSection = () => {
       {/* Project Title */}
       <motion.h3
         className="text-2xl lg:text-xl md:text-lg sm:text-[17px] xs:text-[16px] font-semibold underline mb-6"
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 1, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        Project Title
+        <a href={project.link} target="_blank" rel="noopener noreferrer">
+          {project.title}
+        </a>
       </motion.h3>
 
       {/* Slideshow */}
-      <div className="relative w-full max-w-[900px] md:max-w-[700px] sm:max-w-[520px] xs:max-w-[340px] mx-auto rounded-2xl border-4 border-primary">
-        <button
-          onClick={prevSlide}
-          className="absolute left-[-20px] md:left-[-16px] sm:left-[-12px] top-1/2 -translate-y-1/2 z-10 bg-primary text-white w-10 h-10 md:w-9 md:h-9 sm:w-8 sm:h-8 rounded-full flex items-center justify-center"
-        >
-          &lt;
-        </button>
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={images[currentSlide]}
-            src={images[currentSlide]}
-            alt="Project slide"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.4 }}
-            className="w-full h-[500px] md:h-[380px] sm:h-[300px] xs:h-[220px] object-cover"
-          />
+      <div className="relative overflow-x-hidden touch-auto w-full max-w-[900px] md:max-w-[700px] sm:max-w-full xs:max-w-full mx-auto rounded-2xl border-4 border-primary">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={project.iframe ? project.iframe : project.pdf ? project.pdf : project.image}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.5 }}
+            className="w-full h-[500px] md:h-[380px] sm:h-[300px] xs:h-[220px] flex items-center justify-center"
+          >
+            {project.iframe ? (
+              <iframe
+                src={project.iframe}
+                title={project.title}
+                width="100%"
+                height="100%"
+                className="rounded-xl"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              ></iframe>
+            ) : project.pdf ? (
+              <PDFViewer fileUrl={project.pdf} />
+            ) : (
+              <img
+                src={project.image}
+                alt="Project slide"
+                className="w-full h-full object-cover rounded-xl"
+              />
+            )}
+          </motion.div>
         </AnimatePresence>
         <button
-          onClick={nextSlide}
-          className="absolute right-[-20px] md:right-[-16px] sm:right-[-12px] top-1/2 -translate-y-1/2 z-10 bg-primary text-white w-10 h-10 md:w-9 md:h-9 sm:w-8 sm:h-8 rounded-full flex items-center justify-center"
+          onClick={prevSlide}
+          className="absolute left-[20px] md:left-[15px] sm:left-[10px] top-1/2 -translate-y-1/2 z-10 bg-primary text-white w-10 h-10 md:w-9 md:h-9 sm:w-8 sm:h-8 rounded-full flex items-center justify-center"
         >
-          &gt;
+          <FiChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-[20px] md:right-[15px] sm:right-[10px] top-1/2 -translate-y-1/2 z-10 bg-primary text-white w-10 h-10 md:w-9 md:h-9 sm:w-8 sm:h-8 rounded-full flex items-center justify-center"
+        >
+          <FiChevronRight className="w-5 h-5" />
         </button>
 
         {/* Dots */}
         <div className="absolute bottom-6 md:bottom-5 sm:bottom-4 xs:bottom-3 left-1/2 -translate-x-1/2 flex gap-2 items-center">
-          {images.map((_, idx) => (
+          {projects.map((_, idx) => (
             <div
               key={idx}
               className={`h-2 rounded-full transition-all duration-300 ${
@@ -133,15 +191,17 @@ const ProjectsSection = () => {
         </div>
       </div>
 
-      <motion.button
-        className="mt-12 md:mt-10 sm:mt-8 bg-primary text-white px-6 md:px-5 sm:px-5 xs:px-4 py-3 md:py-2.5 sm:py-2 xs:py-2 rounded-md text-sm md:text-[15px] sm:text-[14px] xs:text-[13px] font-medium hover:opacity-90 transition"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        viewport={{ once: true }}
-      >
-        View all projects
-      </motion.button>
+      <Link href="/projects">
+        <motion.button
+          className="mt-12 md:mt-10 sm:mt-8 bg-primary text-white px-6 md:px-5 sm:px-5 xs:px-4 py-3 md:py-2.5 sm:py-2 xs:py-2 rounded-md text-sm md:text-[15px] sm:text-[14px] xs:text-[13px] font-medium hover:opacity-90 transition"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          View all projects
+        </motion.button>
+      </Link>
     </section>
   );
 };

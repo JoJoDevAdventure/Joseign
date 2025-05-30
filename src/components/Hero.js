@@ -1,14 +1,33 @@
+import { getCalApi } from "@calcom/embed-react";
 import { motion } from "framer-motion";
 import dynamic from 'next/dynamic';
+import { useEffect } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import chartAnimation from "../../public/chart-up.json";
 import Comparison from "./Comparison";
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 const Hero = () => {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "joseign-free-call" });
+      cal("ui", {
+        theme: "light",
+        hideEventTypeDetails: true,
+        layout: "month_view",
+      });
+    })();
+  }, []);
   return (
     <section className="relative py-20 px-32 md:py-0 lg:px-20 md:px-12 sm:px-8 xs:px-4 flex flex-row md:flex-col justify-between items-center gap-8 md:gap-14 sm:gap-10 xs:gap-8 bg-[#F9F8FA] min-h-[75vh] overflow-hidden">
       {/* Left Side Background */}
-      <div className="absolute top-0 right-0 w-1/3 lg:w-1/2 md:w-full sm:hidden h-full bg-[#F7EAF4] border-t-8 border-r-8 border-primary z-0"></div>
+      <motion.div
+        className="absolute top-0 right-0 w-1/3 lg:w-1/2 md:w-full sm:hidden h-full bg-[#F7EAF4] border-t-8 border-r-8 z-0"
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" , delay:1}}
+        viewport={{ once: true }}
+      />
 
       {/* Left Side Content */}
       <motion.div
@@ -50,15 +69,31 @@ const Hero = () => {
           You can request a FREE Call and we’ll push your visuals to the next
           level.
         </motion.p>
-        <motion.button
-          className="text-[20px] xl:text-[18px] lg:text-[17px] md:text-[16px] sm:text-[15px] xs:text-[14px] mt-7 px-8 lg:px-8 md:px-7 sm:px-6 xs:px-6 py-4 md:py-3 sm:py-3 xs:py-3 bg-primary text-white rounded-md shadow hover:opacity-90 transition font-semibold"
+        <motion.div
+          className="flex gap-4 mt-7"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.5 }}
           viewport={{ once: true }}
         >
-          Let’s Talk
-        </motion.button>
+          <button
+            className="text-[20px] xl:text-[18px] lg:text-[17px] md:text-[16px] sm:text-[15px] xs:text-[14px] px-8 lg:px-8 md:px-7 sm:px-6 xs:px-6 py-4 md:py-3 sm:py-3 xs:py-3 bg-primary text-white rounded-md shadow hover:opacity-90 transition font-semibold"
+            data-cal-namespace="joseign-free-call"
+            data-cal-link="joseph-bouhlel/joseign-free-call"
+            data-cal-config='{"layout":"month_view","theme":"light"}'
+          >
+            Let’s Talk
+          </button>
+          <a
+            href="https://wa.me/447783517481"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[20px] xl:text-[18px] lg:text-[17px] md:text-[16px] sm:text-[15px] xs:text-[14px] px-8 lg:px-8 md:px-7 sm:px-6 xs:px-6 py-4 md:py-3 sm:py-3 xs:py-3 bg-[#25D366] text-white rounded-md shadow hover:opacity-90 transition font-semibold"
+          >
+            <FaWhatsapp className="w-5 h-5" />
+            Message Us
+          </a>
+        </motion.div>
       </motion.div>
 
       {/* Right Side */}

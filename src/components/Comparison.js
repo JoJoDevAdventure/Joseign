@@ -88,7 +88,7 @@ const Comparison = () => {
   return (
     <div className="flex flex-col w-full items-center">
       <div
-        className="relative w-[500px] h-[450px] md:w-full md:h-[360px] sm:h-[300px] bg-white rounded-[10px] shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] overflow-hidden border border-black"
+        className="relative w-[550px] h-[450px] md:w-full md:h-[360px] sm:h-[300px] bg-white rounded-[10px] shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] overflow-hidden border border-black"
         ref={containerRef}
       >
         {/* Before Image */}

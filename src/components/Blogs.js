@@ -3,24 +3,10 @@ import { motion } from "framer-motion";
 const blogs = [
   {
     id: 1,
-    title: "Blog title lorem ispum over 2 lines limited",
-    image: "/blogs/blog1.jpg"
+    title: "Why Good UX = More Revenue",
+    image: "https://145968764.fs1.hubspotusercontent-eu1.net/hubfs/145968764/alvaro-reyes-KxVlKiqQObU-unsplash.jpg",
+    link: "https://blog.joseign.com/why-good-ux-more-revenue"
   },
-  {
-    id: 2,
-    title: "Blog title lorem ispum over 2 lines limited",
-    image: "/blogs/blog2.jpg"
-  },
-  {
-    id: 3,
-    title: "Blog title lorem ispum over 2 lines limited",
-    image: "/blogs/blog3.jpg"
-  },
-  {
-    id: 4,
-    title: "Blog title lorem ispum over 2 lines limited",
-    image: "/blogs/blog4.jpg"
-  }
 ];
 
 const Blogs = () => {
@@ -59,24 +45,25 @@ const Blogs = () => {
         viewport={{ once: true }}
       >
         {blogs.map((blog) => (
-          <motion.div
-            key={blog.id}
-            className="text-left"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="w-full h-[300px] md:h-[260px] sm:h-[220px] xs:h-[180px] bg-gray-100 rounded-md overflow-hidden mb-4">
-              <img
-                src={blog.image}
-                alt={blog.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <h3 className="text-lg font-medium leading-snug line-clamp-2">
-              {blog.title}
-            </h3>
-          </motion.div>
+          <a href={blog.link} target="_blank" rel="noopener noreferrer" className="block" key={blog.id}>
+            <motion.div
+              className="text-left"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="w-full h-[300px] md:h-[260px] sm:h-[220px] xs:h-[180px] bg-gray-100 rounded-md overflow-hidden mb-4">
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-medium leading-snug line-clamp-2">
+                {blog.title}
+              </h3>
+            </motion.div>
+          </a>
         ))}
       </motion.div>
 
@@ -89,6 +76,7 @@ const Blogs = () => {
       >
         View our Blogs
       </motion.button>
+
     </section>
   );
 };

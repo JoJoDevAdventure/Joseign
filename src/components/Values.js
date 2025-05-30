@@ -3,28 +3,29 @@ import { useEffect, useState } from "react";
 
 const values = [
   {
-    title: "Creative Brief & Strategy",
+    title: "Fast Turnaround",
     description:
       "Based on our call, we build a clear action plan and creative direction tailored to your brand — no fluff, just strategy that works.",
-    image: "/icons/brief.svg"
+    image: "/fast.svg"
   },
   {
     title: "Concept Development",
     description:
       "Here’s where the magic starts. We explore visuals, directions, and vibes until we hit that spark — the concept that feels just right.",
-    image: "/icons/concept.svg"
+    image: "/convert.svg"
   },
   {
-    title: "Design & Build",
+    title: "Collaborative Process",
     description:
-      "We roll up our sleeves and bring your brand to life with pixel-perfect execution — UI, branding, or graphic assets — all aligned to your goals.",
-    image: "/icons/design.svg"
+      "You’re part of the journey, not just the destination. We blend your insights with our expertise to create design solutions that truly reflect your brand and your goals.",
+    image: "/collab.svg"
   },
-  {
-    title: "End-to-End Service",
-    description: "",
-    image: "/icons/end.svg"
-  }
+{
+  title: "End-to-End Service",
+  description:
+    "From the first sketch to final delivery, we handle every step. Our seamless workflow ensures consistency, quality, and care—so you can focus on what you do best while we bring your vision to life.",
+  image: "/end.svg"
+}
 ];
 
 const fadeVariants = [
@@ -88,10 +89,10 @@ const Values = () => {
               <img
                 src={val.image}
                 alt={val.title}
-                className={`w-20 h-20 ${isExpanded ? "self-center" : "self-start mx-auto"} md:self-center md:mx-0 sm:w-16 sm:h-16 xs:w-14 xs:h-14 transition-all duration-300`}
+                className={`w-32 h-32 ${isExpanded ? "self-center" : "self-start mx-auto"} md:self-center md:mx-0 sm:w-16 sm:h-16 xs:w-14 xs:h-14 transition-all duration-300`}
                 style={{ order: isExpanded ? 0 : 1 }}
               />
-              <div className="flex-1">
+              <div className="">
                 <h3 className="text-2xl font-bold mb-2">{val.title}</h3>
                 <AnimatePresence>
                   {isExpanded && (
@@ -100,7 +101,7 @@ const Values = () => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.6 }}
-                      className="text-sm leading-relaxed"
+                      className="text-lg leading-relaxed"
                     >
                       {val.description}
                     </motion.p>

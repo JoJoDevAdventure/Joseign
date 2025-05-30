@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
       <TransitionEffect />
 
-      <main className="">
+      <main className="w-screen overflow-hidden">
         <Hero/>
         <Trust/>
         <Services/>
