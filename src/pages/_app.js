@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import { AnimatePresence } from "framer-motion";
 import { Montserrat } from "next/font/google";
 import Head from "next/head";
@@ -26,6 +27,7 @@ export default function App({ Component, pageProps }) {
         </AnimatePresence>
         <Footer/>
       </main>
+      <Analytics />
     </>
   );
 }
