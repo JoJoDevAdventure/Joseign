@@ -4,8 +4,30 @@ const blogs = [
   {
     id: 1,
     title: "Why Good UX = More Revenue",
-    image: "https://145968764.fs1.hubspotusercontent-eu1.net/hubfs/145968764/alvaro-reyes-KxVlKiqQObU-unsplash.jpg",
-    link: "https://blog.joseign.com/why-good-ux-more-revenue"
+    image:
+      "https://145968764.fs1.hubspotusercontent-eu1.net/hubfs/145968764/alvaro-reyes-KxVlKiqQObU-unsplash.jpg",
+    link: "https://blog.joseign.com/why-good-ux-more-revenue",
+  },
+  {
+    id: 2,
+    title: "Why Most landing pages don't convert?",
+    image:
+      "https://145968764.fs1.hubspotusercontent-eu1.net/hubfs/145968764/Pasted%20image%2020250604225608.png",
+    link: "https://blog.joseign.com/most-landing-pages-dont-convert-because-they-werent-designed-to",
+  },
+  {
+    id: 3,
+    title: "How to solve brand indecisiveness ?",
+    image:
+      "https://145968764.fs1.hubspotusercontent-eu1.net/hubfs/145968764/5E7248CF-04EB-441A-B52C-53209551B19D.png",
+    link: "https://blog.joseign.com/how-to-solve-brand-indecisiveness",
+  },
+  {
+    id: 4,
+    title: "Personalization isn't slapping a first name tag.",
+    image:
+      "https://145968764.fs1.hubspotusercontent-eu1.net/hubfs/145968764/Pasted%20image%2020250605014516.png",
+    link: "https://blog.joseign.com/if-you-think-personalization-means-slapping-a-first-name-tag-youre-doing-it-wrong",
   },
 ];
 
@@ -38,14 +60,20 @@ const Blogs = () => {
         variants={{
           visible: {
             transition: {
-              staggerChildren: 0.15
-            }
-          }
+              staggerChildren: 0.15,
+            },
+          },
         }}
         viewport={{ once: true }}
       >
         {blogs.map((blog) => (
-          <a href={blog.link} target="_blank" rel="noopener noreferrer" className="block" key={blog.id}>
+          <a
+            href={blog.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+            key={blog.id}
+          >
             <motion.div
               className="text-left"
               initial={{ opacity: 0, y: 30 }}
@@ -67,16 +95,17 @@ const Blogs = () => {
         ))}
       </motion.div>
 
-      <motion.button
-        className="bg-primary text-white px-6 md:px-5 sm:px-5 xs:px-4 py-3 md:py-2.5 sm:py-2 xs:py-2 rounded-md text-sm md:text-[15px] sm:text-[14px] xs:text-[13px] font-medium hover:opacity-90 transition"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        viewport={{ once: true }}
-      >
-        View our Blogs
-      </motion.button>
-
+      <a href="https://blog.joseign.com">
+        <motion.button
+          className="bg-primary text-white px-6 md:px-5 sm:px-5 xs:px-4 py-3 md:py-2.5 sm:py-2 xs:py-2 rounded-md text-sm md:text-[15px] sm:text-[14px] xs:text-[13px] font-medium hover:opacity-90 transition"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          View our Blogs
+        </motion.button>
+      </a>
     </section>
   );
 };

@@ -1,3 +1,94 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Adorable';
+  src: url('/fonts/AdorableMemories.ttf') format('truetype');
+}
+
+h1, h2, h3 {
+  @apply font-adorable;
+}
+
+.animated-gradient {
+  background: linear-gradient(270deg, #FF6EC4, #B63E96, #ff00bb, #B63E96);
+  background-size: 800% 800%;
+  animation: gradientMove 6s ease infinite;
+  color: white !important;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@layer utilities {
+  @keyframes ai-knows-gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-button {
+    background-image: linear-gradient(270deg, #ff6ec4, #ffcdeb, #ff0099);
+    background-size: 600% 600%;
+    animation: ai-knows-gradient 6s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+
+@keyframes scrollImage {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-80%);
+  }
+}
+
+.animate-scrollImage {
+  animation: scrollImage 15s linear infinite alternate;
+}
+
+/* -------- Animated glowing-shadow gradient -------- */
+.glow-gradient {
+  position: relative;           /* anchor the ::before */
+  z-index: 0;                   /* keep content above the glow */
+}
+
+.glow-gradient::before {
+  content: '';
+  position: absolute;
+  inset: -3px;                  /* extend slightly past the edges */
+  border-radius: inherit;
+  background: linear-gradient(45deg,
+              #FF511C, #FF2B6D, #7E3FF2, #FF511C);
+  background-size: 300% 300%;
+  filter: blur(25px);           /* soft glow */
+  animation: glowShift 8s linear infinite;
+  z-index: -1;                  /* sit behind the card */
+}
+
+@keyframes glowShift {
+  0%,100% { background-position: 0% 50%; }
+  50%     { background-position: 100% 50%; }
+}

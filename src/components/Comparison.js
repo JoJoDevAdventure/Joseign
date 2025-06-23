@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { FiArrowDown } from "react-icons/fi";
 
 const Comparison = () => {
   const containerRef = useRef(null);
@@ -87,6 +88,14 @@ const Comparison = () => {
 
   return (
     <div className="flex flex-col w-full items-center">
+      <div className="flex flex-row justify-between w-full">
+        <p className=" text-primary flex items-center gap-4 mb-2">
+          After the Free Call <FiArrowDown/>
+        </p>
+        <p>
+          Before
+        </p>
+      </div>
       <div
         className="relative w-[550px] h-[450px] md:w-full md:h-[360px] sm:h-[300px] bg-white rounded-[10px] shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] overflow-hidden border border-black"
         ref={containerRef}
@@ -115,7 +124,7 @@ const Comparison = () => {
         </div>
         {/* Slider Line */}
         <div
-          className="absolute top-0 bottom-0 w-[2px] bg-[#C94694] cursor-col-resize z-10"
+          className="absolute top-0 bottom-0 w-[4px] bg-[#C94694] cursor-col-resize z-10"
           style={{
             left: `${sliderX}%`,
             transform: "translateX(-50%)",
@@ -124,7 +133,7 @@ const Comparison = () => {
           onMouseDown={startDrag}
           onTouchStart={startTouch}
         >
-          <div className="absolute top-1/2 -translate-y-1/2 -left-[11px] bg-[#C94694] text-white text-sm rounded-full w-6 h-6 flex items-center justify-center shadow select-none">
+          <div className="absolute top-1/2 -translate-y-1/2 -left-[12px] bg-[#C94694] text-white text-sm rounded-full w-8 h-8 flex items-center justify-center shadow select-none animate-bounce">
             ↔
           </div>
         </div>

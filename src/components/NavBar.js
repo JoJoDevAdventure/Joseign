@@ -45,7 +45,11 @@ const NavBar = () => {
   }, []);
 
   return (
-    <header className={`sticky top-0 w-full px-32 md:px-8 py-8 flex items-center justify-between z-50 transition-all duration-300 ${scrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-[#F8F8F8]"}`}>
+    <header
+      className={`sticky top-0 w-full px-32 md:px-8 py-8 flex items-center justify-between z-50 transition-all duration-300 ${
+        scrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-[#F8F8F8]"
+      }`}
+    >
       {/* Placeholder for Logo */}
       <div className="w-[120px]">
         <img
@@ -60,13 +64,28 @@ const NavBar = () => {
         <CustomLink href="/" title="Home" />
         <CustomLink href="/projects" title="Projects" />
         <CustomLink href="/testimonials" title="Testimonials" />
-        <CustomLink href="https://blog.joseign.com" title="Blog" />
+        <a
+          href="https://blog.joseign.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative group"
+        >
+          Blog
+          <span className="h-[1px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 w-0">
+            &nbsp;
+          </span>
+        </a>
       </nav>
 
       {/* Right Call-to-Action Button */}
       <div className="block md:hidden">
-        <button className="bg-[#333] text-white text-sm font-medium px-5 py-2 rounded-md" data-cal-namespace="joseign-free-call" data-cal-link="joseph-bouhlel/joseign-free-call" data-cal-config='{"layout":"month_view","theme":"light"}'>
-          Free Call
+        <button
+          className="animated-gradient text-white text-l font-medium px-5 py-2 rounded-md"
+          data-cal-namespace="joseign-free-call"
+          data-cal-link="joseph-bouhlel/joseign-free-call"
+          data-cal-config='{"layout":"month_view","theme":"light"}'
+        >
+          Book Free Call
         </button>
       </div>
 
@@ -85,19 +104,36 @@ const NavBar = () => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? 0 : "-100%" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed top-0 left-0 w-3/4 h-full bg-[#F8F8F8] z-40 flex flex-col items-start px-8 py-10 gap-6 shadow-lg md:hidden"
+        className="fixed top-0 left-0 w-3/4 h-full bg-[#F8F8F8] z-40 flex flex-col items-start px-8 py-10 gap-6 shadow-lg"
       >
+        <div className="w-[120px]">
+          <img
+            src="/Joseign-logo.png"
+            alt="Joseign Logo"
+            className="w-full h-auto"
+          />
+        </div>
         <CustomLink href="/" title="Home" />
         <CustomLink href="/projects" title="Projects" />
         <CustomLink href="/testimonials" title="Testimonials" />
-        <CustomLink href="https://blog.joseign.com" title="Blog" />
+        <a
+          href="https://blog.joseign.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative group"
+        >
+          Blog
+          <span className="h-[1px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 w-0">
+            &nbsp;
+          </span>
+        </a>
         <button
-          className="bg-[#333] text-white text-sm font-medium px-5 py-2 rounded-md mt-4"
+          className="animated-gradient text-white text-l font-medium px-5 py-2 rounded-md"
           data-cal-namespace="joseign-free-call"
           data-cal-link="joseph-bouhlel/joseign-free-call"
           data-cal-config='{"layout":"month_view","theme":"light"}'
         >
-          Free Call
+          Book Free Call
         </button>
       </motion.div>
     </header>
