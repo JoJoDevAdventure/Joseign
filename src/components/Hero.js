@@ -20,7 +20,7 @@ const Hero = () => {
     })();
   }, []);
   return (
-    <section className="relative py-8 px-32 md:py-0 lg:px-20 md:px-12 sm:px-8 xs:px-4 flex flex-row md:flex-col justify-between items-center gap-8 md:gap-14 sm:gap-10 xs:gap-8 bg-[#F9F8FA] min-h-[70vh] overflow-hidden">
+    <section className="relative py-8 px-32 md:py-0 lg:px-20 md:px-12 sm:px-8 xs:px-4 flex flex-row md:flex-col justify-between items-center gap-8 md:gap-14 sm:gap-0 bg-[#F9F8FA] min-h-[70vh] overflow-hidden">
       {/* Left Side Background */}
       <motion.div
         className="absolute top-0 right-0 w-1/3 lg:w-1/2 md:w-full sm:hidden h-full bg-[#F7EAF4] border-t-8 border-r-8 z-0"
