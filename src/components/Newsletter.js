@@ -1,9 +1,38 @@
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import { useState } from 'react';
 import animationData from "../../public/newsletter.json";
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 const Newsletter = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState('idle'); // idle | loading | success
+
+  const handleJoin = async () => {
+    if (!email || status === 'loading') return;
+
+    setStatus('loading');
+    try {
+      const res = await fetch('/api/add-contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.ok) {
+        setStatus('success');
+        setEmail('');
+        // Reset button after 2 s
+        setTimeout(() => setStatus('idle'), 2000);
+      } else {
+        setStatus('idle');
+        console.error('Newsletter join failed:', await res.text());
+      }
+    } catch (err) {
+      setStatus('idle');
+      console.error('Newsletter join error:', err);
+    }
+  };
   return (
     <section className="w-full px-32 lg:px-20 md:px-12 sm:px-8 xs:px-4 py-20 md:py-16 sm:py-14 xs:py-12 bg-[#F5F5F5]">
       <motion.div
@@ -52,11 +81,25 @@ const Newsletter = () => {
           >
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               className="flex-1 sm:w-full px-5 py-3 border border-primary text-base rounded-md outline-none focus:ring-2 focus:ring-primary"
             />
-            <button className="bg-primary text-white text-base font-medium px-6 md:px-5 sm:px-5 xs:px-4 py-3 md:py-2.5 sm:py-2 xs:py-2 rounded-md sm:w-full">
-              Join
+            <button
+              onClick={handleJoin}
+              disabled={status === 'loading' || status === 'success'}
+              className={`${status === 'success' ? 'bg-green-500' : 'bg-primary'} transition-colors duration-300 text-white text-base font-medium px-6 md:px-5 sm:px-5 xs:px-4 py-3 md:py-2.5 sm:py-2 xs:py-2 rounded-md sm:w-full flex items-center justify-center gap-2`}
+            >
+              {status === 'success' ? (
+                <>
+                  Joined <span className="text-xl leading-none">✓</span>
+                </>
+              ) : status === 'loading' ? (
+                'Joining...'
+              ) : (
+                'Join'
+              )}
             </button>
           </motion.div>
         </motion.div>

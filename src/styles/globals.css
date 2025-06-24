@@ -47,7 +47,7 @@ h1, h2, h3 {
   }
 
   .animate-button {
-    background-image: linear-gradient(270deg, #ff6ec4, #ffcdeb, #ff0099);
+    background-image: linear-gradient(270deg, #ffa4dc, #ffcdeb, #fa55b8);
     background-size: 600% 600%;
     animation: ai-knows-gradient 6s ease infinite;
     background-clip: text;
@@ -59,9 +59,11 @@ h1, h2, h3 {
 @keyframes scrollImage {
   0% {
     transform: translateY(0%);
+    background-color: #B63E96;
   }
   100% {
     transform: translateY(-80%);
+    background-color: #B63E96;
   }
 }
 
@@ -78,17 +80,24 @@ h1, h2, h3 {
 .glow-gradient::before {
   content: '';
   position: absolute;
-  inset: -3px;                  /* extend slightly past the edges */
+  inset: 0;
   border-radius: inherit;
-  background: linear-gradient(45deg,
-              #FF511C, #FF2B6D, #7E3FF2, #FF511C);
-  background-size: 300% 300%;
-  filter: blur(25px);           /* soft glow */
-  animation: glowShift 8s linear infinite;
-  z-index: -1;                  /* sit behind the card */
+  background: radial-gradient(ellipse at center, rgba(255, 81, 28, 0.5), rgba(255, 43, 109, 0.4), rgba(126, 63, 242, 0.35), transparent 70%);
+  background-size: 100% 100%;
+  animation: glowShift 6s ease-in-out infinite;
+  z-index: -1;
+  filter: blur(48px);
+  opacity: 1;
+  transform: scale(1.5);
 }
 
 @keyframes glowShift {
-  0%,100% { background-position: 0% 50%; }
-  50%     { background-position: 100% 50%; }
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #B63E96;
+  border-radius: 8px;
 }
