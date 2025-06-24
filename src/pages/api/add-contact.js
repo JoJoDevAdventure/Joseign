@@ -2,7 +2,6 @@
 // Adds or updates a contact in Mailchimp (Newsletter tag)
 // Accepts a POST JSON body: { email: "user@example.com" }
 
-import util from 'util';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -11,7 +10,6 @@ export default async function handler(req, res) {
   }
 
   const { email } = req.body || {};
-  console.log('[add-contact] Incoming request with email:', email);
   if (!email) {
     return res.status(400).json({ error: 'email is required' });
   }
@@ -22,11 +20,6 @@ export default async function handler(req, res) {
     MAILCHIMP_LIST_ID,
   } = process.env;
 
-  console.log('[add-contact] Using Mailchimp config →', {
-    MAILCHIMP_API_KEY,
-    MAILCHIMP_SERVER_PREFIX,
-    MAILCHIMP_LIST_ID,
-  });
 
   if (!MAILCHIMP_API_KEY || !MAILCHIMP_SERVER_PREFIX || !MAILCHIMP_LIST_ID) {
     return res
@@ -46,8 +39,6 @@ export default async function handler(req, res) {
     tags: ['Newsletter'],
   };
 
-  console.log('[add-contact] POST →', membersURL);
-  console.log('[add-contact] Payload →', util.inspect(memberPayload, { depth: null }));
 
   try {
     const mcRes = await fetch(membersURL, {
@@ -59,16 +50,13 @@ export default async function handler(req, res) {
       body: JSON.stringify(memberPayload),
     });
 
-    console.log('[add-contact] Mailchimp responded with status:', mcRes.status);
 
     // Ignore “Member Exists” (400) so the route is idempotent
     if (!mcRes.ok && mcRes.status !== 400) {
       const details = await mcRes.text();
-      console.log('[add-contact] Error details →', details);
       return res.status(mcRes.status).json({ error: 'Failed to add contact', details });
     }
 
-    console.log('[add-contact] Contact added/exists – success.');
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('add-contact route error:', err);
