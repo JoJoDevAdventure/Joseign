@@ -104,7 +104,7 @@ const NavBar = () => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? 0 : "-100%" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed top-0 left-0 w-3/4 h-full bg-[#F8F8F8] z-40 flex flex-col items-start px-8 py-10 gap-6 shadow-lg"
+        className="fixed top-0 left-0 w-3/4 h-screen bg-[#F8F8F8] z-40 flex flex-col items-start px-8 py-10 gap-6 shadow-lg"
       >
         <div className="w-[120px]">
           <img
