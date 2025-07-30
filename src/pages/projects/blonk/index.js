@@ -2,7 +2,7 @@ import CaseStudy from "@/components/CaseStudy/CaseStudy";
 import TransitionEffect from "@/components/TransitionEffect";
 import Head from "next/head";
 import { useState } from "react";
-import caseStudy from "../../../data/caseStudies/blonk.data";
+import blonkData from "../../../data/caseStudies/blonk.data";
 
 
 const Replicaide = () => {
@@ -18,8 +18,8 @@ const Replicaide = () => {
         />
       </Head>
       <TransitionEffect/>
-      <CaseStudy caseStudy={caseStudy}/>
+      <CaseStudy caseStudy={blonkData}/>
     </>
   );
 };
-export default Replicaide;
+export default Blonk;

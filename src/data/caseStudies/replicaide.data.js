@@ -1,4 +1,4 @@
-export default caseStudy = {
+export default replicaideData = {
   id: "replicaide",
   color: "#060606",
   hero: {

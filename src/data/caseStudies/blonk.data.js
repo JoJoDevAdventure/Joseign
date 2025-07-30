@@ -1,4 +1,4 @@
-export default caseStudy = {
+export default blonkData = {
   id: "blonk",
   color: "#1B1B1B",
   client: {

@@ -1,10 +1,11 @@
 import CaseStudy from "@/components/CaseStudy/CaseStudy";
 import TransitionEffect from "@/components/TransitionEffect";
+import vendraiData from "@/data/caseStudies/vendrai.data";
 import Head from "next/head";
 import { useState } from "react";
 
 
-const Replicaide = () => {
+const VendrAI = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   return (
@@ -17,8 +18,8 @@ const Replicaide = () => {
         />
       </Head>
       <TransitionEffect/>
-      <CaseStudy caseStudy={caseStudy}/>
+      <CaseStudy caseStudy={vendraiData}/>
     </>
   );
 };
-export default Replicaide;
+export default VendrAI;

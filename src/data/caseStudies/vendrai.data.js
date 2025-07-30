@@ -1,4 +1,4 @@
-export default caseStudy = {
+export default vendraiData = {
   id: "vendrai",
   color: "#2D293A",
     hero: {
