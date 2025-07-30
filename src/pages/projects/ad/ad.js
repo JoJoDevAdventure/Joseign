@@ -1,5 +1,5 @@
 
-export const caseStudy = {
+ export default caseStudy = {
   id: "fitfuel",
   color: "#FF0054",
   client: {

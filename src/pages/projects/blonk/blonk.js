@@ -1,4 +1,4 @@
-export const caseStudy = {
+export default caseStudy = {
   id: "blonk",
   color: "#1B1B1B",
   client: {
