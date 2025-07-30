@@ -2,7 +2,6 @@ import CaseStudy from "@/components/CaseStudy/CaseStudy";
 import TransitionEffect from "@/components/TransitionEffect";
 import Head from "next/head";
 import { useState } from "react";
-import { caseStudy } from "./vendrai";
 
 
 const Replicaide = () => {
