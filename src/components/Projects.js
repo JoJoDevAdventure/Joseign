@@ -82,7 +82,7 @@ const ProjectsSection = () => {
 
       {/* Tabs */}
       <motion.div
-        className="relative w-fit lg:w-fit md:w-full sm:w-full mx-auto mb-16 md: mb-8 px-2 py-2 border-2 border-primary rounded-xl flex gap-2 overflow-x-auto sm:grid sm:grid-cols-2 sm:gap-3 sm:overflow-visible"
+        className="relative w-fit lg:w-fit md:w-full sm:w-full mx-auto mb-16 md:mb-8 px-2 py-2 border-2 border-primary rounded-xl flex gap-2 overflow-x-auto sm:grid sm:grid-cols-2 sm:gap-3 sm:overflow-visible"
         initial="hidden"
         whileInView="visible"
         variants={{
