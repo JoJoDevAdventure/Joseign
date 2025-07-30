@@ -1,4 +1,4 @@
-export default blonkData = {
+const blonkData = {
   id: "blonk",
   color: "#1B1B1B",
   client: {
@@ -136,3 +136,4 @@ export default blonkData = {
     },
   },
 };
+export default blonkData;

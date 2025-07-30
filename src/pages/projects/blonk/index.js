@@ -2,12 +2,9 @@ import CaseStudy from "@/components/CaseStudy/CaseStudy";
 import TransitionEffect from "@/components/TransitionEffect";
 import blonkData from "@/data/caseStudies/blonk";
 import Head from "next/head";
-import { useState } from "react";
 
 
-const Blonk = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
+const BlonkPage = () => {
   return (
     <>
       <Head>
@@ -22,4 +19,4 @@ const Blonk = () => {
     </>
   );
 };
-export default Blonk;
+export default BlonkPage;

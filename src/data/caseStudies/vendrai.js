@@ -1,4 +1,4 @@
-export default vendraiData = {
+const vendraiData = {
   id: "vendrai",
   color: "#2D293A",
     hero: {
@@ -140,3 +140,5 @@ export default vendraiData = {
     },
   },
 };
+
+export default vendraiData;

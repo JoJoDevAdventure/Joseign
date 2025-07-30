@@ -1,4 +1,4 @@
-export default replicaideData = {
+const replicaideData = {
   id: "replicaide",
   color: "#060606",
   hero: {
@@ -140,3 +140,5 @@ export default replicaideData = {
     },
   },
 };
+
+export default replicaideData

@@ -1,4 +1,4 @@
-export default plonkkaaData = {
+const plonkkaaData = {
   id: "plonkkaa",
   color: "#A137A6",
   client: {
@@ -132,3 +132,4 @@ export default plonkkaaData = {
     },
   },
 };
+export default plonkkaaData;
