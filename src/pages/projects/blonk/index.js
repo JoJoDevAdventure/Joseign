@@ -2,7 +2,7 @@ import CaseStudy from "@/components/CaseStudy/CaseStudy";
 import TransitionEffect from "@/components/TransitionEffect";
 import Head from "next/head";
 import { useState } from "react";
-import caseStudy from "./blonk";
+import caseStudy from "./blonk.data";
 
 
 const Replicaide = () => {
@@ -11,7 +11,7 @@ const Replicaide = () => {
   return (
     <>
       <Head>
-        <title> Joseign | Plonkkaa</title>
+        <title> Joseign | Blonk</title>
         <meta
           name="description"
           content=""

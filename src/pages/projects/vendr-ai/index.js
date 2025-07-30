@@ -10,7 +10,7 @@ const Replicaide = () => {
   return (
     <>
       <Head>
-        <title> Joseign | Projects | VendrAI</title>
+        <title> Joseign | VendrAI</title>
         <meta
           name="description"
           content=""
