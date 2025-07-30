@@ -14,10 +14,13 @@ const Testimonial = ({ type, title, summary, link, imageLink }) => {
         <Image
           className="absolute inset-0 h-full w-full rounded-lg rounded-bl-none  md:rounded-bl-lg opacity-0 group-hover:opacity-100 bg-primary transition-all duration-500"
           src={`${imageLink}.gif`}
+          alt={title}
         />
         <Image
           className="h-full w-full rounded-lg rounded-bl-none  md:rounded-bl-lg"
           src={`${imageLink}.jpg`}
+                    alt={title}
+
         />
       </div>
       <div className="w-full flex flex-col items-start justify-between mt-2 rounded-bl-none mb-12">

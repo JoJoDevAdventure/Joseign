@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fade = {
   up: { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } },
@@ -43,7 +44,7 @@ const Services = () => {
             transition={{ type: "spring", stiffness: 100 }}
             viewport={{ once: true }}
           >
-            <img src="/brand.jpg" className="w-full h-[300px] md:h-[260px] sm:h-[220px] xs:h-[180px] object-cover" alt="Service 1" />
+            <Image src="/brand.jpg" className="w-full h-[300px] md:h-[260px] sm:h-[220px] xs:h-[180px] object-cover" alt="Service 1" />
             <motion.div
               className="absolute bottom-4 left-0 h-10 bg-primary text-white pl-4 pr-0 flex items-center font-bold text-sm overflow-hidden whitespace-nowrap"
               initial={{ width: 0 }}
@@ -66,7 +67,7 @@ const Services = () => {
             transition={{ type: "spring", stiffness: 100 }}
             viewport={{ once: true }}
           >
-            <img src="/logo.jpg" className="w-full h-[300px] md:h-[260px] sm:h-[220px] xs:h-[180px] object-cover" alt="Service 2" />
+            <Image src="/logo.jpg" className="w-full h-[300px] md:h-[260px] sm:h-[220px] xs:h-[180px] object-cover" alt="Service 2" />
             <motion.div
               className="absolute bottom-4 left-0 h-10 bg-primary text-white pl-4 pr-0 flex items-center font-bold text-sm overflow-hidden whitespace-nowrap"
               initial={{ width: 0 }}
@@ -89,7 +90,7 @@ const Services = () => {
             transition={{ type: "spring", stiffness: 100 }}
             viewport={{ once: true }}
           >
-            <img src="/ui.jpg" className="w-full h-[690px] md:h-[520px] sm:h-[440px] xs:h-[360px] object-cover" alt="Service 3" />
+            <Image src="/ui.jpg" className="w-full h-[690px] md:h-[520px] sm:h-[440px] xs:h-[360px] object-cover" alt="Service 3" />
             <motion.div
               className="absolute bottom-4 left-0 h-10 bg-primary text-white pl-4 pr-0 flex items-center font-bold text-sm overflow-hidden whitespace-nowrap"
               initial={{ width: 0 }}
@@ -113,7 +114,7 @@ const Services = () => {
             transition={{ type: "spring", stiffness: 100 }}
             viewport={{ once: true }}
           >
-            <img src="/ad.jpg" className="w-full h-[300px] md:h-[260px] sm:h-[220px] xs:h-[180px] object-cover" alt="Service 4" />
+            <Image src="/ad.jpg" className="w-full h-[300px] md:h-[260px] sm:h-[220px] xs:h-[180px] object-cover" alt="Service 4" />
             <motion.div
               className="absolute bottom-4 left-0 h-10 bg-primary text-white pl-4 pr-0 flex items-center font-bold text-sm overflow-hidden whitespace-nowrap"
               initial={{ width: 0 }}
@@ -136,7 +137,7 @@ const Services = () => {
             transition={{ type: "spring", stiffness: 100 }}
             viewport={{ once: true }}
           >
-            <img src="/proto.jpg" className="w-full h-[300px] md:h-[260px] sm:h-[220px] xs:h-[180px] object-cover" alt="Service 5" />
+            <Image src="/proto.jpg" className="w-full h-[300px] md:h-[260px] sm:h-[220px] xs:h-[180px] object-cover" alt="Service 5" />
             <motion.div
               className="absolute bottom-4 left-0 h-10 bg-primary text-white pl-4 pr-0 flex items-center font-bold text-sm overflow-hidden whitespace-nowrap"
               initial={{ width: 0 }}

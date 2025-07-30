@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import AnimatedNumbers from "./AnimatedNumbers";
 
 const fadeUp = {
@@ -74,11 +75,11 @@ const Trust = () => {
         viewport={{ once: true }}
       >
         <div className="flex items-center justify-between gap-16 animate-marquee whitespace-nowrap opacity-50">
-          <img src="/figma.png" alt="Figma" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
-          <img src="/upwork.png" alt="Up" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
-          <img src="/fiverr.png" alt="Fiverr" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
-          <img src="/toptal.png" alt="TopTal" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
-          <img src="/adobe.png" alt="Adobe" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
+          <Image src="/figma.png" alt="Figma" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
+          <Image src="/upwork.png" alt="Up" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
+          <Image src="/fiverr.png" alt="Fiverr" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
+          <Image src="/toptal.png" alt="TopTal" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
+          <Image src="/adobe.png" alt="Adobe" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
         </div>
       </motion.div>
     </section>

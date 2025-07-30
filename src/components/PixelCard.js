@@ -303,10 +303,12 @@ export default function PixelCard({
               <Image
                 className="absolute inset-0 h-full w-full rounded-lg rounded-bl-none md:rounded-bl-lg opacity-0 group-hover:opacity-100 bg-primary transition-all duration-500"
                 src={`${img}.gif`}
+                alt={title}
               />
               <Image
                 className="h-full w-full rounded-lg rounded-bl-none md:rounded-bl-lg"
                 src={`${img}.jpg`}
+                alt={title}
               />
             </div>
           ) : null}

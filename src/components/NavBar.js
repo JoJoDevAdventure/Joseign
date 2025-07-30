@@ -1,5 +1,6 @@
 import { getCalApi } from "@calcom/embed-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -52,7 +53,7 @@ const NavBar = () => {
     >
       {/* Placeholder for Logo */}
       <div className="w-[120px]">
-        <img
+        <Image
           src="/Joseign-logo.png"
           alt="Joseign Logo"
           className="w-full h-auto"
@@ -107,7 +108,7 @@ const NavBar = () => {
         className="fixed top-0 left-0 w-3/4 h-screen bg-[#F8F8F8] z-40 flex flex-col items-start px-8 py-10 gap-6 shadow-lg"
       >
         <div className="w-[120px]">
-          <img
+          <Image
             src="/Joseign-logo.png"
             alt="Joseign Logo"
             className="w-full h-auto"
