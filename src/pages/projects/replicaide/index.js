@@ -1,8 +1,8 @@
 import CaseStudy from "@/components/CaseStudy/CaseStudy";
 import TransitionEffect from "@/components/TransitionEffect";
+import replicaideData from "@/data/caseStudies/replicaide.data";
 import Head from "next/head";
 import { useState } from "react";
-import replicaideData from "../../../data/caseStudies/replicaide.data";
 
 
 const Replicaide = () => {

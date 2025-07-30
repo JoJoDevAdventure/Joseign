@@ -1,11 +1,11 @@
 import CaseStudy from "@/components/CaseStudy/CaseStudy";
 import TransitionEffect from "@/components/TransitionEffect";
+import plonkkaaData from "@/data/caseStudies/plonkkaa.data";
 import Head from "next/head";
 import { useState } from "react";
-import plonkkaaData from "../../../data/caseStudies/plonkkaa.data";
 
 
-const Replicaide = () => {
+const Plonkkaa = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   return (
