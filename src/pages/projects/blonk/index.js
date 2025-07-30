@@ -1,6 +1,6 @@
 import CaseStudy from "@/components/CaseStudy/CaseStudy";
 import TransitionEffect from "@/components/TransitionEffect";
-import blonkData from "@/data/caseStudies/blonk.data";
+import blonkData from "@/data/caseStudies/blonk";
 import Head from "next/head";
 import { useState } from "react";
 

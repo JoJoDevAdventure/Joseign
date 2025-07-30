@@ -1,6 +1,6 @@
 import CaseStudy from "@/components/CaseStudy/CaseStudy";
 import TransitionEffect from "@/components/TransitionEffect";
-import vendraiData from "@/data/caseStudies/vendrai.data";
+import vendraiData from "@/data/caseStudies/vendrai";
 import Head from "next/head";
 import { useState } from "react";
 
