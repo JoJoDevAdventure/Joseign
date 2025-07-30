@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 class Pixel {
@@ -299,11 +300,11 @@ export default function PixelCard({
             </div>
           ) : img ? (
             <div className={`relative h-auto ${featured ? 'w-1/2 md:w-full' : 'w-full'}`}>
-              <img
+              <Image
                 className="absolute inset-0 h-full w-full rounded-lg rounded-bl-none md:rounded-bl-lg opacity-0 group-hover:opacity-100 bg-primary transition-all duration-500"
                 src={`${img}.gif`}
               />
-              <img
+              <Image
                 className="h-full w-full rounded-lg rounded-bl-none md:rounded-bl-lg"
                 src={`${img}.jpg`}
               />

@@ -4,17 +4,18 @@ import LightRays from "@/components/LightRays";
 import TransitionEffect from "@/components/TransitionEffect";
 import { testimonialsData } from "@/data/testimonials";
 import Head from "next/head";
+import Image from "next/image";
 
 const Testimonial = ({ type, title, summary, link, imageLink }) => {
   return (
     <article className="w-full flex flex-row gap-12 md:gap-2 items-center justify-center rounded-2xl border border-solid border-dark dark:border-light bg-light dark:bg-dark p-6 relative lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4 rounded-bl-none group">
       <div className="absolute top-0 -right-3 -z-10 w-[100.9%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl dark:hover:bg-light sm:-right-2 sm:h-[102%] sm:w-ful sm:rounded-[1,5rem] rounded-bl-none md:rounded-bl-2xl" />
       <div className="relative">
-        <img
+        <Image
           className="absolute inset-0 h-full w-full rounded-lg rounded-bl-none  md:rounded-bl-lg opacity-0 group-hover:opacity-100 bg-primary transition-all duration-500"
           src={`${imageLink}.gif`}
         />
-        <img
+        <Image
           className="h-full w-full rounded-lg rounded-bl-none  md:rounded-bl-lg"
           src={`${imageLink}.jpg`}
         />

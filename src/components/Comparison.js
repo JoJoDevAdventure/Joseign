@@ -102,7 +102,7 @@ const Comparison = () => {
       >
         {/* Before Image */}
         <div className="absolute inset-0 bg-[url('/checkerboard.png')]">
-          <img
+          <Image
             src={imageMap[selectedCategory].before}
             alt="Before"
             className="w-full h-full object-cover object-left"
@@ -116,7 +116,7 @@ const Comparison = () => {
             transition: 'width 1.5s ease-in-out'
           }}
         >
-          <img
+          <Image
             src={imageMap[selectedCategory].after}
             alt="After"
             className="w-full h-full object-cover object-left shadow-[2px_0px_5px_rgba(0,0,0,0.5)]"

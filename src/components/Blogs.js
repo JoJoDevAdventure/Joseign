@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const blogs = [
   {
@@ -81,7 +82,7 @@ const Blogs = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="w-full h-[300px] md:h-[260px] sm:h-[220px] xs:h-[180px] bg-gray-100 rounded-md overflow-hidden mb-4">
-                <img
+                <Image
                   src={blog.image}
                   alt={blog.title}
                   className="w-full h-full object-cover"

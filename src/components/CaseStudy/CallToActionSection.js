@@ -18,7 +18,7 @@ const CallToActionSection = ({ callToAction }) => {
             viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Got a bold idea ? <br/>Let's bring it to life.
+            Got a bold idea ? <br/>Let&lsquo;s bring it to life.
           </motion.h2>
           
           <motion.p
