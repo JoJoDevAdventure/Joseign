@@ -4,15 +4,23 @@ import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import PDFViewer from "./PDFViewer";
 
-const tabs = ["UI/UX Design", "Brand Identity", "Case Studies", "Social Media"];
+const tabs = ["UI/UX Design", "Landing Page", "Brand Identity", "Case Studies"];
 const projectData = {
   "UI/UX Design": [
-    { image: "/debook.png", title: "DeBook", link: "https://debook.app" },
-    { image: "/Rep.png", title: "Replicaide", link: "https://replicaide.com" },
-    { image: "/Blonk.png", title: "Blonk", link: "https://blonk.co" },
-    { image: "/Venn.png", title: "Venn", link: "https://venn.com" },
-    { image: "/ad.png", title: "Addict Nutrition", link: "" },
 
+    { image: "/projects/debook/debook.jpg", title: "DeBook", link: "https://debook.app" },
+    { image: "/projects/replicaide/rep.jpg", title: "Replicaide", link: "/replicaide" },
+    { image: "/projects/blonk/blonk.jpg", title: "Blonk", link: "/blonk" },
+    { image: "/projects/venn/venn.jpg", title: "Venn", link: "https://venn.com" },
+    { image: "/projects/ad/ad.jpg", title: "Addict Nutrition", link: "https://addictsportnutrition.com" },
+
+  ],
+    "Landing Page": [
+    {
+      title: "Instagram Campaign",
+      link: "https://www.instagram.com/joseign",
+      iframe: "https://instagram.com/gymrat.tn/embed"
+    },
   ],
   "Brand Identity": [
     { pdf: "/ad.pdf", title: "Addict Nutrition Sport", link: "" },
@@ -24,13 +32,6 @@ const projectData = {
   ],
   "Case Studies": [
     { pdf: "/ReplicCase.pdf", title: "Merch Drop A", link: "" },
-  ],
-  "Social Media": [
-    {
-      title: "Instagram Campaign",
-      link: "https://www.instagram.com/joseign",
-      iframe: "https://instagram.com/gymrat.tn/embed"
-    },
   ],
 };
 
@@ -53,9 +54,9 @@ const ProjectsSection = () => {
 
   // Slide animation variants
   const variants = {
-    enter: (dir) => ({ x: dir > 0 ? 300 : -300, opacity: 0.5 }),
+    enter: (dir) => ({ x: dir > 0 ? 50 : -50, opacity: 0.8 }),
     center: { x: 0, opacity: 1 },
-    exit: (dir) => ({ x: dir < 0 ? 300 : -300, opacity: 0.5 }),
+    exit: (dir) => ({ x: dir < 0 ? 50 : -50, opacity: 0.8 }),
   };
 
   return (
@@ -88,7 +89,7 @@ const ProjectsSection = () => {
         variants={{
           visible: {
             transition: {
-              staggerChildren: 0.1
+              staggerChildren: 1
             }
           }
         }}
@@ -141,8 +142,8 @@ const ProjectsSection = () => {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.5 }}
-            className="w-full h-[500px] md:h-[380px] sm:h-[300px] xs:h-[220px] flex items-center justify-center"
+            transition={{ duration: 0.2 }}
+            className="w-full h-[500px] md:h-[480px] flex items-center justify-center"
           >
             {project.iframe ? (
               <iframe

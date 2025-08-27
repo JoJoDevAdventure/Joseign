@@ -6,6 +6,7 @@ import Newsletter from "@/components/Newsletter";
 import Process from "@/components/Process";
 import ProjectsSection from "@/components/Projects";
 import Services from "@/components/Services";
+import Testimonials from "@/components/Testimonials";
 import TransitionEffect from "@/components/TransitionEffect";
 import Trust from "@/components/Trust";
 import Values from "@/components/Values";
@@ -71,6 +72,7 @@ export default function Home() {
         <Services/>
         <ProjectsSection/>
         <Values/>
+        <Testimonials/>
         <Process/>
         <Blogs/>
         <Newsletter/>

@@ -80,8 +80,8 @@ const Values = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               onClick={() => handleToggle(i)}
               className={`cursor-pointer border-2 border-primary rounded-xl p-6 text-left bg-white flex h-[230px] sm:h-auto items-center hover:bg-primary/5 transition-all duration-500 ${
-                isExpanded ? "flex-row" : "flex-col items-center justify-center"
-              } md:flex-row xs:flex-row gap-4`}
+                isExpanded ? "flex-row items-center justify-normal" : "flex-col items-center justify-center"
+              } md:flex-col xs:flex-col gap-4`}
               style={{
                 gridColumn: isSmallScreen ? "span 3" : isExpanded ? "span 2" : "span 1"
               }}
@@ -89,7 +89,7 @@ const Values = () => {
               <img
                 src={val.image}
                 alt={val.title}
-                className={`w-32 h-32 ${isExpanded ? "self-center" : "self-start mx-auto"} md:self-center md:mx-0 sm:w-16 sm:h-16 xs:w-14 xs:h-14 transition-all duration-300`}
+                className={`w-32 h-32 ${isExpanded ? "self-center" : "self-start mx-auto"} md:self-center md:mx-0 md:w-40 md:h-40 transition-all duration-300`}
                 style={{ order: isExpanded ? 0 : 1 }}
               />
               <div className="">

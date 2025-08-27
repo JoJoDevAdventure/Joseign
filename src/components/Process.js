@@ -63,7 +63,7 @@ const Process = () => {
   }, []);
 
   return (
-    <section className="w-full px-32 lg:px-20 md:px-12 sm:px-8 xs:px-4 py-24 md:py-20 sm:py-16 xs:py-12 bg-[#F5F5F5]">
+    <section className="w-full px-32 lg:px-20 md:px-12 sm:px-8 xs:px-4 py-24 md:py-20 sm:py-16 xs:py-12 bg-[#F5F5F5] flex flex-col items-center">
       <motion.p
         className="text-primary font-semibold text-sm uppercase mb-2 text-center"
         initial={{ opacity: 0, y: 30 }}

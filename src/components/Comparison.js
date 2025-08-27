@@ -1,24 +1,30 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { FiArrowDown } from "react-icons/fi";
+import badAd from "../../public/bad-ad.png";
+import badBrand from "../../public/bad-b.gif";
+import badUi from "../../public/bad-ui.png";
+import goodAd from "../../public/good-ad.png";
+import goodBrand from "../../public/good-b.gif";
+import goodUi from "../../public/good-ui.png";
 
 const Comparison = () => {
   const containerRef = useRef(null);
   const [sliderX, setSliderX] = useState(50);
   const [selectedCategory, setSelectedCategory] = useState("UI/UX Design");
   const imageMap = {
-    Ads: {
-      before: "/bad-ad.png",
-      after: "/good-ad.png"
+    "Ads": {
+      before: badAd,
+      after: goodAd,
     },
     "UI/UX Design": {
-      before: "/bad-ui.png",
-      after: "/good-ui.png"
+      before: badUi,
+      after: goodUi,
     },
-    Branding: {
-      before: "/bad-b.gif",
-      after: "/good-b.gif"
-    }
+    "Branding": {
+      before: badBrand,
+      after: goodBrand,
+    },
   };
   const isDragging = useRef(false);
   
@@ -102,11 +108,12 @@ const Comparison = () => {
         ref={containerRef}
       >
         {/* Before Image */}
-        <div className="absolute inset-0 bg-[url('/checkerboard.png')]">
+        <div className="absolute inset-0 relative bg-[url('/checkerboard.png')]">
           <Image
             src={imageMap[selectedCategory].before}
             alt="Before"
             className="w-full h-full object-cover object-left"
+            sizes="(min-width: 768px) 640px, 100vw"
           />
         </div>
         {/* After Image */}
@@ -121,6 +128,7 @@ const Comparison = () => {
             src={imageMap[selectedCategory].after}
             alt="After"
             className="w-full h-full object-cover object-left shadow-[2px_0px_5px_rgba(0,0,0,0.5)]"
+            sizes="(min-width: 768px) 640px, 100vw"
           />
         </div>
         {/* Slider Line */}

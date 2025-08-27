@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Logo from "../../public/Joseign-logo.png";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
@@ -54,9 +55,10 @@ const NavBar = () => {
       {/* Placeholder for Logo */}
       <div className="w-[120px]">
         <Image
-          src="/Joseign-logo.png"
+          src={Logo}
           alt="Joseign Logo"
           className="w-full h-auto"
+          priority
         />
       </div>
 
@@ -109,9 +111,10 @@ const NavBar = () => {
       >
         <div className="w-[120px]">
           <Image
-            src="/Joseign-logo.png"
+            src={Logo}
             alt="Joseign Logo"
             className="w-full h-auto"
+            priority
           />
         </div>
         <CustomLink href="/" title="Home" />

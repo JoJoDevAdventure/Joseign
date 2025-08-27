@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import adobeLogo from "../../public/adobe.png";
+import figmaLogo from "../../public/figma.png";
+import fiverrLogo from "../../public/fiverr.png";
+import toptalLogo from "../../public/toptal.png";
+import upworkLogo from "../../public/upwork.png";
 import AnimatedNumbers from "./AnimatedNumbers";
 
 const fadeUp = {
@@ -75,11 +80,11 @@ const Trust = () => {
         viewport={{ once: true }}
       >
         <div className="flex items-center justify-between gap-16 animate-marquee whitespace-nowrap opacity-50">
-          <Image src="/figma.png" alt="Figma" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
-          <Image src="/upwork.png" alt="Up" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
-          <Image src="/fiverr.png" alt="Fiverr" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
-          <Image src="/toptal.png" alt="TopTal" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
-          <Image src="/adobe.png" alt="Adobe" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7" />
+          <Image src={figmaLogo} alt="Figma" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
+          <Image src={upworkLogo} alt="Upwork" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
+          <Image src={fiverrLogo} alt="Fiverr" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
+          <Image src={toptalLogo} alt="TopTal" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
+          <Image src={adobeLogo} alt="Adobe" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
         </div>
       </motion.div>
     </section>
