@@ -42,8 +42,30 @@ const about = () => {
   return (
     <>
       <Head>
-        <title> Joseign | About</title>
-        <meta name="description" content="any description" />
+        <title>About Joseign – Tech Company Specializing in UI/UX & SaaS Development</title>
+        <meta
+          name="description"
+          content="Discover Joseign: A tech company specializing in landing page optimization and SaaS platform development. We offer UI/UX design, development, deployment, and monitoring services with 7+ years of experience."
+        />
+        <link rel="canonical" href="https://joseign.com/about" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About Joseign – Tech Company Specializing in UI/UX & SaaS" />
+        <meta property="og:description" content="Tech company specializing in landing page optimization and SaaS platforms. UI/UX Design, Development, Deployment, and Monitoring." />
+        <meta property="og:url" content="https://joseign.com/about" />
+        <meta property="og:image" content="https://joseign.com/og-cover.jpg" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Joseign – Tech Company Specializing in UI/UX & SaaS" />
+        <meta name="twitter:description" content="Tech company specializing in landing page optimization and SaaS platforms. 7+ years experience in UI/UX design and development." />
+        <meta name="twitter:image" content="https://joseign.com/og-cover.jpg" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+        />
       </Head>
       <TransitionEffect />
       <main className="flex w-full flex-col items-center justify-center">
@@ -79,7 +101,7 @@ const about = () => {
               <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" />
               <Image
                 src={profilePic}
-                alt="JB"
+                alt="Joseph Bouhlel - Founder of Joseign, UI/UX Designer and Graphic Designer with 7+ years of experience"
                 className="w-full h-auto rounded-2xl"
                 priority
                 sizes="{max-width:768px} 100vw, {max-width:1200px} 50vw, 33vw"
@@ -122,6 +144,24 @@ const about = () => {
       </main>
     </>
   );
+};
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Joseph Bouhlel",
+    "jobTitle": "Founder & UI/UX Designer",
+    "description": "Graphic designer and UI/UX designer with 7 years of experience in creating beautiful, functional, and user-centered digital experiences.",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Joseign"
+    },
+    "knowsAbout": ["UI/UX Design", "Graphic Design", "Web Development", "SaaS Development", "Landing Page Optimization"],
+    "alumniOf": "Design & Development",
+    "award": "50+ Satisfied Clients, 65+ Projects Completed"
+  }
 };
 
 export default about;

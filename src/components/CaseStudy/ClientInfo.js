@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ScrollStack, { ScrollStackItem } from "../ScrollStack";
 
 const hexToRgba = (hex, alpha) => {
@@ -50,7 +49,7 @@ const ClientInfo = ({ client }) => {
           className="relative z-20 flex flex-row md:flex-col gap-4 items-center md:items-start text-center space-y-4 px-8 h-full rounded-[40px] overflow-hidden"
           style={{ backgroundColor: hexToRgba(accent, opacities[0]) }}
         >
-          <Image
+          <img
             src={client.info.logo}
             alt={`${client.info.name} logo`}
             className="md:absolute left-0 right-0 md:w-full w-96 h-60 bg-white/80 rounded-xl md:rounded-none overflow-hidden"
@@ -78,7 +77,7 @@ const ClientInfo = ({ client }) => {
           className="relative z-20 flex flex-row md:flex-col gap-4 items-center md:items-start text-center space-y-4 px-8 h-full rounded-[40px] overflow-hidden"
           style={{ backgroundColor: hexToRgba(accent, opacities[1]) }}
         >
-          <Image
+          <img
             src={client.industry.img}
             alt={`${client.industry.title} logo`}
             className="md:absolute left-0 right-0 md:w-full w-96 h-60 bg-white/80 rounded-xl md:rounded-none overflow-hidden"
@@ -106,7 +105,7 @@ const ClientInfo = ({ client }) => {
           className="relative z-20 flex flex-row md:flex-col gap-4 items-center md:items-start text-center space-y-4 px-8 h-full rounded-[40px] overflow-hidden"
           style={{ backgroundColor: hexToRgba(accent, opacities[2]) }}
         >
-                    <Image
+                    <img
             src={client.values.img}
             alt={`${client.values.title} logo`}
             className="md:absolute left-0 right-0 md:w-full w-96 h-60 bg-white/80 rounded-xl md:rounded-none overflow-hidden"
@@ -134,7 +133,7 @@ const ClientInfo = ({ client }) => {
           className="relative z-20 flex flex-row md:flex-col gap-4 items-center md:items-start text-center space-y-4 px-8 h-full rounded-[40px] overflow-hidden"
           style={{ backgroundColor: hexToRgba(accent, opacities[3]) }}
         >
-                              <Image
+                              <img
             src={client.vision.img}
             alt={`${client.vision.title} logo`}
             className="md:absolute left-0 right-0 md:w-full w-96 h-60 bg-white/80 rounded-xl md:rounded-none overflow-hidden"
@@ -156,13 +155,13 @@ const ClientInfo = ({ client }) => {
         <div className="absolute inset-0 bg-white rounded-[40px]" />
       </ScrollStackItem>
 
-      {/* --- Card 5 : Final image ------------------------------- */}
+      {/* --- Card 5 : Final img ------------------------------- */}
       <ScrollStackItem>
         <div
           className="relative z-20 flex flex-row md:flex-col gap-4 items-center md:items-start text-center space-y-4 h-full rounded-[40px] overflow-hidden"
           style={{ backgroundColor: hexToRgba(accent, opacities[4]) }}
         >
-          <Image
+          <img
             src={client.final_img}
             alt={`${client.final_img} logo`}
             className="md:absolute left-0 right-0 md:w-full md:h-full w-full bg-white/80 rounded-xl md:rounded-none overflow-hidden object-cover"

@@ -1,5 +1,4 @@
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 import { useRef } from "react";
 
 const scribbleVariants = {
@@ -87,7 +86,7 @@ const ProblemSection = ({ problem }) => {
               className="relative h-72 w-72 md:w-full bg-muted/40 rounded-xl"
             >
               {problem.image_1 && (
-                <Image
+                <img
                   src={problem.image_1}
                   alt=""
                   fill
@@ -113,7 +112,7 @@ const ProblemSection = ({ problem }) => {
               className="relative bottom-0 h-52 w-52 bg-muted/40 md:ml-0 md:hidden"
             >
               {problem.image_3 && (
-                <Image
+                <img
                   src={problem.image_3}
                   alt=""
                   fill
@@ -131,7 +130,7 @@ const ProblemSection = ({ problem }) => {
               className="relative bottom-0 ml-12 h-[420px] w-[420px] bg-muted/40 md:ml-0 md:hidden"
             >
               {problem.image_3 && (
-                <Image
+                <img
                   src={problem.image_2}
                   alt=""
                   fill

@@ -4,22 +4,21 @@ import LightRays from "@/components/LightRays";
 import TransitionEffect from "@/components/TransitionEffect";
 import { testimonialsData } from "@/data/testimonials";
 import Head from "next/head";
-import Image from "next/image";
 
 const Testimonial = ({ type, title, summary, link, imageLink }) => {
   return (
     <article className="w-full flex flex-row gap-12 md:gap-2 items-center justify-center rounded-2xl border border-solid border-dark dark:border-light bg-light dark:bg-dark p-6 relative lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4 rounded-bl-none group">
       <div className="absolute top-0 -right-3 -z-10 w-[100.9%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl dark:hover:bg-light sm:-right-2 sm:h-[102%] sm:w-ful sm:rounded-[1,5rem] rounded-bl-none md:rounded-bl-2xl" />
       <div className="relative">
-        <Image
+        <img
           className="absolute inset-0 h-full w-full rounded-lg rounded-bl-none  md:rounded-bl-lg opacity-0 group-hover:opacity-100 bg-primary transition-all duration-500"
           src={`${imageLink}.gif`}
-          alt={title}
+          alt={`${title} - Joseign project showcase (animated preview)`}
         />
-        <Image
+        <img
           className="h-full w-full rounded-lg rounded-bl-none  md:rounded-bl-lg"
           src={`${imageLink}.jpg`}
-                    alt={title}
+                    alt={`${title} - Joseign client project testimonial`}
 
         />
       </div>
@@ -53,8 +52,30 @@ const testimonials = () => {
   return (
     <>
       <Head>
-        <title> Joseign | Testimonials </title>
-        <meta name="description" content="any description" />
+        <title>Client Testimonials – Joseign Success Stories | UI/UX & SaaS Projects</title>
+        <meta
+          name="description"
+          content="Read success stories from our satisfied clients. Discover how Joseign delivered exceptional UI/UX design, landing page optimization, and SaaS development solutions. 50+ happy clients worldwide."
+        />
+        <link rel="canonical" href="https://joseign.com/testimonials" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Client Testimonials – Joseign Success Stories" />
+        <meta property="og:description" content="Unmatched client experience. See how Joseign transforms businesses with exceptional UI/UX design and SaaS development." />
+        <meta property="og:url" content="https://joseign.com/testimonials" />
+        <meta property="og:image" content="https://joseign.com/og-cover.jpg" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Client Testimonials – Joseign Success Stories" />
+        <meta name="twitter:description" content="Read success stories from 50+ satisfied clients. UI/UX design and SaaS development that delivers results." />
+        <meta name="twitter:image" content="https://joseign.com/og-cover.jpg" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(testimonialsSchema) }}
+        />
       </Head>
       <TransitionEffect />
       <main className="w-full mb-16 flex flex-col items-center justify-center">
@@ -81,6 +102,18 @@ const testimonials = () => {
       </main>
     </>
   );
+};
+
+const testimonialsSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Client Testimonials",
+  "description": "Success stories and testimonials from clients who worked with Joseign for UI/UX design, landing page optimization, and SaaS development.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Joseign",
+    "url": "https://joseign.com"
+  }
 };
 
 export default testimonials;

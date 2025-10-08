@@ -1,6 +1,5 @@
 // components/HeroSection.tsx
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
 
 export default function HeroSection({ hero }) {
   const accentColor = hero.color ?? '#000000';
@@ -87,7 +86,7 @@ export default function HeroSection({ hero }) {
             {/* “screen” + CTA */}
             <div className="relative">
               <div className="aspect-video rounded-xl bg-gray-200/70">
-                <Image
+                <img
                   src={hero.image}
                   alt="FitFuel redesign hero"
                   className="h-full w-full rounded-xl object-cover"

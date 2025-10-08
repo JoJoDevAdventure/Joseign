@@ -49,7 +49,7 @@ const Trust = () => {
         {[{ value: 50, label: "Satisfied<br />Clients" },
           { value: 75, label: "Successful<br />Projects" },
           { value: 8, label: "Years Of<br />Experience" },
-          { value: 350, label: "Total Generated<br />Revenues", prefix: "$", suffix: "K+" }
+          { value: 800, label: "Total Generated<br />Revenues", prefix: "$", suffix: "K+" }
         ].map((item, i) => (
           <motion.div
             key={i}
@@ -80,11 +80,11 @@ const Trust = () => {
         viewport={{ once: true }}
       >
         <div className="flex items-center justify-between gap-16 animate-marquee whitespace-nowrap opacity-50">
-          <Image src={figmaLogo} alt="Figma" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
-          <Image src={upworkLogo} alt="Upwork" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
-          <Image src={fiverrLogo} alt="Fiverr" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
-          <Image src={toptalLogo} alt="TopTal" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
-          <Image src={adobeLogo} alt="Adobe" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
+          <Image src={figmaLogo} alt="Figma - Professional design tool used by Joseign for UI/UX design and prototyping" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
+          <Image src={upworkLogo} alt="Upwork - Trusted freelance platform where Joseign delivers projects to global clients" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
+          <Image src={fiverrLogo} alt="Fiverr - Platform where Joseign provides design and development services" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
+          <Image src={toptalLogo} alt="Toptal - Elite freelance network featuring Joseign's premium services" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
+          <Image src={adobeLogo} alt="Adobe Creative Suite - Industry-standard design tools used by Joseign" className="h-12 lg:h-10 md:h-9 sm:h-8 xs:h-7 w-auto object-contain" sizes="(min-width: 1024px) 200px, 120px" />
         </div>
       </motion.div>
     </section>

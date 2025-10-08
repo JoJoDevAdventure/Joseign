@@ -1,5 +1,4 @@
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 import { useRef } from "react";
 import CountUp from "../CountUp";
 
@@ -69,7 +68,7 @@ export default function QuickFactsSection({ quickFacts }) {
           animate={inView ? "visible" : "hidden"}
           className="mb-24 flex justify-center bg-muted/40 w-full h-[400px]"
         >
-          <Image src={quickFacts.banner} className="w-full h-full bg-white/80 object-cover rounded-2xl" />
+          <img src={quickFacts.banner} className="w-full h-full bg-white/80 object-cover rounded-2xl" />
         </motion.div>
 
         {/* services / timeline / tools */}

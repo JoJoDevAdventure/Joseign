@@ -17,19 +17,18 @@ export default function Home() {
     <>
       <Head>
         {/* — Primary SEO — */}
-        <title>Joseign – Branding & CRO Agency | Design That Converts</title>
-        {/* 42-46 chars = sweet-spot for full SERP display  [oai_citation:0‡searchengineland.com](https://searchengineland.com/title-tag-length-388468?utm_source=chatgpt.com) */}
+        <title>Joseign – Landing Page Optimization & SaaS Development | UI/UX Design</title>
         <meta
           name="description"
-          content="Joseign is a conversion-obsessed branding agency helping SaaS & DTC brands 10× revenue through punchy UI/UX, CRO experiments & full-stack creative."
-        /> {/* 150-160 chars  [oai_citation:1‡searchengineland.com](https://searchengineland.com/seo-meta-descriptions-everything-to-know-447910?utm_source=chatgpt.com) */}
+          content="Joseign is a tech company specializing in landing page optimization and SaaS platform development. Expert UI/UX design, development, deployment, and monitoring services for high-converting digital products."
+        />
         <link rel="canonical" href="https://joseign.com/" />
 
         {/* — Open Graph / Facebook — */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Joseign" />
-        <meta property="og:title" content="Joseign – Branding & CRO Agency" />
-        <meta property="og:description" content="Design that converts. Book your free call." />
+        <meta property="og:title" content="Joseign – Landing Page Optimization & SaaS Development" />
+        <meta property="og:description" content="Tech company specializing in landing page optimization and SaaS platforms. Expert UI/UX design, development, and deployment." />
         <meta property="og:url" content="https://joseign.com/" />
         <meta property="og:image" content="https://joseign.com/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
@@ -38,8 +37,8 @@ export default function Home() {
         {/* — Twitter Card — */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@joseign_brand" />
-        <meta name="twitter:title" content="Joseign – Branding & CRO Agency" />
-        <meta name="twitter:description" content="Conversion-driven design from a senior UI/UX team." />
+        <meta name="twitter:title" content="Joseign – Landing Page Optimization & SaaS Development" />
+        <meta name="twitter:description" content="Tech company delivering high-converting landing pages, SaaS platforms, and expert UI/UX design." />
         <meta name="twitter:image" content="https://joseign.com/og-cover.jpg" />
 
         {/* — Favicons & theme — */}
@@ -56,6 +55,10 @@ export default function Home() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
         <script
           type="application/ld+json"
@@ -109,6 +112,64 @@ const orgSchema = {
 };
 /* Recommended Organization properties  [oai_citation:2‡developers.google.com](https://developers.google.com/search/docs/appearance/structured-data/organization?utm_source=chatgpt.com) */
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Joseign",
+  "description": "Tech company specializing in landing page optimization and SaaS platform development with expert UI/UX design services",
+  "url": "https://joseign.com",
+  "logo": "https://joseign.com/logo.png",
+  "priceRange": "$$",
+  "areaServed": "Worldwide",
+  "serviceType": ["UI/UX Design", "Landing Page Optimization", "SaaS Development", "Brand Identity Design", "Web Development", "Deployment & Monitoring"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Joseign Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "UI/UX Design",
+          "description": "User-centered digital experiences and interface design"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Landing Page Optimization",
+          "description": "High-converting landing pages designed to maximize user engagement"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SaaS Platform Development",
+          "description": "Complete SaaS platform development from design to deployment"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Brand Identity Design",
+          "description": "Comprehensive brand guidelines and visual identity creation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Deployment & Monitoring",
+          "description": "Professional deployment and continuous monitoring services"
+        }
+      }
+    ]
+  }
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -118,7 +179,7 @@ const faqSchema = {
       "name": "What services does Joseign offer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Full-stack branding, UI/UX design, and CRO sprints that 10× your conversions."
+        "text": "Joseign specializes in landing page optimization, SaaS platform development, UI/UX design, development, deployment, and monitoring services."
       }
     },
     {
@@ -126,7 +187,7 @@ const faqSchema = {
       "name": "Who do you work with?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Growth-stage SaaS & DTC brands looking for design that sells, small businesses and big corporations."
+        "text": "We work with SaaS companies, startups, small businesses, and corporations looking for high-converting digital products and optimized user experiences."
       }
     }
   ]

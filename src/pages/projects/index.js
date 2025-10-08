@@ -17,10 +17,29 @@ const Projects = () => {
   return (
     <>
       <Head>
-        <title> Joseign | Projects</title>
+        <title>Projects Portfolio – Joseign | Landing Pages, SaaS & UI/UX Design</title>
         <meta
           name="description"
-          content="A large catalogue displaying my latest projects, from Branding to Graphic design, UI/UX Design and even social media posts design."
+          content="Explore Joseign's portfolio of successful projects: landing page optimization, SaaS platforms, UI/UX design, and brand identity. View our work across diverse industries and technologies."
+        />
+        <link rel="canonical" href="https://joseign.com/projects" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Projects Portfolio – Joseign" />
+        <meta property="og:description" content="Browse our portfolio of landing pages, SaaS platforms, and UI/UX design projects delivered for clients worldwide." />
+        <meta property="og:url" content="https://joseign.com/projects" />
+        <meta property="og:image" content="https://joseign.com/og-cover.jpg" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Projects Portfolio – Joseign" />
+        <meta name="twitter:description" content="Explore our portfolio: landing pages, SaaS platforms, UI/UX design & brand identity projects." />
+        <meta name="twitter:image" content="https://joseign.com/og-cover.jpg" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioSchema) }}
         />
       </Head>
       <TransitionEffect />
@@ -118,4 +137,18 @@ const Projects = () => {
     </>
   );
 };
+
+const portfolioSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Joseign Projects Portfolio",
+  "description": "Portfolio showcasing landing page optimization, SaaS platform development, UI/UX design, and brand identity projects",
+  "url": "https://joseign.com/projects",
+  "provider": {
+    "@type": "Organization",
+    "name": "Joseign",
+    "url": "https://joseign.com"
+  }
+};
+
 export default Projects;

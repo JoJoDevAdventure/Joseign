@@ -7,19 +7,57 @@ import PDFViewer from "./PDFViewer";
 const tabs = ["UI/UX Design", "Landing Page", "Brand Identity", "Case Studies"];
 const projectData = {
   "UI/UX Design": [
-
-    { image: "/projects/debook/debook.jpg", title: "DeBook", link: "https://debook.app" },
-    { image: "/projects/replicaide/rep.jpg", title: "Replicaide", link: "/replicaide" },
-    { image: "/projects/blonk/blonk.jpg", title: "Blonk", link: "/blonk" },
-    { image: "/projects/venn/venn.jpg", title: "Venn", link: "https://venn.com" },
-    { image: "/projects/ad/ad.jpg", title: "Addict Nutrition", link: "https://addictsportnutrition.com" },
-
-  ],
-    "Landing Page": [
     {
-      title: "Instagram Campaign",
-      link: "https://www.instagram.com/joseign",
-      iframe: "https://instagram.com/gymrat.tn/embed"
+      image: "/projects/marhabten/marhabten.png",
+      title: "Marhabten",
+      link: "https://marhabten.net",
+    },
+    {
+      image: "/projects/plonkkaa/plonkkaa-ui.png",
+      title: "Plonkkaa",
+      link: "/plonkkaa",
+    },
+    {
+      image: "/projects/replicaide/replicaide-ui.png",
+      title: "Replicaide",
+      link: "/replicaide",
+    },
+    {
+      image: "/projects/blonk/blonk-ui.png",
+      title: "Blonk",
+      link: "/blonk",
+    },
+  ],
+  "Landing Page": [
+    {
+      title: "Marhabten",
+      link: "https://marhabten.net",
+      image: "/projects/marhabten/landing.png",
+    },
+        {
+      title: "VendrAI",
+      link: "https://vendrai.com",
+      image: "/projects/vendrai/landing.png",
+    },
+    {
+      title: "Plonkkaa",
+      link: "/projects/plonkkaa",
+      image: "/projects/plonkkaa/landing.png",
+    },
+        {
+      title: "Replicaide",
+      link: "https://replicaide.com",
+      image: "/projects/replicaide/landing.png",
+    },
+            {
+      title: "Robyn fit",
+      link: "https://fitxrobyn.joseign.com",
+      image: "/projects/rob/landing.png",
+    },
+    {
+      title: "Trenity Weight",
+      link: "#",
+      image: "/projects/fit/landing.png",
     },
   ],
   "Brand Identity": [
@@ -31,7 +69,11 @@ const projectData = {
     { pdf: "/deepcal.pdf", title: "Deepcal", link: "" },
   ],
   "Case Studies": [
-    { pdf: "/ReplicCase.pdf", title: "Merch Drop A", link: "" },
+    { iframe: "/projects/replicaide", title: "ReplicAIDE", link: "/projects/replicaide" },
+    { iframe: "/projects/vendr-ai", title: "VendrAI", link: "/projects/vendr-ai" },
+    { iframe: "/projects/marhabten", title: "Marhabten", link: "/projects/marhabten" },
+    { iframe: "/projects/plonkkaa", title: "Plonkkaa", link: "/projects/plonkkaa" },
+    { iframe: "/projects/blonk", title: "Blonk", link: "/projects/blonk" },
   ],
 };
 
@@ -89,17 +131,19 @@ const ProjectsSection = () => {
         variants={{
           visible: {
             transition: {
-              staggerChildren: 1
-            }
-          }
+              staggerChildren: 1,
+            },
+          },
         }}
         viewport={{ once: true }}
       >
         <motion.div
-          className={`absolute top-2 h-[44px] md:h-[40px] sm:h-[38px] bg-primary/10 rounded-lg border border-primary/30 z-0 transition-all duration-500 ${tabs.indexOf(selectedTab) == 0 ? 'translate-x-2': ''} sm:hidden`}
+          className={`absolute top-2 h-[44px] md:h-[40px] sm:h-[38px] bg-primary/10 rounded-lg border border-primary/30 z-0 transition-all duration-500 ${
+            tabs.indexOf(selectedTab) == 0 ? "translate-x-2" : ""
+          } sm:hidden`}
           style={{
             width: "160px",
-            left: `${tabs.indexOf(selectedTab) * 170}px`
+            left: `${tabs.indexOf(selectedTab) * 170}px`,
           }}
         />
         {tabs.map((tab) => (
@@ -109,7 +153,9 @@ const ProjectsSection = () => {
               setSelectedTab(tab);
               setCurrentSlide(0);
             }}
-            className={`relative z-10 px-6 py-3 text-sm font-medium transition-colors duration-300 w-[160px] md:w-[140px] sm:w-full ${tab == selectedTab ? "text-primary" : "text-black"}`}
+            className={`relative z-10 px-6 py-3 text-sm font-medium transition-colors duration-300 w-[160px] md:w-[140px] sm:w-full ${
+              tab == selectedTab ? "text-primary" : "text-black"
+            }`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -136,31 +182,43 @@ const ProjectsSection = () => {
       <div className="relative overflow-x-hidden touch-auto w-full max-w-[900px] md:max-w-[700px] sm:max-w-full xs:max-w-full mx-auto rounded-2xl border-4 border-primary">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
-            key={project.iframe ? project.iframe : project.pdf ? project.pdf : project.image}
+            key={
+              project.iframe
+                ? project.iframe
+                : project.pdf
+                ? project.pdf
+                : project.image
+            }
             custom={direction}
             variants={variants}
             initial="enter"
             animate="center"
             exit="exit"
             transition={{ duration: 0.2 }}
-            className="w-full h-[500px] md:h-[480px] flex items-center justify-center"
+            className="relative w-full h-[500px] md:h-[480px] flex items-center justify-center"
           >
             {project.iframe ? (
-              <iframe
-                src={project.iframe}
-                title={project.title}
-                width="100%"
-                height="100%"
-                className="rounded-xl"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              ></iframe>
+              <div className="flex w-full h-full relative">
+                <iframe
+                  src={project.iframe}
+                  title={project.title}
+                  style={{
+                    transform: "scale(0.5)",
+                    transformOrigin: "top left",
+                    width: "200%",
+                    /*  …then expand the frame so the shrunken page still fills the hole */
+                    height: "200%",
+                  }}
+                  className="absolute inset-0 border-0 rounded-xl bg-white"
+                  allow="autoplay; encrypted-media"
+                />
+              </div>
             ) : project.pdf ? (
               <PDFViewer fileUrl={project.pdf} />
             ) : (
               <img
                 src={project.image}
-                alt="Project slide"
+                alt={`${project.title} - ${selectedTab} project by Joseign`}
                 className="w-full h-full object-cover rounded-xl"
               />
             )}

@@ -1,0 +1,14 @@
+# robots.txt for Joseign - Tech Company specializing in Landing Pages & SaaS Development
+# Allow all crawlers to access the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://joseign.com/sitemap.xml
+
+# Disallow crawling of API routes
+Disallow: /api/
+
+# Crawl-delay (optional - helps prevent server overload)
+Crawl-delay: 1
