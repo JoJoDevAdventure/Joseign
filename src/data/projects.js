@@ -83,7 +83,7 @@ export const projectsData = [
     img: "/projects/venditpros/branding.mp4",
     link: "https://venditpros.com",
     summary:
-      "Blonk's vision is to revolutionize recruitment by combining deep human insights with a smooth, tech-first experience — making hiring smarter and more human.",
+      "Vend it Pros is a vending machine company based in the US, My role was to create a detailed branding guideline and website from scratch, including logo style, colours, imagery and more...",
     type: "UI/UX Design",
     featured: true,
   },
