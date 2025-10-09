@@ -8,11 +8,10 @@ export const projectsData = [
     type: "End-to-end",
     featured: true,
   },
-
-  {
-    title: "Marhabten",
-    img: "/projects/marhabten/marhabten.png",
-    link: "/projects/marhabten",
+    {
+    title: "Fit X Robyn",
+    img: "/projects/rob/landing.png",
+    link: "fitxrobyn.joseign.com",
     type: "End-to-end",
     featured: false,
   },
@@ -46,10 +45,13 @@ export const projectsData = [
   },
 
   {
-    title: "Fit X Robyn",
-    img: "/projects/rob/landing.png",
-    link: "fitxrobyn.joseign.com",
-    type: "End-to-end",
+    title: "Vend-It-Pros : Smart Vending",
+    vid: "/projects/venditpros/branding.mp4",
+    img: "/projects/venditpros/branding.mp4",
+    link: "https://venditpros.com",
+    summary:
+      "Vend it Pros is a vending machine company based in the US, My role was to create a detailed branding guideline and website from scratch, including logo style, colours, imagery and more...",
+    type: "UI/UX Design",
     featured: false,
   },
   {
@@ -63,7 +65,7 @@ export const projectsData = [
   },
   {
     title: "Addict Nutrition Sport",
-    img: "/projects/ad/ad.jpg",
+    img: "/projects/ad/landing.png",
     summary:
       "AD Is a french company specialized in supplements, My role was to create a detailed branding guideline from scratch, including logo style, colours, imagery and more...",
     link: "https://addictsportnutrition.com",
@@ -72,31 +74,28 @@ export const projectsData = [
   },
   {
     title: "DEBOOK: WEB3 Library",
-    img: "/projects/debook/debook.jpg",
+    img: "/projects/debook/landing.png",
     link: "https://debook.app",
     type: "UI/UX Design",
     featured: false,
   },
-  {
-    title: "Vend-It-Pros : Smart Vending",
-    vid: "/projects/venditpros/branding.mp4",
-    img: "/projects/venditpros/branding.mp4",
-    link: "https://venditpros.com",
-    summary:
-      "Vend it Pros is a vending machine company based in the US, My role was to create a detailed branding guideline and website from scratch, including logo style, colours, imagery and more...",
-    type: "UI/UX Design",
+    {
+    title: "Marhabten",
+    img: "/projects/marhabten/marhabten.png",
+    link: "/projects/marhabten",
+    type: "End-to-end",
     featured: true,
   },
   {
     title: "Venn Telecom",
-    img: "projects/venn/venn.jpg",
+    img: "projects/venn/landing.png",
     link: "https://www.venntelecom.com",
     type: "UI/UX Design",
     featured: false,
   },
   {
     title: "DeepCal",
-    img: "/projects/deepcal/deepcal.jpg",
+    img: "/projects/deepcal/landing.png",
     link: "https://drive.google.com/file/d/1VyzUe0c1oV_WBXUziiaJAe9H4sj1XYPY/view?usp=sharing",
     type: "End-to-end",
     featured: false,
