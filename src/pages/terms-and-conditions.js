@@ -26,7 +26,7 @@ const TermsAndConditions = () => {
             <section className="mb-8">
               <h2 className="text-3xl font-bold mb-4">1. Agreement to Terms</h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                By accessing or using Joseign's services ("Services"), you agree to be bound by these Terms and Conditions ("Terms"). If you disagree with any part of these Terms, you may not use our Services.
+                By accessing or using Joseign&apos;s services (&quot;Services&quot;), you agree to be bound by these Terms and Conditions (&quot;Terms&quot;). If you disagree with any part of these Terms, you may not use our Services.
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 These Terms apply to all users of the Services, including visitors, customers, and clients.
@@ -185,7 +185,7 @@ const TermsAndConditions = () => {
             <section className="mb-8">
               <h2 className="text-3xl font-bold mb-4">9. Limitation of Liability</h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                To the fullest extent permitted by law, Joseign's total liability shall not exceed the amount paid by the client for the specific project in question.
+                To the fullest extent permitted by law, Joseign&apos;s total liability shall not exceed the amount paid by the client for the specific project in question.
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 We are not liable for any indirect, incidental, special, consequential, or punitive damages, including lost profits, data loss, or business interruption.
@@ -196,7 +196,7 @@ const TermsAndConditions = () => {
               <h2 className="text-3xl font-bold mb-4">10. Termination</h2>
               <h3 className="text-2xl font-semibold mb-3 mt-6">10.1 Termination by Client</h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                You may terminate the project at any time with 7 days' written notice. You will be billed for:
+                You may terminate the project at any time with 7 days&apos; written notice. You will be billed for:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
                 <li>All work completed to date</li>

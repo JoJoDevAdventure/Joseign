@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
             <section className="mb-8">
               <h2 className="text-3xl font-bold mb-4">1. Introduction</h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                Joseign ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website{" "}
+                Joseign (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website{" "}
                 <Link href="/" className="text-primary hover:underline">joseign.com</Link> or use our services.
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -164,7 +164,7 @@ const PrivacyPolicy = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-bold mb-4">10. Children's Privacy</h2>
+              <h2 className="text-3xl font-bold mb-4">10. Children&apos;s Privacy</h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 Our services are not intended for individuals under 18 years of age. We do not knowingly collect personal information from children. If we discover we have collected information from a child, we will delete it immediately.
               </p>
@@ -180,7 +180,7 @@ const PrivacyPolicy = () => {
             <section className="mb-8">
               <h2 className="text-3xl font-bold mb-4">12. Changes to This Policy</h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date. Continued use of our services after changes constitutes acceptance of the updated policy.
+                We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated &quot;Last Updated&quot; date. Continued use of our services after changes constitutes acceptance of the updated policy.
               </p>
             </section>
 

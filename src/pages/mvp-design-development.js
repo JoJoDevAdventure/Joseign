@@ -563,7 +563,7 @@ const MVPDesignDevelopment = () => {
               </h1>
 
               <p className="text-2xl md:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto">
-                Don't waste 6 months building the wrong thing. We design, develop, and deploy your full-stack MVP in 4-6 weeks so you can validate with real users and iterate fast.
+                Don&apos;t waste 6 months building the wrong thing. We design, develop, and deploy your full-stack MVP in 4-6 weeks so you can validate with real users and iterate fast.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -583,7 +583,7 @@ const MVPDesignDevelopment = () => {
                     whileTap={{ scale: 0.95 }}
                     className="bg-white dark:bg-gray-800 border-2 border-primary text-primary px-10 py-5 rounded-lg font-bold text-xl hover:bg-primary hover:text-white transition-all"
                   >
-                    See MVPs We've Built
+                    See MVPs We&apos;ve Built
                   </motion.button>
                 </Link>
               </div>
@@ -712,7 +712,7 @@ const MVPDesignDevelopment = () => {
               Validate Your Idea with <span className="text-primary">Real Users, Fast</span>
             </h2>
             <p className="text-xl md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Startups don't fail because of bad ideas—they fail because they build the wrong thing for too long. An MVP lets you test, learn, and pivot before you run out of runway.
+              Startups don&apos;t fail because of bad ideas—they fail because they build the wrong thing for too long. An MVP lets you test, learn, and pivot before you run out of runway.
             </p>
           </motion.div>
 
@@ -753,7 +753,7 @@ const MVPDesignDevelopment = () => {
               From Idea to Launch in <span className="text-primary">6 Weeks</span>
             </h2>
             <p className="text-xl md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Here's exactly how we take your SaaS idea from concept to a production-ready MVP with real users.
+              Here&apos;s exactly how we take your SaaS idea from concept to a production-ready MVP with real users.
             </p>
           </motion.div>
 
@@ -970,7 +970,7 @@ const MVPDesignDevelopment = () => {
               in 4-6 Weeks?
             </h2>
             <p className="text-2xl md:text-xl mb-10 opacity-90">
-              Let's turn your idea into a production-ready product. Book a free strategy call to discuss your vision.
+              Let&apos;s turn your idea into a production-ready product. Book a free strategy call to discuss your vision.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

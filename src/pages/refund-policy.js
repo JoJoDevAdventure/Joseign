@@ -111,7 +111,7 @@ const RefundPolicy = () => {
                 <li>
                   <strong>Submit a Written Request:</strong> Email{" "}
                   <a href="mailto:hello@joseign.com" className="text-primary hover:underline">hello@joseign.com</a>{" "}
-                  with "Refund Request" in the subject line
+                  with &quot;Refund Request&quot; in the subject line
                 </li>
                 <li>
                   <strong>Include Required Information:</strong>
@@ -180,7 +180,7 @@ const RefundPolicy = () => {
                 For ongoing monthly retainer agreements:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-                <li><strong>Cancellation Notice:</strong> 30 days' written notice required</li>
+                <li><strong>Cancellation Notice:</strong> 30 days&apos; written notice required</li>
                 <li><strong>Current Month:</strong> No refund for the current billing period</li>
                 <li><strong>Unused Hours:</strong> Unused hours do not roll over and are non-refundable</li>
                 <li><strong>Early Termination:</strong> If you terminate before the minimum commitment period (typically 3 months), no refund will be issued for months already paid</li>
@@ -219,7 +219,7 @@ const RefundPolicy = () => {
             <section className="mb-8">
               <h2 className="text-3xl font-bold mb-4">12. Changes to This Policy</h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                We reserve the right to update this Refund Policy at any time. Changes will be posted on this page with an updated "Last Updated" date. Existing projects will be governed by the policy in effect at the time of agreement signing.
+                We reserve the right to update this Refund Policy at any time. Changes will be posted on this page with an updated &quot;Last Updated&quot; date. Existing projects will be governed by the policy in effect at the time of agreement signing.
               </p>
             </section>
 

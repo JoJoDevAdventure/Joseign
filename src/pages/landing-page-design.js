@@ -7,6 +7,58 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FaBullseye, FaChartLine, FaCheckCircle, FaClock, FaCode, FaPalette, FaRocket, FaUsers } from "react-icons/fa";
 
+// Separate component for process step items to avoid hooks in callbacks
+const ProcessStepItem = ({ step, index }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="relative"
+    >
+      <div className="grid grid-cols-12 gap-8 md:grid-cols-1">
+        <div className="col-span-2 md:col-span-1 flex md:flex-row md:items-center md:gap-4">
+          <div className="relative">
+            <div className="w-24 h-24 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center relative">
+              <step.icon className="text-primary text-3xl md:text-2xl" />
+              <div className="absolute -bottom-1 -right-1 bg-primary text-white rounded-full w-10 h-10 md:w-8 md:h-8 flex items-center justify-center font-bold text-sm md:text-xs shadow-lg">
+                {step.number}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-span-10 md:col-span-1 bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-primary transition-all">
+          <div className="grid grid-cols-2 md:grid-cols-1 gap-6 mb-6">
+            <div>
+              <h3 className="text-2xl md:text-xl font-bold mb-4">{step.title}</h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+            <div className="relative w-full h-48 md:h-40 rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700">
+              <Image
+                src={step.image}
+                alt={step.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border-l-4 border-primary">
+            <p className="text-sm font-semibold text-primary mb-1">✨ Deliverable:</p>
+            <p className="text-sm text-gray-700 dark:text-gray-300">{step.deliverable}</p>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 const LandingPageDesign = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [openAccordion, setOpenAccordion] = useState(0);
@@ -69,7 +121,7 @@ const LandingPageDesign = () => {
     {
       number: "01",
       title: "Landing Page Audit",
-      description: "We start by analyzing your current landing page (if you have one) or studying your competitors. We'll identify conversion leaks, UX friction points, and SEO weaknesses that are costing you customers.",
+      description: "We start by analyzing your current landing page (if you have one) or studying your competitors. We&apos;ll identify conversion leaks, UX friction points, and SEO weaknesses that are costing you customers.",
       icon: FaBullseye,
       deliverable: "Comprehensive audit report with actionable insights",
       image: "/services/landing-step-1.png"
@@ -356,62 +408,14 @@ const LandingPageDesign = () => {
               <span className="text-primary">That Convert Like Crazy</span>
             </h2>
             <p className="text-xl md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              From audit to launch, here's exactly how we transform your landing page into a conversion machine in just 7-10 days.
+              From audit to launch, here&apos;s exactly how we transform your landing page into a conversion machine in just 7-10 days.
             </p>
           </motion.div>
 
           <div className="space-y-8">
-            {processSteps.map((step, index) => {
-              const ref = useRef(null);
-              const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-              return (
-                <motion.div
-                  key={index}
-                  ref={ref}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="relative"
-                >
-                  <div className="grid grid-cols-12 gap-8 md:grid-cols-1">
-                    <div className="col-span-2 md:col-span-1 flex md:flex-row md:items-center md:gap-4">
-                      <div className="relative">
-                        <div className="w-24 h-24 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center relative">
-                          <step.icon className="text-primary text-3xl md:text-2xl" />
-                          <div className="absolute -bottom-1 -right-1 bg-primary text-white rounded-full w-10 h-10 md:w-8 md:h-8 flex items-center justify-center font-bold text-sm md:text-xs shadow-lg">
-                            {step.number}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-span-10 md:col-span-1 bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-primary transition-all">
-                      <div className="grid grid-cols-2 md:grid-cols-1 gap-6 mb-6">
-                        <div>
-                          <h3 className="text-2xl md:text-xl font-bold mb-4">{step.title}</h3>
-                          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                            {step.description}
-                          </p>
-                        </div>
-                        <div className="relative w-full h-48 md:h-40 rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700">
-                          <Image
-                            src={step.image}
-                            alt={step.title}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                      </div>
-                      <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border-l-4 border-primary">
-                        <p className="text-sm font-semibold text-primary mb-1">✨ Deliverable:</p>
-                        <p className="text-sm text-gray-700 dark:text-gray-300">{step.deliverable}</p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+            {processSteps.map((step, index) => (
+              <ProcessStepItem key={index} step={step} index={index} />
+            ))}
           </div>
         </div>
       </section>
@@ -465,7 +469,7 @@ const LandingPageDesign = () => {
           >
             <p className="text-primary font-semibold text-sm uppercase mb-2">Everything You Need</p>
             <h2 className="text-5xl lg:text-4xl md:text-3xl font-black mb-6">
-              What's <span className="text-primary">Included</span>
+              What&apos;s <span className="text-primary">Included</span>
             </h2>
           </motion.div>
 
@@ -539,7 +543,7 @@ const LandingPageDesign = () => {
               That Actually Converts?
             </h2>
             <p className="text-xl md:text-lg mb-8 opacity-90">
-              Let's turn your traffic into paying customers. Book a free 30-minute call to discuss your project.
+              Let&apos;s turn your traffic into paying customers. Book a free 30-minute call to discuss your project.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
