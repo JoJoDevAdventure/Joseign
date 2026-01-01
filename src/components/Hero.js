@@ -1,34 +1,48 @@
 import { getCalApi } from "@calcom/embed-react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaExclamationCircle, FaWhatsapp } from "react-icons/fa";
 import { FiCalendar } from "react-icons/fi";
-import chartAnimation from "../../public/chart-up.json";
 import Comparison from "./Comparison";
+import LightRays from "./LightRays";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const Hero = () => {
+  const [selectedService, setSelectedService] = useState("UI/UX Design");
+
+  const serviceContent = {
+    "Landing Page": {
+      headline: "Your Traffic Isn't Converting.",
+      highlight: "We Fix That.",
+      subheadline: "Stop losing customers to confusing landing pages. Get data-driven designs that turn visitors into paying users—guaranteed."
+    },
+    "UI/UX Design": {
+      headline: "Users Don't Get Your Product.",
+      highlight: "We Simplify It.",
+      subheadline: "Confusing interfaces kill retention. We create intuitive UI/UX that users love—so they stay, engage, and convert."
+    },
+    "MVP": {
+      headline: "Your Idea Still Needs Validation.",
+      highlight: "We Build It.",
+      subheadline: "Don't waste months building the wrong thing. Ship a market-ready MVP in weeks, gather real feedback, and iterate fast."
+    }
+  };
+
+  const currentContent = serviceContent[selectedService];
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({ namespace: "joseign-free-call" });
+      const cal = await getCalApi({ namespace: "discovery" });
       cal("ui", {
-        theme: "light",
-        hideEventTypeDetails: true,
+        hideEventTypeDetails: false,
         layout: "month_view",
       });
     })();
   }, []);
   return (
     <section className="relative py-8 px-32 md:py-0 lg:px-20 md:px-12 sm:px-8 xs:px-4 flex flex-row md:flex-col justify-between items-center gap-8 md:gap-14 sm:gap-0 bg-[#F9F8FA] min-h-[70vh] overflow-hidden">
-      {/* Left Side Background */}
-      <motion.div
-        className="absolute top-0 right-0 w-1/3 lg:w-1/2 md:w-full sm:hidden h-full bg-[#F7EAF4] border-t-8 border-r-8 z-0"
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut", delay: 1 }}
-        viewport={{ once: true }}
-      />
+      {/* LightRays Background */}
+      <LightRays lightSpread={10} className="absolute top-0 right-0 translate-x-1/2 opacity-40"/>
 
       {/* Left Side Content */}
       <motion.div
@@ -47,37 +61,30 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.8 }}
           viewport={{ once: true }}
         >
-          UI/UX & Branding for High-Converting Startups
+          Landing Pages, UI/UX & MVP Development for SaaS Startups
         </motion.p>
 
         <motion.h1
+          key={selectedService}
           className="text-[58px] xl:text-[52px] lg:text-[46px] md:text-[40px] sm:text-[40px] xs:text-[40px] font-bold leading-[1.08] text-gray-900 text-left tracking-tight"
           initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          Design That Converts,
+          {currentContent.headline}
           <br />
-          Brands That{" "}
           <span className="text-primary relative inline-block font-black">
-            Stick.
-            <span className="absolute -top-52 left-8 md:left-20 w-[290px] h-[150px] pointer-events-none select-none">
-              <Lottie animationData={chartAnimation} loop={true} autoplay />
-            </span>
+            {currentContent.highlight}
           </span>
         </motion.h1>
         <motion.p
+          key={selectedService + "-sub"}
           className="text-[20px] xl:text-[18px] lg:text-[16px] md:text-[14px] sm:text-[12px] xs:text-[14px] mt-6 md:mt-2 text-gray-700 max-w-[90%] md:max-w-full leading-relaxed text-left font-medium"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.25 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          We craft UI/UX, branding & graphics that make people fall in love with
-          your product.
-          <br />
-Book your FREE call — let’s elevate your visuals and brand clarity.
+          {currentContent.subheadline}
         </motion.p>
         <motion.div
           className="flex gap-4 mt-7 items-start"
@@ -89,9 +96,9 @@ Book your FREE call — let’s elevate your visuals and brand clarity.
           <div className="flex flex-col items-start gap-1">
             <button
               className="flex items-center gap-2 text-[20px] xl:text-[18px] lg:text-[17px] md:text-[12px] px-8 lg:px-8 md:px-7 sm:px-6 xs:px-6 py-4 md:py-3 sm:py-3 xs:py-3 bg-primary text-white rounded-md shadow hover:opacity-90 transition font-semibold"
-              data-cal-namespace="joseign-free-call"
-              data-cal-link="joseph-bouhlel/joseign-free-call"
-              data-cal-config='{"layout":"month_view","theme":"light"}'
+              data-cal-namespace="discovery"
+              data-cal-link="joseign/discovery"
+              data-cal-config='{"layout":"month_view"}'
             >
               <FiCalendar className="w-5 h-5" />
               Book Free Call
@@ -122,7 +129,7 @@ Book your FREE call — let’s elevate your visuals and brand clarity.
           transition={{ duration: 0.6, delay: 1.5 }}
           viewport={{ once: true }}
         >
-          <Comparison />
+          <Comparison onCategoryChange={setSelectedService} />
         </motion.div>
       </div>
     </section>

@@ -136,11 +136,11 @@ export default function ExecutionSection({ execution }) {
 
         {execution.phases.map((p, i) => (
           <div key={i} className="phaseSlide flex flex-col h-[80%] w-[35vw] md:w-full items-center justify-center px-8">
-            <div className="relative mb-4 h-full bg-muted/40 w-[35vw] md:w-full">
+            <div className="relative mb-4 h-[400px] bg-muted/40 w-[35vw] md:w-full">
               {p.img && <img src={p.img} alt={p.name} className="object-cover w-full h-full" />}
             </div>
             <h3 className="mb-2 text-xl font-semibold">{p.name}</h3>
-            <p className="max-w-xs text-center text-muted-foreground text-sm">{p.details}</p>
+            <p className="text-center text-muted-foreground text-sm">{p.details}</p>
           </div>
         ))}
 

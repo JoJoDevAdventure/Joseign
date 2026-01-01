@@ -1,14 +1,62 @@
-# robots.txt for Joseign - Tech Company specializing in Landing Pages & SaaS Development
-# Allow all crawlers to access the site
+# robots.txt for Joseign - Landing Page Development, UI/UX Design & MVP Development for SaaS
+# Updated: December 2025
 
+# Allow all search engine crawlers
 User-agent: *
 Allow: /
 
 # Sitemap location
 Sitemap: https://joseign.com/sitemap.xml
 
-# Disallow crawling of API routes
+# Disallow crawling of private/admin routes
 Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
 
-# Crawl-delay (optional - helps prevent server overload)
+# Crawl-delay to prevent server overload
+Crawl-delay: 1
+
+# ====================
+# LLM & AI Crawler Rules
+# ====================
+
+# OpenAI GPTBot (ChatGPT training)
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 2
+
+# Google-Extended (Bard/Gemini training)
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 2
+
+# Anthropic Claude (AI training)
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 2
+
+# Common Crawl (archive & AI training data)
+User-agent: CCBot
+Allow: /
+Crawl-delay: 2
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Meta AI (Facebook/Instagram AI)
+User-agent: FacebookBot
+Allow: /
+
+# ByteDance (TikTok AI)
+User-agent: Bytespider
+Allow: /
+
+# Apple Applebot (Siri, Spotlight)
+User-agent: Applebot
+Allow: /
 Crawl-delay: 1

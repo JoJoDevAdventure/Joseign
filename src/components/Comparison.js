@@ -1,35 +1,38 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { FiArrowDown } from "react-icons/fi";
-import badAd from "../../public/bad-ad.png";
-import badBrand from "../../public/bad-b.gif";
-import badUi from "../../public/bad-ui.png";
-import goodAd from "../../public/good-ad.png";
-import goodBrand from "../../public/good-b.gif";
-import goodUi from "../../public/good-ui.png";
+import badLanding from "../../public/landing/bad-landing.png";
+import badMvp from "../../public/landing/bad-mvp.png";
+import badUi from "../../public/landing/bad-ui.png";
+import goodLanding from "../../public/landing/good-landing.png";
+import goodMvp from "../../public/landing/good-mvp.png";
+import goodUi from "../../public/landing/good-ui.png";
 
-const Comparison = () => {
+const Comparison = ({ onCategoryChange }) => {
   const containerRef = useRef(null);
   const [sliderX, setSliderX] = useState(50);
   const [selectedCategory, setSelectedCategory] = useState("UI/UX Design");
   const imageMap = {
-    "Ads": {
-      before: badAd,
-      after: goodAd,
+    "Landing Page": {
+      before: badLanding,
+      after: goodLanding,
     },
     "UI/UX Design": {
       before: badUi,
       after: goodUi,
     },
-    "Branding": {
-      before: badBrand,
-      after: goodBrand,
+    "MVP": {
+      before: badMvp,
+      after: goodMvp,
     },
   };
   const isDragging = useRef(false);
   
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
+    if (onCategoryChange) {
+      onCategoryChange(category);
+    }
   };
 
   // Handle mouse drag
@@ -83,6 +86,26 @@ const Comparison = () => {
       clearTimeout(t2);
     };
   }, [selectedCategory]);
+
+  // Auto-rotate categories every 5 seconds
+  useEffect(() => {
+    const categories = ["Landing Page", "UI/UX Design", "MVP"];
+    let currentIndex = categories.indexOf(selectedCategory);
+
+    const rotationInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % categories.length;
+      handleCategoryChange(categories[currentIndex]);
+    }, 5000);
+
+    return () => clearInterval(rotationInterval);
+  }, [selectedCategory]);
+
+  // Notify parent of initial category
+  useEffect(() => {
+    if (onCategoryChange) {
+      onCategoryChange(selectedCategory);
+    }
+  }, []);
 
   const startDrag = (e) => {
     e.preventDefault();
@@ -149,14 +172,14 @@ const Comparison = () => {
       </div>
       <div className="mt-8 flex justify-center items-center gap-3 md:flex-row md:gap-4 w-full">
         <button
-          onClick={() => handleCategoryChange("Ads")}
+          onClick={() => handleCategoryChange("Landing Page")}
           className={`py-4 border border-black text-sm rounded transition-all duration-500 ${
-            selectedCategory === "Ads"
+            selectedCategory === "Landing Page"
               ? "bg-[#C94694] text-white font-medium w-full"
               : "bg-[#F0F0F0] w-[180px] md:w-full"
           }`}
         >
-          Ads
+          Landing Page
         </button>
         <button
           onClick={() => handleCategoryChange("UI/UX Design")}
@@ -169,14 +192,14 @@ const Comparison = () => {
           UI/UX Design
         </button>
         <button
-          onClick={() => handleCategoryChange("Branding")}
+          onClick={() => handleCategoryChange("MVP")}
           className={`py-4 border border-black text-sm rounded transition-all ${
-            selectedCategory === "Branding"
+            selectedCategory === "MVP"
               ? "bg-[#C94694] text-white font-medium  w-full"
               : "bg-[#F0F0F0] w-[180px] md:w-full"
           }`}
         >
-          Branding
+          MVP
         </button>
       </div>
     </div>

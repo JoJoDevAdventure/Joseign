@@ -53,10 +53,9 @@ const Process = () => {
 
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({ namespace: "joseign-free-call" });
+      const cal = await getCalApi({ namespace: "discovery" });
       cal("ui", {
-        theme: "light",
-        hideEventTypeDetails: true,
+        hideEventTypeDetails: false,
         layout: "month_view",
       });
     })();
@@ -151,9 +150,9 @@ const Process = () => {
               </motion.p>
               <button
                 className="bg-primary text-white text-lg font-medium px-6 py-3 rounded-md"
-                data-cal-namespace="joseign-free-call"
-                data-cal-link="joseph-bouhlel/joseign-free-call"
-                data-cal-config='{"layout":"month_view","theme":"light"}'
+                data-cal-namespace="discovery"
+                data-cal-link="joseign/discovery"
+                data-cal-config='{"layout":"month_view"}'
               >
                 {steps[selected].buttonText}
               </button>
@@ -184,9 +183,9 @@ const Process = () => {
               </p>
               <button
                 className="bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-md"
-                data-cal-namespace="joseign-free-call"
-                data-cal-link="joseph-bouhlel/joseign-free-call"
-                data-cal-config='{"layout":"month_view","theme":"light"}'
+                data-cal-namespace="discovery"
+                data-cal-link="joseign/discovery"
+                data-cal-config='{"layout":"month_view"}'
               >
                 {step.buttonText}
               </button>

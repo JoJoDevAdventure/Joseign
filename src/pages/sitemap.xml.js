@@ -12,6 +12,12 @@ function generateSiteMap() {
     '/bookme',
   ];
 
+  const servicePages = [
+    '/landing-page-design',
+    '/ui-ux-design-saas',
+    '/mvp-design-development',
+  ];
+
   const projectPages = [
     '/projects/replicaide',
     '/projects/marhabten',
@@ -20,19 +26,41 @@ function generateSiteMap() {
     '/projects/vendr-ai',
   ];
 
-  const allPages = [...staticPages, ...projectPages];
+  const legalPages = [
+    '/privacy-policy',
+    '/terms-and-conditions',
+    '/refund-policy',
+  ];
+
+  const allPages = [...staticPages, ...servicePages, ...projectPages, ...legalPages];
 
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      ${allPages
        .map((page) => {
          const path = page === '' ? '' : page;
-         const priority = page === '' ? '1.0' : page.includes('/projects/') ? '0.8' : '0.9';
+         let priority = '0.7';
+         let changefreq = 'monthly';
+
+         if (page === '') {
+           priority = '1.0';
+           changefreq = 'weekly';
+         } else if (servicePages.includes(page)) {
+           priority = '0.9';
+           changefreq = 'weekly';
+         } else if (page.includes('/projects/')) {
+           priority = '0.8';
+           changefreq = 'monthly';
+         } else if (legalPages.includes(page)) {
+           priority = '0.5';
+           changefreq = 'yearly';
+         }
+
          return `
        <url>
            <loc>${`${WEBSITE_URL}${path}`}</loc>
            <lastmod>${new Date().toISOString()}</lastmod>
-           <changefreq>${page === '' ? 'weekly' : 'monthly'}</changefreq>
+           <changefreq>${changefreq}</changefreq>
            <priority>${priority}</priority>
        </url>
      `;
