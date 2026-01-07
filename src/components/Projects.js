@@ -85,7 +85,7 @@ const projectData = {
     {
       title: "PEARSON",
       description: "Pearson Automotive — 20 years of premium car service in Milton, Brisbane. Modern landing page redesign.",
-      link: "#",
+      link: "/projects/pearson",
       image: "/projects/PEARSON/landing.png",
       caseStudy: "/projects/pearson",
     },
@@ -361,10 +361,10 @@ const ProjectsSection = () => {
               >
                 {project.caseStudy && (
                   <Link href={project.caseStudy}>
-                    <motion.button
+                    <motion.div
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="w-full bg-primary text-white px-5 py-3 rounded-lg font-semibold text-sm shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
+                      className="w-full bg-primary text-white px-5 py-3 rounded-lg font-semibold text-sm shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group cursor-pointer"
                     >
                       <span>View Case Study</span>
                       <motion.span
@@ -373,22 +373,22 @@ const ProjectsSection = () => {
                       >
                         →
                       </motion.span>
-                    </motion.button>
+                    </motion.div>
                   </Link>
                 )}
 
                 {project.link && project.link !== "#" && (
                   <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <motion.button
+                    <motion.div
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="w-full bg-white dark:bg-gray-800 text-primary border-2 border-primary px-5 py-3 rounded-lg font-semibold text-sm hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2"
+                      className="w-full bg-white dark:bg-gray-800 text-primary border-2 border-primary px-5 py-3 rounded-lg font-semibold text-sm hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <span>Visit Live Project</span>
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
-                    </motion.button>
+                    </motion.div>
                   </a>
                 )}
               </motion.div>
