@@ -18,7 +18,7 @@ export const projectsData = [
 
   {
     title: "LMS - Electrical",
-    thumbnail: "/projects/lms/landing.png",
+    thumbnail: "/projects/LMS/landing.png",
     link: "/projects/lms-electrical",
     type: "UI/UX Design",
     featured: false,
