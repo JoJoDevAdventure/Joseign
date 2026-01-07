@@ -6,11 +6,11 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Logo from "../../public/Joseign-logo.png";
 
-const CustomLink = ({ href, title, className = "" }) => {
+const CustomLink = ({ href, title, className = "", onClick }) => {
   const router = useRouter();
 
   return (
-    <Link href={href} className={`${className} relative group`}>
+    <Link href={href} className={`${className} relative group`} onClick={onClick}>
       {title}
       <span
         className={`h-[1px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
@@ -135,11 +135,23 @@ const NavBar = () => {
       {/* Burger Icon */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="hidden md:flex flex-col items-center justify-center"
+        className="hidden md:flex flex-col items-center justify-center w-8 h-8 relative"
       >
-        <span className="w-6 h-0.5 bg-black mb-1"></span>
-        <span className="w-6 h-0.5 bg-black mb-1"></span>
-        <span className="w-6 h-0.5 bg-black"></span>
+        <span
+          className={`w-6 h-0.5 bg-black absolute transition-all duration-300 ease-in-out ${
+            isOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
+          }`}
+        ></span>
+        <span
+          className={`w-6 h-0.5 bg-black absolute transition-all duration-300 ease-in-out ${
+            isOpen ? "opacity-0" : "opacity-100"
+          }`}
+        ></span>
+        <span
+          className={`w-6 h-0.5 bg-black absolute transition-all duration-300 ease-in-out ${
+            isOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
+          }`}
+        ></span>
       </button>
 
       {/* Mobile Menu - Animated Side Panel */}
@@ -157,7 +169,7 @@ const NavBar = () => {
             priority
           />
         </div>
-        <CustomLink href="/" title="Home" />
+        <CustomLink href="/" title="Home" onClick={() => setIsOpen(false)} />
 
         {/* Mobile Services Dropdown */}
         <div className="w-full">
@@ -199,8 +211,8 @@ const NavBar = () => {
           </motion.div>
         </div>
 
-        <CustomLink href="/projects" title="Projects" />
-        <CustomLink href="/testimonials" title="Testimonials" />
+        <CustomLink href="/projects" title="Projects" onClick={() => setIsOpen(false)} />
+        <CustomLink href="/testimonials" title="Testimonials" onClick={() => setIsOpen(false)} />
 
         <button
           className="animated-gradient text-white text-l font-medium px-5 py-2 rounded-md mt-4"

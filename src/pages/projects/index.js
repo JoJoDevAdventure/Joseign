@@ -51,7 +51,7 @@ const Projects = () => {
           />
           <TargetCursor hideDefaultCursor={true} spinDuration={5}/>
           <div className="relative mt-2 flex justify-center flex-wrap gap-3 w-full z-50 mb-12">
-            {["All", "End-to-end", "UI/UX Design", "Branding"].map((cat) => (
+            {["All", "End-to-end", "UI/UX Design", "MVP"].map((cat) => (
               <button
                 key={cat}
                 onClick={() => handleCategoryChange(cat)}

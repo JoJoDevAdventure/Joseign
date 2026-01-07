@@ -19,11 +19,15 @@ function generateSiteMap() {
   ];
 
   const projectPages = [
+    '/projects/gearshare',
     '/projects/replicaide',
     '/projects/marhabten',
     '/projects/plonkkaa',
     '/projects/blonk',
     '/projects/vendr-ai',
+    '/projects/pearson',
+    '/projects/lms-electrical',
+    '/projects/diamond-air',
   ];
 
   const legalPages = [

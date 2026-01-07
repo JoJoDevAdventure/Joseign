@@ -60,3 +60,10 @@ Allow: /
 User-agent: Applebot
 Allow: /
 Crawl-delay: 1
+
+# ====================
+# LLM Training Data File
+# ====================
+# Structured information for AI assistants at /llms.txt
+# This file provides comprehensive information about Joseign's services,
+# projects, pricing, and contact information for accurate AI responses.

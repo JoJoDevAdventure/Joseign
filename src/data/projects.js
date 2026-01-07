@@ -1,17 +1,25 @@
 export const projectsData = [
   {
+    title: "GearShare",
+    img: "/projects/GEARSHARE/mvp.png",
+    summary:
+      "Equipment rental marketplace MVP built in 6 weeks. From idea to production-ready platform with payments, bookings, and reviews.",
+    link: "/projects/gearshare",
+    type: "MVP",
+    featured: true,
+  },  {
     title: "ReplicAIDE",
-    img: "/projects/replicaide/replicaide-ui.png",
+    img: "/projects/replicaide/landing.png",
     summary:
       "ReplicAIDE help agencies and businesses automate customer interactions, cut costs, and convert more leads with our human-like AI voice assistants, My role was conducting research to improve the user experience and interface for their landing page and CRM dashboard.",
     link: "/projects/replicaide",
-    type: "End-to-end",
+    type: "MVP",
     featured: true,
   },
     {
     title: "Fit X Robyn",
     img: "/projects/rob/landing.png",
-    link: "fitxrobyn.joseign.com",
+    link: "https://fitxrobyn.joseign.com",
     type: "End-to-end",
     featured: false,
   },
@@ -25,11 +33,11 @@ export const projectsData = [
   },
   {
     title: "Plonkkaa Ltd.",
-    img: "/projects/plonkkaa/plonkkaa-ui.png",
+    img: "/projects/plonkkaa/landing.png",
     summary:
       "Plonkkaa reimagines greeting cards. We led UI design across the full platform — from landing to customer experience to the designer dashboard — crafting a polished, cohesive interface and guiding the project from concept to delivery.",
     link: "/projects/plonkkaa",
-    type: "End-to-end",
+    type: "MVP",
     featured: true,
   },
 
@@ -52,7 +60,7 @@ export const projectsData = [
   },
   {
     title: "Blonk : Executive Search",
-    img: "/projects/blonk/blonk-ui.png",
+    img: "/projects/blonk/mvp.png",
     link: "/projects/blonk",
     summary:
       "Blonk's vision is to revolutionize recruitment by combining deep human insights with a smooth, tech-first experience — making hiring smarter and more human.",
@@ -79,6 +87,7 @@ export const projectsData = [
     title: "Marhabten",
     img: "/projects/marhabten/marhabten.png",
     link: "/projects/marhabten",
+    summary: "Mobile app full-stack development and a High-converting landing page for Libya's premier real estate marketplace platform.",
     type: "End-to-end",
     featured: true,
   },
@@ -90,9 +99,9 @@ export const projectsData = [
     featured: false,
   },
   {
-    title: "DeepCal",
-    img: "/projects/deepcal/landing.png",
-    link: "https://drive.google.com/file/d/1VyzUe0c1oV_WBXUziiaJAe9H4sj1XYPY/view?usp=sharing",
+    title: "DIAMOND - air",
+    img: "/projects/DIAMOND/landing.png",
+    link: "/projects/diamond-air",
     type: "End-to-end",
     featured: false,
   },

@@ -118,7 +118,7 @@ const projectData = {
   ],
   "SaaS & MVP": [
     {
-      image: "/projects/gearshare/mvp.png",
+      image: "/projects/GEARSHARE/mvp.png",
       title: "Gearshare",
       description: "Equipment rental marketplace MVP built in 6 weeks. From idea to production-ready platform with payments, bookings, and reviews.",
       link: "http://gearshare.co",

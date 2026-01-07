@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 class Pixel {
   constructor(canvas, context, x, y, color, speed, delay) {
@@ -259,14 +260,32 @@ export default function PixelCard({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [finalGap, finalSpeed, finalColors, finalNoFocus]);
 
+  // Check if link is internal (starts with /) or external
+  const isInternalLink = link && link.startsWith('/');
+
+  const LinkWrapper = ({ children }) => {
+    if (isInternalLink) {
+      return (
+        <Link href={link} className="block relative group cursor-target">
+          {children}
+        </Link>
+      );
+    }
+    return (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        tabIndex={finalNoFocus ? -1 : 0}
+        className="block relative group cursor-target"
+      >
+        {children}
+      </a>
+    );
+  };
+
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      tabIndex={finalNoFocus ? -1 : 0}
-      className="block relative group cursor-target"
-    >
+    <LinkWrapper>
       <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl sm:-right-2 sm:h-[102%] sm:w-ful sm:rounded-[1,5rem]" />
 
       <div
@@ -335,6 +354,6 @@ export default function PixelCard({
           </div>
         </div>
       </div>
-    </a>
+    </LinkWrapper>
   );
 }
