@@ -17,11 +17,10 @@ export const projectsData = [
   },
 
   {
-    title: "My Chocolate Shop",
-    thumbnail: "/projects/mcs/mychoc.jpg",
-    vid: "/projects/mcs/mcs.mov",
-    link: "https://drive.google.com/file/d/1pQ9T9lToDH8bNdlqAEK4-IsBX2-uxwFb/view?usp=sharing",
-    type: "Branding",
+    title: "LMS - Electrical",
+    thumbnail: "/projects/lms/landing.png",
+    link: "/projects/lms-electrical",
+    type: "UI/UX Design",
     featured: false,
   },
   {
@@ -45,12 +44,9 @@ export const projectsData = [
   },
 
   {
-    title: "Vend-It-Pros : Smart Vending",
-    vid: "/projects/venditpros/branding.mp4",
-    img: "/projects/venditpros/branding.mp4",
-    link: "https://venditpros.com",
-    summary:
-      "Vend it Pros is a vending machine company based in the US, My role was to create a detailed branding guideline and website from scratch, including logo style, colours, imagery and more...",
+    title: "PEARSON",
+    img: "/projects/PEARSON/landing.png",
+    link: "/projects/pearson",
     type: "UI/UX Design",
     featured: false,
   },
