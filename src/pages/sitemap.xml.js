@@ -9,6 +9,8 @@ function generateSiteMap() {
     '/about',
     '/testimonials',
     '/projects',
+    '/pricing',
+    '/agencies-collaboration',
     '/bookme',
   ];
 

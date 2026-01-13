@@ -3,6 +3,7 @@ import AIPopUp from "@/components/AIPopUp";
 import Blogs from "@/components/Blogs";
 import Hero from "@/components/Hero";
 import Newsletter from "@/components/Newsletter";
+import Pricing from "@/components/Pricing";
 import Process from "@/components/Process";
 import ProjectsSection from "@/components/Projects";
 import Services from "@/components/Services";
@@ -75,8 +76,9 @@ export default function Home() {
         <Services/>
         <ProjectsSection/>
         <Values/>
-        <Testimonials/>
         <Process/>
+        <Pricing/>
+        <Testimonials/>
         <Blogs/>
         <Newsletter/>
       </main>
