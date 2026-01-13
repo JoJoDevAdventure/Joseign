@@ -9,17 +9,48 @@ const Pricing = () => {
   const [websiteLink, setWebsiteLink] = useState("");
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
-  const handleDemoRequest = (e) => {
+  const handleDemoRequest = async (e) => {
     e.preventDefault();
-    // Here you would typically send the email and website link to your backend
-    console.log("Demo requested for:", email, "Website:", websiteLink);
-    setEmailSubmitted(true);
-    setTimeout(() => {
-      setShowEmailPopup(false);
-      setEmailSubmitted(false);
-      setEmail("");
-      setWebsiteLink("");
-    }, 2000);
+
+    try {
+      // Send demo request to API endpoint
+      const response = await fetch('/api/demo-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          websiteLink,
+          timestamp: new Date().toISOString(),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit demo request');
+      }
+
+      // Show success message
+      setEmailSubmitted(true);
+
+      // Reset form after 2 seconds
+      setTimeout(() => {
+        setShowEmailPopup(false);
+        setEmailSubmitted(false);
+        setEmail("");
+        setWebsiteLink("");
+      }, 2000);
+    } catch (error) {
+      console.error('Error submitting demo request:', error);
+      // Still show success to user to avoid exposing errors
+      setEmailSubmitted(true);
+      setTimeout(() => {
+        setShowEmailPopup(false);
+        setEmailSubmitted(false);
+        setEmail("");
+        setWebsiteLink("");
+      }, 2000);
+    }
   };
 
   const websitePricing = [

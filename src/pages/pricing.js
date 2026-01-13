@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import AnimatedText from "@/components/AnimatedText";
 import Pricing from "@/components/Pricing";
 import { motion } from "framer-motion";
@@ -109,9 +110,9 @@ export default function PricingPage() {
                 <h3 className="text-xl font-semibold mb-3">What&apos;s your refund policy?</h3>
                 <p className="text-dark/70">
                   We offer a full refund if the project is cancelled before work begins. During the design phase, prorated refunds are available. After development starts, we don&apos;t offer refunds but guarantee bug fixes for 30 days. Full policy at{" "}
-                  <a href="/refund-policy" className="text-primary hover:underline">
+                  <Link href="/refund-policy" className="text-primary hover:underline">
                     joseign.com/refund-policy
-                  </a>
+                  </Link>
                 </p>
               </div>
 
