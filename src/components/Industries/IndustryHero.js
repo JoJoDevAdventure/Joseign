@@ -74,7 +74,7 @@ const IndustryHero = ({ data }) => {
         style={{ backgroundColor: data.accentColor }}
       />
 
-      <div className="relative z-10 flex items-center min-h-[90vh] md:min-h-[auto] px-32 lg:px-20 md:px-12 sm:px-8 xs:px-4 ">
+      <div className="relative z-10 flex items-center min-h-[90vh] md:min-h-[auto] px-32 lg:px-20 md:px-12 sm:px-8 xs:px-4">
         <div className="w-full flex flex-row md:flex-col items-center gap-16 md:gap-10">
           {/* Left Content */}
           <motion.div

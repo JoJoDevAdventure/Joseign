@@ -103,17 +103,29 @@ const IndustryPricing = ({ data }) => {
                   ))}
                 </div>
 
-                {/* CTA */}
-                <a
-                  href={plan.ctaLink}
-                  className={`group w-full flex items-center justify-center gap-3 py-4 rounded-xl font-bold text-base transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
-                    plan.highlighted ? "text-white" : "text-white"
-                  }`}
-                  style={{ backgroundColor: data.accentColor }}
-                >
-                  {plan.ctaText}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                {/* CTAs */}
+                <div className="space-y-3">
+                  <button
+                    data-cal-namespace="discovery"
+                    data-cal-link="joseign/discovery"
+                    data-cal-config='{"layout":"month_view"}'
+                    className={`group w-full flex items-center justify-center gap-3 py-4 rounded-xl font-bold text-base transition-all duration-300 hover:scale-[1.02] hover:shadow-xl cursor-pointer text-white`}
+                    style={{ backgroundColor: data.accentColor }}
+                  >
+                    {plan.ctaText}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  {plan.paymentLink && (
+                    <a
+                      href={plan.paymentLink}
+                      className="group w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-[1.02] border-2"
+                      style={{ borderColor: `${data.accentColor}30`, color: data.accentColor }}
+                    >
+                      Get Started — No Call
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

@@ -68,14 +68,16 @@ const FinalCTA = ({ data }) => {
 
             {/* CTAs */}
             <div className="flex items-center gap-4 sm:flex-col sm:items-start mb-10">
-              <a
-                href={data.ctaLink}
-                className="group inline-flex items-center gap-3 px-8 py-5 rounded-xl text-white font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              <button
+                data-cal-namespace="discovery"
+                data-cal-link="joseign/discovery"
+                data-cal-config='{"layout":"month_view"}'
+                className="group inline-flex items-center gap-3 px-8 py-5 rounded-xl text-white font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
                 style={{ backgroundColor: data.accentColor }}
               >
                 {ctaText}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </button>
 
               {data.secondaryLink && (
                 <a

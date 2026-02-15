@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm install:*)",
       "Bash(wc -l:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(python3:*)"
     ]
   }
 }

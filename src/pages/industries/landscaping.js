@@ -298,6 +298,7 @@ const pricingData = {
       ],
       ctaText: "Get Started",
       ctaLink: "https://joseign.com/bookme",
+      paymentLink: "https://joseign.com/pay/landscaping/landing-page",
     },
     {
       name: "Landscaping Full Website",
@@ -317,6 +318,7 @@ const pricingData = {
       ],
       ctaText: "Claim Your Spot",
       ctaLink: "https://joseign.com/bookme",
+      paymentLink: "https://joseign.com/pay/landscaping/full-website",
     },
     {
       name: "AI Agentic Website",
@@ -335,6 +337,7 @@ const pricingData = {
       ],
       ctaText: "Request Demo",
       ctaLink: "https://joseign.com/bookme",
+      paymentLink: "https://joseign.com/pay/landscaping/ai-agentic",
     },
   ],
   guarantees: [

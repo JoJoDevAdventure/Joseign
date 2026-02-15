@@ -298,6 +298,7 @@ const pricingData = {
       ],
       ctaText: "Get Started",
       ctaLink: "https://joseign.com/bookme",
+      paymentLink: "https://joseign.com/pay/roofing/landing-page",
     },
     {
       name: "Roofing Full Website",
@@ -317,6 +318,7 @@ const pricingData = {
       ],
       ctaText: "Claim Your Spot",
       ctaLink: "https://joseign.com/bookme",
+      paymentLink: "https://joseign.com/pay/roofing/full-website",
     },
     {
       name: "AI Agentic Website",
@@ -335,6 +337,7 @@ const pricingData = {
       ],
       ctaText: "Request Demo",
       ctaLink: "https://joseign.com/bookme",
+      paymentLink: "https://joseign.com/pay/roofing/ai-agentic",
     },
   ],
   guarantees: [
