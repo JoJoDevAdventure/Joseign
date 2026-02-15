@@ -56,7 +56,7 @@ const Pricing = () => {
   const websitePricing = [
     {
       name: "Basic Landing Page",
-      price: "$850",
+      price: "$950",
       maintenance: "$150/year",
       description: "Perfect for funnels and simple conversions",
       ideal: "Ideal for Funnels",
@@ -74,7 +74,7 @@ const Pricing = () => {
     },
     {
       name: "Premium Website",
-      price: "$1,450",
+      price: "$1,950",
       maintenance: "$299/year",
       description: "Top-notch design for local businesses",
       ideal: "Ideal for Local Businesses",

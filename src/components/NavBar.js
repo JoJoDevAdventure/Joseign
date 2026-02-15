@@ -117,6 +117,7 @@ const NavBar = () => {
         </div>
 
         <CustomLink href="/projects" title="Projects" />
+        <CustomLink href="/industries" title="Industries" />
         <CustomLink href="/pricing" title="Pricing" />
         <CustomLink href="/testimonials" title="Testimonials" />
       </nav>
@@ -213,6 +214,7 @@ const NavBar = () => {
         </div>
 
         <CustomLink href="/projects" title="Projects" onClick={() => setIsOpen(false)} />
+        <CustomLink href="/industries" title="Industries" onClick={() => setIsOpen(false)} />
         <CustomLink href="/pricing" title="Pricing" onClick={() => setIsOpen(false)} />
         <CustomLink href="/testimonials" title="Testimonials" onClick={() => setIsOpen(false)} />
 

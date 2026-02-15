@@ -12,14 +12,14 @@ export default function PricingPage() {
         <title>Pricing - Website & MVP Development | Joseign</title>
         <meta
           name="description"
-          content="Transparent pricing for landing pages, premium websites, AI-powered websites, and MVP development. Plans starting at $850. No hidden fees."
+          content="Transparent pricing for landing pages, premium websites, AI-powered websites, and MVP development. Plans starting at $950. No hidden fees."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://joseign.com/pricing" />
 
         {/* Open Graph */}
         <meta property="og:title" content="Pricing - Website & MVP Development | Joseign" />
-        <meta property="og:description" content="Transparent pricing for landing pages, premium websites, AI-powered websites, and MVP development. Plans starting at $850." />
+        <meta property="og:description" content="Transparent pricing for landing pages, premium websites, AI-powered websites, and MVP development. Plans starting at $950." />
         <meta property="og:url" content="https://joseign.com/pricing" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://joseign.com/og-cover.jpg" />
