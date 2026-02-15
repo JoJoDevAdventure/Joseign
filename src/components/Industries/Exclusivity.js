@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Shield, Users, Award, Lock } from "lucide-react";
+import useAvailability from "@/hooks/useAvailability";
 
 /**
  * @param {Object} data
@@ -20,7 +21,8 @@ const iconMap = {
 };
 
 const Exclusivity = ({ data }) => {
-  const remaining = data.slots.total - data.slots.taken;
+  const { spotsLeft, taken, total, isSunday } = useAvailability();
+  const remaining = spotsLeft;
 
   return (
     <section className="w-full bg-white px-32 lg:px-20 md:px-12 sm:px-8 xs:px-4 py-28 md:py-20 sm:py-16">
@@ -58,8 +60,8 @@ const Exclusivity = ({ data }) => {
         >
           {/* Slot Indicators */}
           <div className="flex items-center justify-center gap-4 mb-6">
-            {Array.from({ length: data.slots.total }).map((_, i) => {
-              const isTaken = i < data.slots.taken;
+            {Array.from({ length: total }).map((_, i) => {
+              const isTaken = i < taken;
               return (
                 <motion.div
                   key={i}
@@ -89,9 +91,11 @@ const Exclusivity = ({ data }) => {
             })}
           </div>
 
-          <p className="text-dark/40 text-sm font-medium mb-2">{data.slotsLabel}</p>
+          <p className="text-dark/40 text-sm font-medium mb-2">
+            {isSunday ? "Booking for next week" : data.slotsLabel}
+          </p>
           <p className="text-4xl md:text-3xl font-extrabold" style={{ color: data.accentColor }}>
-            {remaining} of {data.slots.total} Available
+            {isSunday ? "Fully Booked" : `${remaining} of ${total} Available`}
           </p>
         </motion.div>
 

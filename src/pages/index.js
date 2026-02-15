@@ -26,14 +26,14 @@ export default function Home() {
         <link rel="canonical" href="https://joseign.com/" />
 
         {/* — Open Graph / Facebook — */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Joseign" />
-        <meta property="og:title" content="Joseign – Landing Page Optimization & SaaS Development" />
-        <meta property="og:description" content="Tech company specializing in landing page optimization and SaaS platforms. Expert UI/UX design, development, and deployment." />
-        <meta property="og:url" content="https://joseign.com/" />
-        <meta property="og:image" content="https://joseign.com/og-cover.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:site_name" content="Joseign"/>
+        <meta property="og:title" content="Joseign – Landing Page Optimization & SaaS Development"/>
+        <meta property="og:description" content="Tech company specializing in landing page optimization and SaaS platforms. Expert UI/UX design, development, and deployment."/>
+        <meta property="og:url" content="https://joseign.com/"/>
+        <meta property="og:image" content="https://joseign.com/og-cover.jpg"/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
 
         {/* — Twitter Card — */}
         <meta name="twitter:card" content="summary_large_image" />

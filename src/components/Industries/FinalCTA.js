@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Phone } from "lucide-react";
+import useAvailability from "@/hooks/useAvailability";
 
 /**
  * @param {Object} data
@@ -16,6 +17,12 @@ import { ArrowRight, Phone } from "lucide-react";
  * @param {string} data.accentColor     - e.g. "#16A34A"
  */
 const FinalCTA = ({ data }) => {
+  const { spotsLeft, isSunday } = useAvailability();
+  const urgencyText = isSunday
+    ? "Fully booked this week — book for next week"
+    : `Only ${spotsLeft} spot${spotsLeft !== 1 ? "s" : ""} left this week`;
+  const ctaText = isSunday ? "Book for Next Week" : data.ctaText;
+
   return (
     <section className="w-full relative overflow-hidden">
       {/* Background - subtle accent tint */}
@@ -48,7 +55,7 @@ const FinalCTA = ({ data }) => {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-red-500/30 bg-red-500/10 mb-8"
               >
                 <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                <span className="text-sm font-bold text-red-500">{data.urgencyText}</span>
+                <span className="text-sm font-bold text-red-500">{urgencyText}</span>
               </motion.div>
             )}
 
@@ -66,7 +73,7 @@ const FinalCTA = ({ data }) => {
                 className="group inline-flex items-center gap-3 px-8 py-5 rounded-xl text-white font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                 style={{ backgroundColor: data.accentColor }}
               >
-                {data.ctaText}
+                {ctaText}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
 

@@ -76,12 +76,27 @@ const Bonuses = ({ data }) => {
                   <div className="flex-1">
                     <div className="flex items-center justify-between gap-4 mb-1">
                       <h3 className="text-lg font-bold text-dark">{bonus.title}</h3>
-                      <span
-                        className="text-sm font-extrabold px-3 py-1 rounded-full flex-shrink-0"
-                        style={{ color: data.accentColor, backgroundColor: `${data.accentColor}10` }}
-                      >
-                        {bonus.value}
-                      </span>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <motion.span
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.4, delay: 0.3 + index * 0.12 }}
+                          className="text-sm font-bold text-dark/30 line-through"
+                        >
+                          {bonus.value}
+                        </motion.span>
+                        <motion.span
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ type: "spring", stiffness: 400, damping: 15, delay: 0.5 + index * 0.12 }}
+                          className="text-xs font-extrabold px-3 py-1 rounded-full text-white"
+                          style={{ backgroundColor: data.accentColor }}
+                        >
+                          FREE
+                        </motion.span>
+                      </div>
                     </div>
                     <p className="text-dark/50 leading-relaxed">{bonus.description}</p>
                   </div>

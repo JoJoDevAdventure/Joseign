@@ -1,6 +1,8 @@
-import { motion } from "framer-motion";
+import useAvailability from "@/hooks/useAvailability";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, CheckCircle, Loader2 } from "lucide-react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 
 /**
  * @param {Object} data
@@ -14,6 +16,52 @@ import { ArrowRight } from "lucide-react";
  * @param {string} data.accentColor   - e.g. "#16A34A"
  */
 const IndustryHero = ({ data }) => {
+  const { spotsLeft, isSunday } = useAvailability();
+  const badgeText = isSunday
+    ? "Booking for Next Week"
+    : `Only ${spotsLeft} Spot${spotsLeft !== 1 ? "s" : ""} Left This Week`;
+
+  const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMsg("");
+
+    try {
+      let normalizedWebsite = website.trim();
+      if (normalizedWebsite && !/^https?:\/\//i.test(normalizedWebsite)) {
+        normalizedWebsite = `https://${normalizedWebsite}`;
+      }
+
+      const res = await fetch("/api/demo-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          websiteLink: normalizedWebsite,
+          timestamp: new Date().toISOString(),
+        }),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        setErrorMsg(result.error || "Something went wrong.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+    } catch {
+      setErrorMsg("Network error. Please try again.");
+      setStatus("error");
+    }
+  };
+
   return (
     <section className="relative w-full min-h-[90vh] md:min-h-[auto] bg-light overflow-hidden">
       {/* Gradient Accent Glow */}
@@ -26,7 +74,7 @@ const IndustryHero = ({ data }) => {
         style={{ backgroundColor: data.accentColor }}
       />
 
-      <div className="relative z-10 flex items-center min-h-[90vh] md:min-h-[auto] px-32 lg:px-20 md:px-12 sm:px-8 xs:px-4 py-24 md:py-16">
+      <div className="relative z-10 flex items-center min-h-[90vh] md:min-h-[auto] px-32 lg:px-20 md:px-12 sm:px-8 xs:px-4 ">
         <div className="w-full flex flex-row md:flex-col items-center gap-16 md:gap-10">
           {/* Left Content */}
           <motion.div
@@ -48,7 +96,7 @@ const IndustryHero = ({ data }) => {
                   className="w-2 h-2 rounded-full animate-pulse"
                   style={{ backgroundColor: data.accentColor }}
                 />
-                <span className="text-sm font-medium text-dark/70">{data.badge}</span>
+                <span className="text-sm font-medium text-dark/70">{badgeText}</span>
               </motion.div>
             )}
 
@@ -70,18 +118,72 @@ const IndustryHero = ({ data }) => {
               {data.subheadline}
             </p>
 
-            {/* CTA */}
-            <div className="flex items-center gap-4 sm:flex-col sm:items-start">
-              <a
-                href={data.ctaLink}
-                className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl text-white font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                style={{ backgroundColor: data.accentColor }}
-              >
-                {data.ctaText}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <span className="text-dark/40 text-sm">No commitment required</span>
-            </div>
+            {/* Demo Request Form */}
+            <AnimatePresence mode="wait">
+              {status === "success" ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-3 p-4 rounded-xl border border-dark/10 bg-white"
+                >
+                  <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: data.accentColor }} />
+                  <p className="text-dark/70 font-medium">
+                    We received your request! We&apos;ll be in touch shortly.
+                  </p>
+                </motion.div>
+              ) : (
+                <motion.form
+                  key="form"
+                  onSubmit={handleSubmit}
+                  className="flex flex-col gap-3 max-w-[480px]"
+                >
+                  <p className="text-sm font-bold uppercase tracking-wider text-dark/40 mb-1">
+                    Request a Free Demo
+                  </p>
+                  <div className="flex flex-row sm:flex-col gap-3">
+                    <input
+                      type="email"
+                      required
+                      placeholder="Your email *"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="flex-1 px-4 py-3.5 rounded-xl border border-dark/10 bg-white text-dark placeholder:text-dark/30 text-sm font-medium focus:outline-none focus:border-dark/20 transition-colors"
+                    />
+                    <input
+                      type="text"
+                      required
+                      placeholder="yourwebsite.com"
+                      value={website}
+                      onChange={(e) => setWebsite(e.target.value)}
+                      className="flex-1 px-4 py-3.5 rounded-xl border border-dark/10 bg-white text-dark placeholder:text-dark/30 text-sm font-medium focus:outline-none focus:border-dark/20 transition-colors"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={status === "loading"}
+                    className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-white font-bold text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl disabled:opacity-70 disabled:hover:scale-100"
+                    style={{ backgroundColor: data.accentColor }}
+                  >
+                    {status === "loading" ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Request Free Demo
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </button>
+                  {status === "error" && (
+                    <p className="text-red-500 text-sm font-medium">{errorMsg}</p>
+                  )}
+                  <span className="text-dark/40 text-xs">No commitment required. We&apos;ll review your site and get back within 24h.</span>
+                </motion.form>
+              )}
+            </AnimatePresence>
           </motion.div>
 
           {/* Right Image */}
