@@ -24,7 +24,7 @@ const iconMap = {
 const Bonuses = ({ data }) => {
   return (
     <section
-      className="w-full px-32 lg:px-20 md:px-12 sm:px-8 xs:px-4 py-28 md:py-20 sm:py-16 overflow-hidden"
+      className="w-full px-32 lg:px-20 md:px-12 sm:px-8 xs:px-4 py-28 md:py-20 sm:py-16"
       style={{ backgroundColor: `${data.accentColor}06` }}
     >
       <div className="max-w-6xl mx-auto">

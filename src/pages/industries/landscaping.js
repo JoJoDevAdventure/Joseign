@@ -1,15 +1,15 @@
-import TransitionEffect from "@/components/TransitionEffect";
-import IndustryHero from "@/components/Industries/IndustryHero";
-import PainPoints from "@/components/Industries/PainPoints";
+import Bonuses from "@/components/Industries/Bonuses";
+import Exclusivity from "@/components/Industries/Exclusivity";
+import FinalCTA from "@/components/Industries/FinalCTA";
 import HowItWorks from "@/components/Industries/HowItWorks";
+import IndustryFAQ from "@/components/Industries/IndustryFAQ";
+import IndustryHero from "@/components/Industries/IndustryHero";
+import IndustryPricing from "@/components/Industries/IndustryPricing";
+import IndustryTestimonials from "@/components/Industries/IndustryTestimonials";
+import PainPoints from "@/components/Industries/PainPoints";
 import Showcase from "@/components/Industries/Showcase";
 import Speed from "@/components/Industries/Speed";
-import Exclusivity from "@/components/Industries/Exclusivity";
-import Bonuses from "@/components/Industries/Bonuses";
-import IndustryTestimonials from "@/components/Industries/IndustryTestimonials";
-import IndustryPricing from "@/components/Industries/IndustryPricing";
-import IndustryFAQ from "@/components/Industries/IndustryFAQ";
-import FinalCTA from "@/components/Industries/FinalCTA";
+import TransitionEffect from "@/components/TransitionEffect";
 import Head from "next/head";
 
 const ACCENT = "#16A34A";
@@ -20,7 +20,7 @@ const heroData = {
   subheadline: "We build premium, high-converting landing pages for landscaping companies in 3-7 days. You stay focused on jobs — we handle everything else.",
   ctaText: "Claim Your Spot",
   ctaLink: "https://joseign.com/bookme",
-  heroImage: "/placeholder.png",
+  heroImage: "/landscaping/hero.png",
   badge: "Only 3 Spots This Week",
   accentColor: ACCENT,
 };
@@ -60,7 +60,7 @@ const howItWorksData = {
       number: "01",
       title: "Quick Discovery Call",
       description: "A 15-minute call where we learn about your services, your ideal customers, and what sets you apart. Send us your best project photos and we'll take it from there.",
-      image: "/placeholder.png",
+      image: "/landscaping/step-1.png",
       highlights: [
         "15 minutes, not 15 meetings",
         "Just send us your project photos",
@@ -71,7 +71,7 @@ const howItWorksData = {
       number: "02",
       title: "We Build, You Work",
       description: "Our team designs and develops your entire website while you're out on jobs. We handle the copy, the layout, the before/after galleries — everything.",
-      image: "/placeholder.png",
+      image: "/landscaping/step-2.png",
       highlights: [
         "We write all the content for you",
         "Stunning before/after project galleries",
@@ -82,7 +82,7 @@ const howItWorksData = {
       number: "03",
       title: "Review & Launch",
       description: "We send you the finished product. You tell us what to tweak (if anything). We make changes same-day and launch. Your new site starts generating leads immediately.",
-      image: "/placeholder.png",
+      image: "/landscaping/step-3.png",
       highlights: [
         "Unlimited revisions included",
         "Same-day changes",
@@ -101,28 +101,28 @@ const showcaseData = {
     {
       title: "GreenScape Pro",
       description: "Full landing page with before/after gallery that increased quote requests by 220% in the first month.",
-      image: "/placeholder.png",
+      image: "/landscaping/proj-1.png",
       tags: ["Landing Page", "Gallery", "Lead Gen"],
       link: "#",
     },
     {
       title: "Elite Outdoor Living",
       description: "Premium website for high-end hardscaping and outdoor kitchen company. Positioned them as the luxury option in their market.",
-      image: "/placeholder.png",
+      image: "/landscaping/proj-2.png",
       tags: ["Full Website", "Premium Design"],
       link: "#",
     },
     {
       title: "Fresh Cut Lawns",
       description: "Simple, conversion-focused landing page with online booking. Generates 50+ leads monthly from Google.",
-      image: "/placeholder.png",
+      image: "/landscaping/proj-3.png",
       tags: ["Landing Page", "SEO", "Booking"],
       link: "#",
     },
     {
       title: "Bloom Landscape Design",
       description: "Portfolio-style site showcasing residential design work. Tripled their design consultation bookings.",
-      image: "/placeholder.png",
+      image: "/landscaping/proj-4.png",
       tags: ["Portfolio", "Design", "Branding"],
       link: "#",
     },
@@ -162,7 +162,7 @@ const speedData = {
     { day: "Day 4-5", title: "Development", description: "We build your site with blazing-fast performance and local SEO." },
     { day: "Day 6-7", title: "Review & Launch", description: "You review, we tweak, and your new site goes live." },
   ],
-  image: "/placeholder.png",
+  image: "/landscaping/timeline.png",
   accentColor: ACCENT,
 };
 
@@ -241,7 +241,7 @@ const bonusesData = {
     },
   ],
   totalValue: "$2,500+",
-  image: "/placeholder.png",
+  image: "/landscaping/bonus.png",
   accentColor: ACCENT,
 };
 
@@ -254,7 +254,7 @@ const testimonialsData = {
       role: "Owner",
       company: "GreenScape Pro Landscaping",
       text: "I went from zero online presence to getting 15+ quote requests per week. The before/after gallery on my site does all the selling for me. Best money I've ever spent.",
-      image: "/placeholder.png",
+      image: "https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/f0/de/f7/b7/2f/v1_E10/E10968ZP.jpg?w=1600&cf_fit=scale-down&q=85&format=auto&s=7894ffbee435ace0dc1401c23194a034bbbd9d986176ee666956ba2571ad1bb3",
       stars: 5,
     },
     {
@@ -262,7 +262,7 @@ const testimonialsData = {
       role: "Co-Owner",
       company: "Bloom Landscape Design",
       text: "They understood exactly what we needed without us having to explain every detail. One call, sent our photos, and 5 days later we had a website that looks like a $10K build.",
-      image: "/placeholder.png",
+      image: "https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/8a/d8/c9/1d/cf/v1_E10/E109704K.jpg?w=1600&cf_fit=scale-down&q=85&format=auto&s=59660209ab4d4d490fe06ae2b956c24e8da603f1fad60f843c0b5cf6a9f541e7",
       stars: 5,
     },
     {
@@ -270,7 +270,7 @@ const testimonialsData = {
       role: "Owner",
       company: "Fresh Cut Lawn Care",
       text: "I was doing everything through Facebook before. Now I have a real website that ranks on Google and clients can book directly. My revenue went up 35% in 2 months.",
-      image: "/placeholder.png",
+      image: "https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/92/91/c2/a4/13/v1_E10/E10AFCQH.jpg?w=1600&cf_fit=scale-down&q=85&format=auto&s=e470298c0b443417511b413c2af3ad25448c95c6832caa75ecda8855fa3d75d9",
       stars: 5,
     },
   ],
@@ -393,7 +393,7 @@ const finalCTAData = {
   secondaryText: "WhatsApp Us",
   secondaryLink: "https://wa.me/message/FMWAQDMHBNBEP1",
   urgencyText: "Only 1 spot left this week",
-  image: "/placeholder.png",
+  image: "/landscaping/hero.png",
   trustBadges: ["50+ Happy Clients", "3-7 Day Delivery", "Money-Back Guarantee"],
   accentColor: ACCENT,
 };
@@ -413,7 +413,7 @@ export default function LandscapingPage() {
       </Head>
       <TransitionEffect />
 
-      <main className="w-full overflow-hidden">
+      <main className="w-full overflow-x-clip">
         <IndustryHero data={heroData} />
         <PainPoints data={painPointsData} />
         <HowItWorks data={howItWorksData} />

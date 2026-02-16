@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 
 /**
  * @param {Object} data
@@ -59,18 +58,6 @@ const Showcase = ({ data }) => {
                   height={400}
                   className="w-full h-[350px] md:h-[250px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  {project.link && (
-                    <div
-                      className="w-14 h-14 rounded-full flex items-center justify-center text-white"
-                      style={{ backgroundColor: data.accentColor }}
-                    >
-                      <ArrowUpRight className="w-6 h-6" />
-                    </div>
-                  )}
-                </div>
               </div>
 
               {/* Tags */}

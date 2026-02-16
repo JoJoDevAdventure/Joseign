@@ -4,6 +4,14 @@ const path = require("path");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "elements-resized.envatousercontent.com",
+      },
+    ],
+  },
 
   // If you use the App Router, no extra flags needed here.
   webpack: (config) => {

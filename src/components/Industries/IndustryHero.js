@@ -204,8 +204,8 @@ const IndustryHero = ({ data }) => {
                   src={data.heroImage}
                   alt={data.eyebrow}
                   width={700}
-                  height={500}
-                  className="w-full h-auto object-cover"
+                  height={600}
+                  className="w-full object-cover"
                   priority
                 />
               </div>
