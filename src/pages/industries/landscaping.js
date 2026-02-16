@@ -298,7 +298,7 @@ const pricingData = {
       ],
       ctaText: "Get Started",
       ctaLink: "https://joseign.com/bookme",
-      paymentLink: "https://joseign.com/pay/landscaping/landing-page",
+      paymentLink: "https://contra.com/payment-link/WgpvEyUd-modern-website-for-your-landscaping-business-single-landing-page",
     },
     {
       name: "Landscaping Full Website",
@@ -318,7 +318,7 @@ const pricingData = {
       ],
       ctaText: "Claim Your Spot",
       ctaLink: "https://joseign.com/bookme",
-      paymentLink: "https://joseign.com/pay/landscaping/full-website",
+      paymentLink: "https://contra.com/payment-link/Mppgv681-modern-website-for-your-landscaping-business-full-business-website",
     },
     {
       name: "AI Agentic Website",
@@ -337,7 +337,7 @@ const pricingData = {
       ],
       ctaText: "Request Demo",
       ctaLink: "https://joseign.com/bookme",
-      paymentLink: "https://joseign.com/pay/landscaping/ai-agentic",
+      paymentLink: "https://contra.com/payment-link/J3HFV3NS-modern-website-for-your-landscaping-business-ai-powered-website",
     },
   ],
   guarantees: [
