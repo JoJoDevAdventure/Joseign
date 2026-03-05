@@ -12,7 +12,7 @@ export const testimonialsData = [
     summary:
       "Great work! Works fast and does an amazing job of ensuring everything is perfect. Have recommended them to others.",
     link: "https://landing.alertrax.com",
-    type: "DDP: Destination Design Pools",
+    type: "AlerTrax Tracking",
     img: "/projects/alertrax/landing.png",
   },
   {
