@@ -1,9 +1,8 @@
-import React from "react";
-import Head from "next/head";
-import Link from "next/link";
 import AnimatedText from "@/components/AnimatedText";
 import Pricing from "@/components/Pricing";
 import { motion } from "framer-motion";
+import Head from "next/head";
+import Link from "next/link";
 
 export default function PricingPage() {
   return (
